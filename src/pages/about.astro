@@ -1,0 +1,51 @@
+---
+import { experiences } from '~/config';
+import type { Experience as Contract } from '~/types';
+
+import Project from '@views/Project.astro';
+import Heading from '@views/commons/Heading.astro';
+import MainLayout from '@views/layouts/MainLayout.astro';
+import Experience from '../views/Experience.astro';
+---
+
+<MainLayout title="About Me">
+    <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0">
+        <Heading
+            title="About Me"
+            description="Hello 👋 I'm Supian M, a developer based in Banjarbaru, Indonesia. I'm passionate about web development and server administration, always eager to learn new technologies."
+        />
+
+        <img src="/images/banner.jpg" class="relative z-30 my-10 w-full rounded-xl" alt="" />
+
+        <h2 class="mb-2 text-2xl font-bold dark:text-gray-200">Short Bio</h2>
+        <p class="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7 lg:text-lg lg:leading-8 dark:text-gray-400">
+            🧑🏻‍💻 Focused on back-end development and ⚙️ server management — keeping apps 🚀 and servers 💾 running smoothly.
+        </p>
+
+        <h2 class="mt-5 mb-2 text-2xl font-bold sm:mt-6 lg:mt-10 dark:text-gray-200">Professional Experience</h2>
+        <div class="px-5 py-5 pb-5">
+            {
+                experiences.map((exp: Contract) => {
+                    return (
+                        <div class="border-l border-gray-200 pb-7 last:border-l-0 last:pb-0 dark:border-gray-700">
+                            <Experience
+                                date={exp.date}
+                                role={exp.role}
+                                comp={exp.comp}
+                                desc={exp.desc}
+                                logo={exp.logo}
+                            />
+                        </div>
+                    );
+                })
+            }
+        </div>
+
+        <h2 class="mt-5 mb-2 text-2xl font-bold dark:text-gray-200">Let's Connect</h2>
+        <p class="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7 lg:text-lg lg:leading-8 dark:text-gray-400">
+            If you want to stay up to date with my work be sure to <a href="https://www.threads.net/@supianidz" target="_blank" class="text-indigo-600 underline">follow me on
+            threads</a
+        >, or you can send me an <a href="mailto:supianidz@octopy.dev" class="text-indigo-600 underline">email</a> and I'll be sure to get back to you.
+        </p>
+    </section>
+</MainLayout>

@@ -16,4 +16,12 @@ type Project = {
     prev: string;
 }
 
-export type { Menu, Social, Project };
+type Experience = {
+    date: string;
+    role: string;
+    comp: string;
+    desc: string;
+    logo: string;
+};
+
+export type { Menu, Social, Project, Experience };
