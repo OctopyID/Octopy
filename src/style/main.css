@@ -22,6 +22,14 @@ html.dark pre:has(code) span {
     text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
+body {
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+pre.astro-code {
+    font-family: 'Geist Mono', monospace;
+}
+
 .astro-code {
     @apply rounded-xl border border-dashed border-gray-500;
 }

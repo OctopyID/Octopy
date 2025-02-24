@@ -995,6 +995,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/geist-mono@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@fontsource/geist-mono@npm:5.1.1"
+  checksum: 10c0/7e893cf188975afd47df097249d6f621489be247a7a3a098459095fea4d635cb20d136ba7a4e0f12b920850cf089211618ca8b65d15d94d043b49d8ca8b884aa
+  languageName: node
+  linkType: hard
+
+"@fontsource/instrument-sans@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@fontsource/instrument-sans@npm:5.1.1"
+  checksum: 10c0/68a9004ce6aa93a10b9fcefd0126360635f456a88c631e72bdd595559b0d1d23778b18b92505106fa8a3ee1d2d3e1bac58cc83f625d65f9c777b4622075ce08a
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -5069,6 +5083,8 @@ __metadata:
     "@astrojs/sitemap": "npm:^3.2.1"
     "@astrojs/ts-plugin": "npm:^1.10.4"
     "@astrojs/vue": "npm:^5.0.7"
+    "@fontsource/geist-mono": "npm:^5.1.1"
+    "@fontsource/instrument-sans": "npm:^5.1.1"
     "@tailwindcss/typography": "npm:^0.5.16"
     "@tailwindcss/vite": "npm:^4.0.8"
     "@types/lodash": "npm:^4"
