@@ -11,7 +11,7 @@ export const menus: Array<Menu> = [
     },
     {
         label: 'Projects',
-        route: '/'
+        route: '/projects'
     },
     {
         label: 'About Me',

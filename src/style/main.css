@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
+@plugin "tailwind-scrollbar";
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:where(.dark, .dark *));
+
+html, .astro-code {
+    @apply scrollbar-thin  scrollbar-thumb-slate-700 scrollbar-track-slate-300 dark:scrollbar-thumb-gray-700 dark:scrollbar-track-gray-800;
+}

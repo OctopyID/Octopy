@@ -1,0 +1,32 @@
+---
+import { projects } from '~/config';
+import type { Project as Contract } from '~/types';
+
+import Project from '@views/Project.astro';
+import Heading from '@views/commons/Heading.astro';
+import MainLayout from '@views/layouts/MainLayout.astro';
+---
+
+<MainLayout title="My Projects">
+    <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0 select-none">
+        <Heading
+            title="My Projects"
+            description="Here are some of the current projects I've been working on. I really enjoy creating new projects and coming up with new ideas. I'm always working on something new, so check back often!"
+        />
+
+        <div class="z-50 my-8 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-3 sm:gap-5">
+            {
+                projects.map((project: Contract) => {
+                    return (
+                        <Project
+                            name={project.name}
+                            desc={project.desc}
+                            prev={project.prev}
+                            link={project.link}
+                        />
+                    );
+                })
+            }
+        </div>
+    </section>
+</MainLayout>
