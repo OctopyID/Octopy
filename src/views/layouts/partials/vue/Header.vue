@@ -31,7 +31,7 @@
                     </a>
                 </div>
 
-                <div class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-gray-800 dark:text-white" @click="theme()">
+                <div id="toggle" class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-gray-800 dark:text-white" @click="theme()">
                     <div class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-gray-600">
                         <Icon name="Sun" class="ease absolute h-6 w-6 transform fill-amber-500 transition duration-700" :class="{ rising: !dark }" v-show="!dark"></Icon>
                         <Icon name="Moon" class="ease absolute h-6 w-6 transform fill-amber-500 transition duration-700" :class="{ rising: dark }" v-show="dark"></Icon>
@@ -62,6 +62,14 @@ const toggle = () => {
 <style scoped>
 .horizon .rising {
     animation: 3s ease 0s 1 rising;
+}
+
+#toggle:hover svg {
+    transform: translate3d(0, 10px, 0);
+}
+
+html.dark #toggle:hover .horizon {
+    border-color: #718096 !important;
 }
 
 @keyframes rising {
