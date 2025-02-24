@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { AtSign, Facebook, Github, Instagram, Linkedin, Moon, Sun } from 'lucide-vue-next';
+import { AtSign, Facebook, Github, Instagram, Linkedin, Moon, Sun, X, Menu } from 'lucide-vue-next';
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -24,7 +24,9 @@ const icons = {
     Instagram,
     AtSign,
     Linkedin,
-    Github
+    Github,
+    X,
+    Menu,
 };
 
 const icon = computed(() => {
