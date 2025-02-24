@@ -104,3 +104,50 @@ export const experiences: Array<Experience> = [
         logo: '/images/company/1.webp'
     }
 ];
+
+export const stacks: string[] = [
+    // Back-End Development
+    'PHP',
+    'Laravel',
+    'Node.js',
+
+    // Front-End Development
+    'Vue.js',
+
+    // Desktop Development
+    'Electron',
+    'Flutter',
+
+    // Containerization & DevOps
+    'Docker',
+
+    // Server & Deployment
+    'Ubuntu',
+    'Apache',
+    'Nginx',
+
+    // Databases
+    'MySQL',
+    'PostgreSQL',
+    'SQLite',
+    'Redis',
+
+    // Scripting
+    'Bash',
+
+    // Version Control
+    'Git',
+    'GitHub',
+
+    // IDE & Tools
+    'JetBrains',
+
+    // Project Management
+    'ClickUp',
+
+    // Monitoring
+    'Grafana',
+
+    // CDN
+    'Cloudflare'
+];

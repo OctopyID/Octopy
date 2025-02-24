@@ -1,15 +1,16 @@
 ---
 import { experiences } from '~/config';
 import type { Experience as Contract } from '~/types';
-
+import { stacks } from '~/config';
 import Project from '@views/Project.astro';
 import Heading from '@views/commons/Heading.astro';
 import MainLayout from '@views/layouts/MainLayout.astro';
 import Experience from '../views/Experience.astro';
+import Tech from '../views/commons/Tech.astro';
 ---
 
 <MainLayout title="About Me">
-    <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0">
+    <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0 select-none">
         <Heading
             title="About Me"
             description="Hello 👋 I'm Supian M, a developer based in Banjarbaru, Indonesia. I'm passionate about web development and server administration, always eager to learn new technologies."
@@ -22,7 +23,7 @@ import Experience from '../views/Experience.astro';
             🧑🏻‍💻 Focused on back-end development and ⚙️ server management — keeping apps 🚀 and servers 💾 running smoothly.
         </p>
 
-        <h2 class="mt-5 mb-2 text-2xl font-bold sm:mt-6  dark:text-gray-200">Professional Experience</h2>
+        <h2 class="my-5 text-2xl font-bold sm:mt-6 dark:text-gray-200">Professional Experience</h2>
         <div class="px-5 pb-5">
             {
                 experiences.map((exp: Contract) => {
@@ -41,7 +42,16 @@ import Experience from '../views/Experience.astro';
             }
         </div>
 
-        <h2 class="mt-5 mb-2 text-2xl font-bold dark:text-gray-200">Let's Connect</h2>
+        <h2 class="my-5 text-2xl font-bold sm:mt-6  dark:text-gray-200">Skills & Tech Stack</h2>
+        <div class="pb-5 flex flex-row gap-2 flex-wrap">
+            {
+                stacks.map((stack: string) => (
+                    <Tech text={stack}></Tech>
+                ))
+            }
+        </div>
+
+        <h2 class="my-5 text-2xl font-bold dark:text-gray-200">Let's Connect</h2>
         <p class="text-sm  text-gray-600 sm:text-base slg:text-lg dark:text-gray-400">
             If you want to stay up to date with my work be sure to <a href="https://www.threads.net/@supianidz" target="_blank" class="text-indigo-600 underline">follow me on
             threads</a
