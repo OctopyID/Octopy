@@ -6,12 +6,19 @@ import Footer from '@views/layouts/partials/vue/Footer.vue';
 const { title } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{title} - Octopy ID</title>
         <link rel="icon" type="image/x-icon" href="/favicon.svg">
+
+        <script is:inline>
+            // prevent flickering
+            if (typeof Storage !== 'undefined') {
+                document.documentElement.classList.toggle('dark', localStorage.getItem('vueuse-color-scheme') === 'dark');
+            }
+        </script>
     </head>
     <body class="bg-white dark:bg-gray-900">
         <SquareLines>
