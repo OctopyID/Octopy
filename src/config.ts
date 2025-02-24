@@ -1,4 +1,4 @@
-import type { Menu, Social } from './types';
+import type { Menu, Project, Social } from './types';
 
 export const menus: Array<Menu> = [
     {
@@ -44,5 +44,32 @@ export const socials: Array<Social> = [
         name: 'Github',
         icon: 'Github',
         href: 'https://github.com/SupianIDz'
+    }
+];
+
+export const projects: Array<Project> = [
+    {
+        name: 'TempMail.Best',
+        desc: 'Best Temporary Email.',
+        prev: 'https://kai.bi/assets/images/projects/tempmail.best.png',
+        link: 'https://tempmail.best'
+    },
+    {
+        name: 'DNS.Surf',
+        desc: 'Querying DNS Resolution Results in Different Regions Worldwide.',
+        prev: 'https://kai.bi/assets/images/projects/dns.surf.png',
+        link: 'https://dns.surf'
+    },
+    {
+        name: 'HTML.ZONE',
+        desc: 'Web Toolbox.',
+        prev: 'https://kai.bi/assets/images/projects/html.zone.png',
+        link: 'https://html.zone'
+    },
+    {
+        name: 'Sink',
+        desc: 'A Simple / Speedy / Secure Link Shortener with Analytics.',
+        prev: 'https://kai.bi/assets/images/projects/sink.cool.png',
+        link: 'https://sink.cool'
     }
 ];
