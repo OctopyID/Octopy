@@ -22,12 +22,12 @@ import Experience from '../views/Experience.astro';
             🧑🏻‍💻 Focused on back-end development and ⚙️ server management — keeping apps 🚀 and servers 💾 running smoothly.
         </p>
 
-        <h2 class="mt-5 mb-2 text-2xl font-bold sm:mt-6 lg:mt-10 dark:text-gray-200">Professional Experience</h2>
-        <div class="px-5 py-5 pb-5">
+        <h2 class="mt-5 mb-2 text-2xl font-bold sm:mt-6  dark:text-gray-200">Professional Experience</h2>
+        <div class="px-5 pb-5">
             {
                 experiences.map((exp: Contract) => {
                     return (
-                        <div class="border-l border-gray-200 pb-7 last:border-l-0 last:pb-0 dark:border-gray-700">
+                        <div class="border-l border-gray-200 pb-7 last:border-l-0 last:pb-0 dark:border-gray-500">
                             <Experience
                                 date={exp.date}
                                 role={exp.role}

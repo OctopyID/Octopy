@@ -23,7 +23,7 @@ html.dark pre:has(code) span {
 }
 
 .astro-code {
-    @apply rounded-xl border border-dashed border-gray-400;
+    @apply rounded-xl border border-dashed border-gray-500;
 }
 
 .prose img {

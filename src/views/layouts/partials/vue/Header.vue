@@ -4,14 +4,16 @@
     <header id="header" class="absolute top-0 z-50 h-20 w-full">
         <div
             class="mx-auto flex h-full max-w-5xl items-center justify-between border-r-0 border-b border-l-0 border-transparent pr-4 pl-6 select-none lg:rounded-b-xl lg:border-r lg:border-l">
+
+            <Logo class="w-full" />
             <div class="fixed inset-0 z-20 h-screen w-screen bg-white/90 duration-300 ease-out dark:bg-gray-900/90" v-on:click="toggle" v-if="mobile"></div>
             <nav class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-gray-500 sm:flex-row sm:justify-end dark:text-gray-400">
                 <div class="ml-4 flex h-6 w-6 cursor-pointer flex-col items-end justify-center sm:hidden" v-on:click="toggle" v-if="!mobile">
-                    <Icon name="Menu" class="h-8 w-8 dark:text-gray-200"></Icon>
+                    <Icon name="Menu" class="h-8 w-8 text-gray-800 dark:text-gray-200"></Icon>
                 </div>
 
                 <div class="ml-4 h-6 w-6 -translate-x-1 cursor-pointer flex-col items-end justify-center sm:hidden" v-on:click="toggle" v-if="mobile">
-                    <Icon name="X" class="h-6 w-6 text-gray-600 dark:text-gray-200"></Icon>
+                    <Icon name="X" class="h-6 w-6 text-gray-800 dark:text-gray-200"></Icon>
                 </div>
 
                 <div
@@ -19,7 +21,7 @@
                     :class="{ hidden: !mobile }"
                 >
                     <div class="absolute inset-0 top-0 right-0 block h-full w-full px-3 sm:hidden">
-                        <div class="relative h-full w-full rounded-xl border border-dashed border-gray-300 bg-white backdrop-blur-xs dark:border-gray-700 dark:bg-gray-900"></div>
+                        <div class="relative h-full w-full rounded-xl border border-dashed border-gray-300 bg-white backdrop-blur-xs dark:border-gray-500 dark:bg-gray-900"></div>
                     </div>
 
                     <a
@@ -44,7 +46,7 @@
 
 <script lang="ts" setup>
 import { menus } from '~/config.ts';
-import { Icon } from '@views/commons/vue';
+import { Icon, Logo } from '@views/commons/vue';
 import { useDark, useToggle } from '@vueuse/core';
 import { ref } from 'vue';
 
