@@ -73,6 +73,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/sitemap@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@astrojs/sitemap@npm:3.2.1"
+  dependencies:
+    sitemap: "npm:^8.0.0"
+    stream-replace-string: "npm:^2.0.0"
+    zod: "npm:^3.23.8"
+  checksum: 10c0/03a883dcf5ea18963e2b9031c07ea131d8c79efbc76abb42a06e71db1ad252696846c187187f2804b16d1d51b740419433a1eacb4abe0e93d74056320aee12ae
+  languageName: node
+  linkType: hard
+
 "@astrojs/telemetry@npm:3.2.0":
   version: 3.2.0
   resolution: "@astrojs/telemetry@npm:3.2.0"
@@ -85,6 +96,21 @@ __metadata:
     is-wsl: "npm:^3.1.0"
     which-pm-runs: "npm:^1.1.0"
   checksum: 10c0/5727205ca13fc9f83ff97b64838f6edd4010e8307d19f781f641c0c99e779d7d3e15469d66a67ba119c87963cd1c529bbd0f15bc8b88d88918f8fda04805c610
+  languageName: node
+  linkType: hard
+
+"@astrojs/ts-plugin@npm:^1.10.4":
+  version: 1.10.4
+  resolution: "@astrojs/ts-plugin@npm:1.10.4"
+  dependencies:
+    "@astrojs/compiler": "npm:^2.10.3"
+    "@astrojs/yaml2ts": "npm:^0.2.2"
+    "@jridgewell/sourcemap-codec": "npm:^1.4.15"
+    "@volar/language-core": "npm:~2.4.7"
+    "@volar/typescript": "npm:~2.4.7"
+    semver: "npm:^7.3.8"
+    vscode-languageserver-textdocument: "npm:^1.0.11"
+  checksum: 10c0/ec0756aeab265c85c084614009c908abd35c07848e309d82e4e5b65663162b4e1d5b771cf094725d180a7e95e8c0e1fb6424904c1f61129cf9a706abfdb613c8
   languageName: node
   linkType: hard
 
@@ -101,6 +127,15 @@ __metadata:
     astro: ^5.0.0
     vue: ^3.2.30
   checksum: 10c0/b72637970ae727388ca8c0d0f1975476d0a1b4c2c744b82e4166f42e011f7343d61b70be2eed670bc8979ab596f5e08ab20228ff8e466d378f884c788a96bea9
+  languageName: node
+  linkType: hard
+
+"@astrojs/yaml2ts@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "@astrojs/yaml2ts@npm:0.2.2"
+  dependencies:
+    yaml: "npm:^2.5.0"
+  checksum: 10c0/f8b13a833fd83931607a0b3780d1ac808becb692ba022d773b4ee57f2d0dcdf5ea8d4bd42d0836678b1928aba303a27c4139a574cb62bdfd5a5b38db80b6ed6a
   languageName: node
   linkType: hard
 
@@ -1072,7 +1107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/sourcemap-codec@npm:^1.4.10, @jridgewell/sourcemap-codec@npm:^1.4.14, @jridgewell/sourcemap-codec@npm:^1.5.0":
+"@jridgewell/sourcemap-codec@npm:^1.4.10, @jridgewell/sourcemap-codec@npm:^1.4.14, @jridgewell/sourcemap-codec@npm:^1.4.15, @jridgewell/sourcemap-codec@npm:^1.5.0":
   version: 1.5.0
   resolution: "@jridgewell/sourcemap-codec@npm:1.5.0"
   checksum: 10c0/2eb864f276eb1096c3c11da3e9bb518f6d9fc0023c78344cdc037abadc725172c70314bdb360f2d4b7bffec7f5d657ce006816bc5d4ecb35e61b66132db00c18
@@ -1583,6 +1618,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:*":
+  version: 22.13.5
+  resolution: "@types/node@npm:22.13.5"
+  dependencies:
+    undici-types: "npm:~6.20.0"
+  checksum: 10c0/a2e7ed7bb0690e439004779baedeb05159c5cc41ef6d81c7a6ebea5303fde4033669e1c0e41ff7453b45fd2fea8dbd55fddfcd052950c7fcae3167c970bca725
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^17.0.5":
+  version: 17.0.45
+  resolution: "@types/node@npm:17.0.45"
+  checksum: 10c0/0db377133d709b33a47892581a21a41cd7958f22723a3cc6c71d55ac018121382de42fbfc7970d5ae3e7819dbe5f40e1c6a5174aedf7e7964e9cb8fa72b580b0
+  languageName: node
+  linkType: hard
+
+"@types/sax@npm:^1.2.1":
+  version: 1.2.7
+  resolution: "@types/sax@npm:1.2.7"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/d077a761a0753b079bf8279b3993948030ca86ed9125437b9b29c1de40db9b2deb7fddc369f014b58861d450e8b8cc75f163aa29dc8cea81952efbfd859168cf
+  languageName: node
+  linkType: hard
+
 "@types/unist@npm:*, @types/unist@npm:^3.0.0":
   version: 3.0.3
   resolution: "@types/unist@npm:3.0.3"
@@ -1625,6 +1685,33 @@ __metadata:
     vite: ^5.0.0 || ^6.0.0
     vue: ^3.2.25
   checksum: 10c0/927c06ccf591812c8195967ad550059a77a922cc9f9672f4e83451538a421427bd4daf8cce20366baa3a70882b2ff6c4e5fea2c1fdc3fd24a8caa061c893c2d8
+  languageName: node
+  linkType: hard
+
+"@volar/language-core@npm:2.4.11, @volar/language-core@npm:~2.4.7":
+  version: 2.4.11
+  resolution: "@volar/language-core@npm:2.4.11"
+  dependencies:
+    "@volar/source-map": "npm:2.4.11"
+  checksum: 10c0/ccc5de0c28b4186dc99ff9856b2ac2318ee1818480af3ca406f3c09d42b19b6df8698b525f6cf0fed368332fc76659cd4433fb38e6a55a85c7cefc97d665ccf8
+  languageName: node
+  linkType: hard
+
+"@volar/source-map@npm:2.4.11":
+  version: 2.4.11
+  resolution: "@volar/source-map@npm:2.4.11"
+  checksum: 10c0/8e5badf9f67d669679c48fe32258e082d823523ca2807438d38c0aac6c52b84d43580c8921b559fc5a27c0c7457ffcba569e60de7a597851690dec04ed77c5fc
+  languageName: node
+  linkType: hard
+
+"@volar/typescript@npm:~2.4.7":
+  version: 2.4.11
+  resolution: "@volar/typescript@npm:2.4.11"
+  dependencies:
+    "@volar/language-core": "npm:2.4.11"
+    path-browserify: "npm:^1.0.1"
+    vscode-uri: "npm:^3.0.8"
+  checksum: 10c0/bca9bda9c8c95fd06672b834d1804810fdad496e15ee8e2099f76de74fa529d835f342afb6b976e6e3bc4599a3bbbfd007a842694fe1300cf6286783b827f917
   languageName: node
   linkType: hard
 
@@ -1920,6 +2007,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"arg@npm:^5.0.0":
+  version: 5.0.2
+  resolution: "arg@npm:5.0.2"
+  checksum: 10c0/ccaf86f4e05d342af6666c569f844bec426595c567d32a8289715087825c2ca7edd8a3d204e4d2fb2aa4602e09a57d0c13ea8c9eea75aac3dbb4af5514e6800e
+  languageName: node
+  linkType: hard
+
 "argparse@npm:^1.0.7":
   version: 1.0.10
   resolution: "argparse@npm:1.0.10"
@@ -1956,6 +2050,16 @@ __metadata:
   dependencies:
     printable-characters: "npm:^1.0.42"
   checksum: 10c0/8c5693a84621fe53c62fcad6b779dc55c5caf4d43b8e67077964baea4a337769ef53f590d7395c806805b4ef1a391b614ba9acdee19b2ca4309ddedaf13894e6
+  languageName: node
+  linkType: hard
+
+"astro-robots-txt@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "astro-robots-txt@npm:1.0.0"
+  dependencies:
+    valid-filename: "npm:^4.0.0"
+    zod: "npm:^3.22.2"
+  checksum: 10c0/d389573e627877b4e69984897066cfb7df610eac1cdec47da69ccce239fed8dc9e69bb9046b700f0f532837a4d5ea6b0e065d5b73dd94cf8b89ec2e33d87a3a6
   languageName: node
   linkType: hard
 
@@ -2881,6 +2985,13 @@ __metadata:
   dependencies:
     is-unicode-supported: "npm:^2.0.0"
   checksum: 10c0/9159df4264d62ef447a3931537de92f5012210cf5135c35c010df50a2169377581378149abfe1eb238bd6acbba1c0d547b1f18e0af6eee49e30363cedaffcfe4
+  languageName: node
+  linkType: hard
+
+"filename-reserved-regex@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "filename-reserved-regex@npm:3.0.0"
+  checksum: 10c0/2b1df851a37f84723f9d8daf885ddfadd3dea2a124474db405295962abc1a01d6c9b6b27edec33bad32ef601e1a220f8a34d34f30ca5a911709700e2b517e268
   languageName: node
   linkType: hard
 
@@ -4531,11 +4642,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "octopy.dev@workspace:."
   dependencies:
+    "@astrojs/sitemap": "npm:^3.2.1"
+    "@astrojs/ts-plugin": "npm:^1.10.4"
     "@astrojs/vue": "npm:^5.0.7"
     "@tailwindcss/vite": "npm:^4.0.8"
     "@types/lodash": "npm:^4"
     "@vueuse/core": "npm:^12.7.0"
     astro: "npm:^5.3.0"
+    astro-robots-txt: "npm:^1.0.0"
     lodash: "npm:^4.17.21"
     lucide-vue-next: "npm:^0.475.0"
     prettier: "npm:^3.5.2"
@@ -4680,6 +4794,13 @@ __metadata:
   dependencies:
     entities: "npm:^4.5.0"
   checksum: 10c0/829d37a0c709215a887e410a7118d754f8e1afd7edb529db95bc7bbf8045fb0266a7b67801331d8e8d9d073ea75793624ec27ce9ff3b96862c3b9008f4d68e80
+  languageName: node
+  linkType: hard
+
+"path-browserify@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "path-browserify@npm:1.0.1"
+  checksum: 10c0/8b8c3fd5c66bd340272180590ae4ff139769e9ab79522e2eb82e3d571a89b8117c04147f65ad066dccfb42fcad902e5b7d794b3d35e0fd840491a8ddbedf8c66
   languageName: node
   linkType: hard
 
@@ -5302,6 +5423,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sax@npm:^1.2.4":
+  version: 1.4.1
+  resolution: "sax@npm:1.4.1"
+  checksum: 10c0/6bf86318a254c5d898ede6bd3ded15daf68ae08a5495a2739564eb265cd13bcc64a07ab466fb204f67ce472bb534eb8612dac587435515169593f4fffa11de7c
+  languageName: node
+  linkType: hard
+
 "semver@npm:^6.3.1":
   version: 6.3.1
   resolution: "semver@npm:6.3.1"
@@ -5311,7 +5439,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.6.3, semver@npm:^7.7.1":
+"semver@npm:^7.3.5, semver@npm:^7.3.8, semver@npm:^7.6.3, semver@npm:^7.7.1":
   version: 7.7.1
   resolution: "semver@npm:7.7.1"
   bin:
@@ -5455,6 +5583,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sitemap@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "sitemap@npm:8.0.0"
+  dependencies:
+    "@types/node": "npm:^17.0.5"
+    "@types/sax": "npm:^1.2.1"
+    arg: "npm:^5.0.0"
+    sax: "npm:^1.2.4"
+  bin:
+    sitemap: dist/cli.js
+  checksum: 10c0/adaabfb1f27e3c76ba25f9a16dcb02ff17dd2ecbd1b2dbe2608a6770eff37bd71f7d21c10df6824917453bc4da2c2790fd85ee6424d75699bd053e3422d2ef5c
+  languageName: node
+  linkType: hard
+
 "smart-buffer@npm:^4.2.0":
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
@@ -5562,6 +5704,13 @@ __metadata:
   version: 1.1.0
   resolution: "stoppable@npm:1.1.0"
   checksum: 10c0/ba91b65e6442bf6f01ce837a727ece597a977ed92a05cb9aea6bf446c5e0dcbccc28f31b793afa8aedd8f34baaf3335398d35f903938d5493f7fbe386a1e090e
+  languageName: node
+  linkType: hard
+
+"stream-replace-string@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "stream-replace-string@npm:2.0.0"
+  checksum: 10c0/6cdf6108c57a869c1282dece0728bd7a8e314855bee71992436460192cdf46b3c976451e1e114716af209b2bfefa0e7e4581ca0eebc330d9dfcde341a72d50af
   languageName: node
   linkType: hard
 
@@ -5786,6 +5935,13 @@ __metadata:
   version: 0.1.3
   resolution: "uncrypto@npm:0.1.3"
   checksum: 10c0/74a29afefd76d5b77bedc983559ceb33f5bbc8dada84ff33755d1e3355da55a4e03a10e7ce717918c436b4dfafde1782e799ebaf2aadd775612b49f7b5b2998e
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.20.0":
+  version: 6.20.0
+  resolution: "undici-types@npm:6.20.0"
+  checksum: 10c0/68e659a98898d6a836a9a59e6adf14a5d799707f5ea629433e025ac90d239f75e408e2e5ff086afc3cace26f8b26ee52155293564593fbb4a2f666af57fc59bf
   languageName: node
   linkType: hard
 
@@ -6031,6 +6187,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"valid-filename@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "valid-filename@npm:4.0.0"
+  dependencies:
+    filename-reserved-regex: "npm:^3.0.0"
+  checksum: 10c0/cfbd173134b63ba2e831e464b9828c6ca8e4e00344271693488e42d94387944813cdbde49d1c76026467c3fe3a5b2de8c8c485eb75ec78457007f2dcde000ac4
+  languageName: node
+  linkType: hard
+
 "vfile-location@npm:^5.0.0":
   version: 5.0.3
   resolution: "vfile-location@npm:5.0.3"
@@ -6189,6 +6354,20 @@ __metadata:
     vite:
       optional: true
   checksum: 10c0/d153966fbcc9375bb858a5f5a096466900b42b25d2a3b255e10d050672300a978cccbe249c1f2beb2e09caaa0c800261e9305c62df4f2b75aa32b32bb936799c
+  languageName: node
+  linkType: hard
+
+"vscode-languageserver-textdocument@npm:^1.0.11":
+  version: 1.0.12
+  resolution: "vscode-languageserver-textdocument@npm:1.0.12"
+  checksum: 10c0/534349894b059602c4d97615a1147b6c4c031141c2093e59657f54e38570f5989c21b376836f13b9375419869242e9efb4066643208b21ab1e1dee111a0f00fb
+  languageName: node
+  linkType: hard
+
+"vscode-uri@npm:^3.0.8":
+  version: 3.1.0
+  resolution: "vscode-uri@npm:3.1.0"
+  checksum: 10c0/5f6c9c10fd9b1664d71fab4e9fbbae6be93c7f75bb3a1d9d74399a88ab8649e99691223fd7cef4644376cac6e94fa2c086d802521b9a8e31c5af3e60f0f35624
   languageName: node
   linkType: hard
 
@@ -6398,6 +6577,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"yaml@npm:^2.5.0":
+  version: 2.7.0
+  resolution: "yaml@npm:2.7.0"
+  bin:
+    yaml: bin.mjs
+  checksum: 10c0/886a7d2abbd70704b79f1d2d05fe9fb0aa63aefb86e1cb9991837dced65193d300f5554747a872b4b10ae9a12bc5d5327e4d04205f70336e863e35e89d8f4ea9
+  languageName: node
+  linkType: hard
+
 "yargs-parser@npm:^21.1.1":
   version: 21.1.1
   resolution: "yargs-parser@npm:21.1.1"
@@ -6465,7 +6653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.24.1":
+"zod@npm:^3.22.2, zod@npm:^3.23.8, zod@npm:^3.24.1":
   version: 3.24.2
   resolution: "zod@npm:3.24.2"
   checksum: 10c0/c638c7220150847f13ad90635b3e7d0321b36cce36f3fc6050ed960689594c949c326dfe2c6fa87c14b126ee5d370ccdebd6efb304f41ef5557a4aaca2824565

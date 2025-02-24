@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts" setup>
-import { menus } from '../../../../config';
+import { menus } from '~/config.ts';
 import { Icon } from '@views/commons/vue';
 import { useDark, useToggle } from '@vueuse/core';
 import { ref } from 'vue';

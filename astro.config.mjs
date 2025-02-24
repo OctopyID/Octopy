@@ -2,18 +2,28 @@
 import { defineConfig } from 'astro/config';
 import css from '@tailwindcss/vite';
 import vue from '@astrojs/vue';
+import robot from 'astro-robots-txt';
+
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [
-      css()
-    ]
-  },
+    site: 'https://www.octopy.dev',
+    vite: {
+        plugins: [
+            css()
+        ]
+    },
 
-  integrations: [
-    vue({
-      //
-    })
-  ]
+    integrations: [
+        vue({
+            //
+        }),
+        robot({
+            sitemap: true
+        }),
+        sitemap({
+            //
+        })
+    ]
 });

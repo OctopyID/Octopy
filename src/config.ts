@@ -1,6 +1,6 @@
-import type { Menu } from './types';
+import type { Menu, Social } from './types';
 
-export const menus: Menu[] = [
+export const menus: Array<Menu> = [
     {
         label: 'Home',
         route: '/'
@@ -16,5 +16,33 @@ export const menus: Menu[] = [
     {
         label: 'About Me',
         route: '/'
+    }
+];
+
+export const socials: Array<Social> = [
+    {
+        name: 'Facebook',
+        icon: 'Facebook',
+        href: 'https://facebook.com/SupianIDz'
+    },
+    {
+        name: 'Instagram',
+        icon: 'Instagram',
+        href: 'https://instagram.com/SupianIDz'
+    },
+    {
+        name: 'Threads',
+        icon: 'AtSign',
+        href: 'https://threads.com/@SupianIDz'
+    },
+    {
+        name: 'LinkedIn',
+        icon: 'Linkedin',
+        href: 'https://www.linkedin.com/in/supianidz/'
+    },
+    {
+        name: 'Github',
+        icon: 'Github',
+        href: 'https://github.com/SupianIDz'
     }
 ];

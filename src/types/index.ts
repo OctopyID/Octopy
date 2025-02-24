@@ -1,7 +1,12 @@
 type Menu = {
     label: string;
-
     route: string;
 }
 
-export type { Menu };
+type Social = {
+    name: string;
+    icon: string;
+    href: string;
+}
+
+export type { Menu, Social };

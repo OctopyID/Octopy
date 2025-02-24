@@ -2,7 +2,7 @@
 import '@style/main.css';
 import SquareLines from './partials/SquareLines.astro';
 import Header from '@views/layouts/partials/vue/Header.vue';
-
+import Footer from '@views/layouts/partials/vue/Footer.vue';
 const { title } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -17,6 +17,7 @@ const { title } = Astro.props;
         <SquareLines>
             <Header client:only="vue"></Header>
             <slot></slot>
+            <Footer client:only="vue"></Footer>
         </SquareLines>
     </body>
 </html>

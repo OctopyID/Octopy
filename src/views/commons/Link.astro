@@ -1,0 +1,10 @@
+---
+const { ...rest } = Astro.props;
+---
+
+<a
+    {...rest}
+    class="inline-flex w-auto px-4 py-2 mt-5 text-xs font-semibold duration-300 ease-out border rounded-md bg-gray-900 dark:bg-white dark:text-gray-900 text-gray-100 hover:border-gray-700 border-gray-900 dark:hover:border-gray-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-gray-900"
+>
+    <slot></slot>
+</a>
