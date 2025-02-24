@@ -4,6 +4,7 @@ import { Icon, Link, Separator } from '../views/commons';
 import MainLayout from '@views/layouts/MainLayout.astro';
 import Portrait from '../../public/images/portrait.png';
 import Projects from '@views/Projects.astro';
+import Writings from '@views/Writings.astro';
 ---
 <MainLayout title="Supian M">
     <div class="relative z-20 w-full max-w-4xl mx-auto mt-12 px-7 md:mt-24 lg:mt-32 xl:px-0 select-none">
@@ -12,7 +13,7 @@ import Projects from '@views/Projects.astro';
                 <h1 class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-5xl dark:text-white">
                     Hello, I'm Supian M.
                 </h1>
-                
+
                 <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
                     I'm a developer based in Banjarbaru, Indonesia.
                     <br class="hidden lg:block" />
@@ -69,4 +70,6 @@ import Projects from '@views/Projects.astro';
     <Projects></Projects>
 
     <Separator text="Some of my writing"></Separator>
+
+    <Writings></Writings>
 </MainLayout>
