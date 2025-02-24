@@ -1,0 +1,16 @@
+# IDE
+.idea
+
+# Project Related
+.yarn
+.astro
+.wrangler
+
+/dist
+/node_modules
+
+# Logs
+*.log
+
+# OS Related
+.DS_Store

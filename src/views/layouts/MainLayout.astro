@@ -1,0 +1,22 @@
+---
+import '@style/main.css';
+import SquareLines from './partials/SquareLines.astro';
+import Header from '@views/layouts/partials/vue/Header.vue';
+
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{title} - Octopy ID</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.svg">
+    </head>
+    <body class="bg-white dark:bg-gray-900">
+        <SquareLines>
+            <Header client:only="vue"></Header>
+            <slot></slot>
+        </SquareLines>
+    </body>
+</html>

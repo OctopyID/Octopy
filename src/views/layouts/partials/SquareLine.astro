@@ -1,0 +1,13 @@
+---
+import _ from 'lodash';
+
+const boxes = 9;
+---
+
+<div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-gray-300 dark:divide-gray-700 divide-dashed">
+    {
+        _.times(boxes, () => (
+            <div class="w-full h-auto bg-white dark:bg-gray-900 aspect-square"></div>
+        ))
+    }
+</div>

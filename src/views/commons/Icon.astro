@@ -1,0 +1,6 @@
+---
+import IconVue from './vue/Icon.vue';
+const { name, stroke = 1.5, ...rest } = Astro.props;
+---
+
+<IconVue name={name} stroke={stroke} {...rest} />
