@@ -1,10 +1,24 @@
 @import "tailwindcss";
+@import "@shikijs/themes/material-theme-ocean";
 
 @plugin "tailwind-scrollbar";
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+.astro-code {
+    @apply rounded-xl  border border-dashed border-gray-300;
+}
+
 html, .astro-code {
     @apply scrollbar-thin  scrollbar-thumb-slate-700 scrollbar-track-slate-300 dark:scrollbar-thumb-gray-700 dark:scrollbar-track-gray-800;
+}
+
+html.dark pre:has(code),
+html.dark pre:has(code) span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--color-gray-900) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
 }

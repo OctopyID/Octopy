@@ -6,7 +6,8 @@
         "astro": "astro",
         "watch": "astro dev",
         "build": "astro build",
-        "pages": "wrangler pages"
+        "pages": "wrangler pages",
+        "deploy": "astro build && wrangler pages deploy"
     },
     "dependencies": {
         "@astrojs/sitemap": "^3.2.1",

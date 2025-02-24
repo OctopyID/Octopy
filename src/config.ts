@@ -7,7 +7,7 @@ export const menus: Array<Menu> = [
     },
     {
         label: 'Posts',
-        route: '/'
+        route: '/posts'
     },
     {
         label: 'Projects',

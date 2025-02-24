@@ -14,7 +14,16 @@ export default defineConfig({
             css()
         ]
     },
-
+    markdown: {
+        shikiConfig: {
+            themes: {
+                light: 'github-light',
+                dark: 'github-dark'
+            },
+            defaultColor: false,
+            wrap: true
+        }
+    },
     integrations: [
         vue({
             //
