@@ -14,7 +14,7 @@ export const menus: Array<Menu> = [
         route: '/projects'
     },
     {
-        label: 'About Me',
+        label: 'About',
         route: '/about'
     }
 ];
@@ -49,28 +49,28 @@ export const socials: Array<Social> = [
 
 export const projects: Array<Project> = [
     {
-        name: 'TempMail.Best',
-        desc: 'Best Temporary Email.',
-        prev: 'https://kai.bi/assets/images/projects/tempmail.best.png',
-        link: 'https://tempmail.best'
+        name: 'Laravel Impersonate',
+        desc: 'Login as a different user quickly for Laravel.',
+        prev: '/images/projects/1.webp',
+        link: 'https://github.com/OctopyID/LaraPersonate'
     },
     {
-        name: 'DNS.Surf',
-        desc: 'Querying DNS Resolution Results in Different Regions Worldwide.',
-        prev: 'https://kai.bi/assets/images/projects/dns.surf.png',
-        link: 'https://dns.surf'
+        name: 'Google Photo CLI',
+        desc: 'GPhoto streamlines the photo uploading process and helps you keep your photo library organized.',
+        prev: '/images/projects/2.webp',
+        link: 'https://github.com/OctopyID/GPhotoCLI'
     },
     {
-        name: 'HTML.ZONE',
-        desc: 'Web Toolbox.',
-        prev: 'https://kai.bi/assets/images/projects/html.zone.png',
-        link: 'https://html.zone'
+        name: 'Debugify',
+        desc: 'Your Debug Companion.',
+        prev: '/images/projects/3.webp',
+        link: 'https://github.com/OctopyID/Debugify'
     },
     {
-        name: 'Sink',
-        desc: 'A Simple / Speedy / Secure Link Shortener with Analytics.',
-        prev: 'https://kai.bi/assets/images/projects/sink.cool.png',
-        link: 'https://sink.cool'
+        name: 'SIOPEN',
+        desc: 'Local online marketplace designed to facilitate the procurement of goods and services between the Regional Government and MSMEs.',
+        prev: '/images/projects/4.webp',
+        link: null
     }
 ];
 
@@ -139,5 +139,5 @@ export const stacks: Array<TechStack> = [
     { label: 'Grafana', color: '#F46800' },
 
     // CDN & Cloud
-    { label: 'Cloudflare', color: '#F38020' },
+    { label: 'Cloudflare', color: '#F38020' }
 ];

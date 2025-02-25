@@ -12,7 +12,7 @@ type Social = {
 type Project = {
     name: string;
     desc: string;
-    link: string;
+    link: string | null;
     prev: string;
 }
 
@@ -26,7 +26,7 @@ type Experience = {
 
 type TechStack = {
     label: string;
-    color:string;
+    color: string;
 }
 
 export type { Menu, Social, Project, Experience, TechStack };
