@@ -1,7 +1,7 @@
 ---
 title: Hello World
-description: Aria is a template for Astro
-dateFormatted: Jun 6, 2024
+description: Lorem ipsum
+dateFormatted: Feb 24, 2025
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget arcu a massa elementum bibendum sed nec lectus. Donec gravida nunc at dolor condimentum finibus. Mauris a
