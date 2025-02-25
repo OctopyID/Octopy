@@ -68,7 +68,7 @@ export const projects: Array<Project> = [
     },
     {
         name: 'SIOPEN',
-        desc: 'Local online marketplace designed to facilitate the procurement of goods and services between the Regional Government and MSMEs.',
+        desc: 'Marketplace designed to facilitate the procurement of goods and services between the Regional Government and MSMEs.',
         prev: '/images/projects/4.webp',
         link: null
     }
