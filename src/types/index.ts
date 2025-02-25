@@ -24,4 +24,9 @@ type Experience = {
     logo: string;
 };
 
-export type { Menu, Social, Project, Experience };
+type TechStack = {
+    label: string;
+    color:string;
+}
+
+export type { Menu, Social, Project, Experience, TechStack };

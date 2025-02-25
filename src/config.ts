@@ -1,4 +1,4 @@
-import type { Experience, Menu, Project, Social } from './types';
+import type { Experience, Menu, Project, Social, TechStack } from './types';
 
 export const menus: Array<Menu> = [
     {
@@ -105,49 +105,39 @@ export const experiences: Array<Experience> = [
     }
 ];
 
-export const stacks: string[] = [
-    // Back-End Development
-    'PHP',
-    'Laravel',
-    'Node.js',
+export const stacks: Array<TechStack> = [
+    // Programming Languages & Framework
+    { label: 'PHP', color: '#777BB4' },
+    { label: 'Laravel', color: '#FF2D20' },
+    { label: 'Typescript', color: '#3178C6' },
+    { label: 'Vue.js', color: '#4FC08D' },
+    { label: 'Astro', color: '#BC52EE' },
+    { label: 'Node.js', color: '#5FA04E' },
 
-    // Front-End Development
-    'Vue.js',
+    // Desktop & Cross-Platform Development
+    { label: 'Electron', color: '#47848F' },
+    { label: 'Flutter', color: '#02569B' },
 
-    // Desktop Development
-    'Electron',
-    'Flutter',
-
-    // Containerization & DevOps
-    'Docker',
-
-    // Server & Deployment
-    'Ubuntu',
-    'Apache',
-    'Nginx',
+    // DevOps & Deployment
+    { label: 'Ubuntu', color: '#E95420' },
+    { label: 'Docker', color: '#2496ED' },
+    { label: 'Nginx', color: '#009639' },
+    { label: 'Apache', color: '#D22128' },
 
     // Databases
-    'MySQL',
-    'PostgreSQL',
-    'SQLite',
-    'Redis',
+    { label: 'MySQL', color: '#4479A1' },
+    { label: 'PostgreSQL', color: '#4169E1' },
 
-    // Scripting
-    'Bash',
-
-    // Version Control
-    'Git',
-    'GitHub',
-
-    // IDE & Tools
-    'JetBrains',
+    // Version Control & Collaboration
+    { label: 'Git', color: '#F05032' },
+    { label: 'GitHub', color: '#181717' },
 
     // Project Management
-    'ClickUp',
+    { label: 'ClickUp', color: '#7B68EE' },
 
-    // Monitoring
-    'Grafana',
+    // Monitoring & Analytics
+    { label: 'Grafana', color: '#F46800' },
 
-    // CDN
-    'Cloudflare'
+    // CDN & Cloud
+    { label: 'Cloudflare', color: '#F38020' },
 ];

@@ -1,6 +1,6 @@
 ---
-const { text, color = '4b5563' } = Astro.props;
-const badgeUrl = `https://img.shields.io/badge/${encodeURIComponent(text)}-${color}?style=for-the-badge&logo=${text.toLowerCase()}`;
+const { label, color } = Astro.props;
+const badgeUrl = `https://img.shields.io/badge/${encodeURIComponent(label)}-${color.replace('#', '')}?style=for-the-badge&logo=${label.toLowerCase()}&logoColor=FFFFFF`;
 ---
 
-<img src={badgeUrl} alt={text} class="rounded" />
+<img src={badgeUrl} alt={label} class="rounded" />

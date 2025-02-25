@@ -1,12 +1,12 @@
 ---
 import { experiences } from '~/config';
-import type { Experience as Contract } from '~/types';
+import type { Experience as Contract, TechStack } from '~/types';
 import { stacks } from '~/config';
 import Project from '@views/Project.astro';
 import Heading from '@views/commons/Heading.astro';
 import MainLayout from '@views/layouts/MainLayout.astro';
-import Experience from '../views/Experience.astro';
-import Tech from '../views/commons/Tech.astro';
+import Experience from '@views/Experience.astro';
+import Tech from '@views/commons/Tech.astro';
 ---
 
 <MainLayout title="About Me">
@@ -23,7 +23,7 @@ import Tech from '../views/commons/Tech.astro';
             🧑🏻‍💻 Focused on back-end development and ⚙️ server management — keeping apps 🚀 and servers 💾 running smoothly.
         </p>
 
-        <h2 class="my-5 text-2xl font-bold sm:mt-6 dark:text-gray-200">Professional Experience</h2>
+        <h2 class="my-5 text-2xl font-bold sm:mt-6 dark:text-gray-200">Working History</h2>
         <div class="px-5 pb-5">
             {
                 experiences.map((exp: Contract) => {
@@ -42,14 +42,21 @@ import Tech from '../views/commons/Tech.astro';
             }
         </div>
 
-        <h2 class="my-5 text-2xl font-bold sm:mt-6  dark:text-gray-200">Skills & Tech Stack</h2>
-        <div class="pb-5 flex flex-row gap-2 flex-wrap">
+        <h2 class="mb-2 text-2xl font-bold dark:text-gray-200">Tech Stack</h2>
+        <p class="text-sm  text-gray-600 sm:text-base lg:text-lg  dark:text-gray-400">
+            I use various technologies to build efficient applications, covering backend, frontend, server management, and deployment. Here are the technologies I work with:
+        </p>
+        <div class="pb-5 pt-5 flex flex-row gap-2 flex-wrap">
             {
-                stacks.map((stack: string) => (
-                    <Tech text={stack}></Tech>
+                stacks.map((stack: TechStack) => (
+                    <Tech label={stack.label} color={stack.color}></Tech>
                 ))
             }
         </div>
+        <p class="text-sm text-gray-600 sm:text-base lg:text-lg dark:text-gray-400">
+            Of course, this is just a glimpse of my tech stack. There are a few I didn’t mention and I am constantly exploring and mastering new tools, frameworks, and languages
+            to stay ahead of the ever-evolving tech landscape.
+        </p>
 
         <h2 class="my-5 text-2xl font-bold dark:text-gray-200">Let's Connect</h2>
         <p class="text-sm  text-gray-600 sm:text-base slg:text-lg dark:text-gray-400">
