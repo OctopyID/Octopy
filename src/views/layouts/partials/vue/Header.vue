@@ -17,6 +17,7 @@
                 </div>
 
                 <div
+                    id="menu"
                     class="dm:mx-0 fixed top-[75px] left-0 z-40 h-auto w-full flex-col items-end justify-start pt-7 pb-4 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:py-0 sm:pt-0 sm:pr-0"
                     :class="{ hidden: !mobile }"
                 >
@@ -48,7 +49,7 @@
 import { menus } from '~/config.ts';
 import { Icon, Logo } from '@views/commons/vue';
 import { useDark, useToggle } from '@vueuse/core';
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const dark = useDark();
 const theme = useToggle(dark, {
@@ -59,6 +60,52 @@ const mobile = ref(false);
 const toggle = () => {
     mobile.value = ! mobile.value;
 };
+
+onMounted(() => {
+    const items = document.querySelectorAll<HTMLAnchorElement>('#menu a');
+    items.forEach((item) => {
+        if (item.pathname === window.location.pathname) {
+            item.classList.add('text-gray-900', 'dark:text-white');
+        }
+    });
+});
+
+const stickyClasses = ['fixed', 'h-14'];
+const defaultClasses = ['absolute', 'h-20'];
+const stickyClassesCtn = ['border-gray-300/50', 'bg-white/80', 'dark:border-gray-600/40', 'dark:bg-gray-900/60', 'backdrop-blur-2xl'];
+const defaultClassesCtn = ['border-transparent'];
+
+const handleScroll = () => {
+    const head = document.getElementById('header');
+    const menu = document.getElementById('menu');
+    if (! head || ! menu) {
+        return;
+    }
+
+    if (window.scrollY > 16) {
+        head.firstElementChild?.classList.add(...stickyClassesCtn);
+        head.firstElementChild?.classList.remove(...defaultClassesCtn);
+        head.classList.add(...stickyClasses);
+        head.classList.remove(...defaultClasses);
+        menu.classList.add('top-[56px]');
+        menu.classList.remove('top-[75px]');
+    } else {
+        head.firstElementChild?.classList.remove(...stickyClassesCtn);
+        head.firstElementChild?.classList.add(...defaultClassesCtn);
+        head.classList.add(...defaultClasses);
+        head.classList.remove(...stickyClasses);
+        menu.classList.remove('top-[56px]');
+        menu.classList.add('top-[75px]');
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style scoped>
