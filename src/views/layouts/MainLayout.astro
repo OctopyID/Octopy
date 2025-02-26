@@ -9,50 +9,53 @@ import { SEO } from 'astro-seo';
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{title} - Octopy ID</title>
-        <link rel="icon" type="image/x-icon" href="/favicon.svg">
-        <SEO
-            title="Supian M —  Code, Servers, and Everything in Between"
-            description="Hi, I'm Supian M. Explore my portfolio, read my posts, and learn more about me."
-            openGraph={{
-                basic: {
-                    title: 'Supian M —  Code, Servers, and Everything in Between',
-                    type: 'website',
-                    image: 'https://www.octopy.dev/images/portrait.png'
-                }
-            }}
-            twitter={{
-                creator: '@supianidz'
-            }}
-            extend={{
-                meta: [
-                    {
-                        name: 'twitter:image',
-                        content: 'https://www.octopy.dev/images/portrait.png'
-                    },
-                    { name: 'twitter:title', content: 'Supian M —  Code, Servers, and Everything in Between' },
-                    { name: 'twitter:description', content: 'Hi! I\'m Supian M —  a developer and server admin. Explore my portfolio, blog, and tech insights.' }
-                ]
-            }}
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} - Octopy ID</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+    <SEO
+      title="Supian M —  Code, Servers, and Everything in Between"
+      description="Hi, I'm Supian M. Explore my portfolio, read my posts, and learn more about me."
+      openGraph={{
+        basic: {
+          title: 'Supian M —  Code, Servers, and Everything in Between',
+          type: 'website',
+          image: 'https://www.octopy.dev/images/portrait.png',
+        },
+      }}
+      twitter={{
+        creator: '@supianidz',
+      }}
+      extend={{
+        meta: [
+          {
+            name: 'twitter:image',
+            content: 'https://www.octopy.dev/images/portrait.png',
+          },
+          { name: 'twitter:title', content: 'Supian M —  Code, Servers, and Everything in Between' },
+          {
+            name: 'twitter:description',
+            content: "Hi! I'm Supian M —  a developer and server admin. Explore my portfolio, blog, and tech insights.",
+          },
+        ],
+      }}
+    />
 
-        <script is:inline>
-            // prevent flickering
-            if (typeof Storage !== 'undefined') {
-                document.documentElement.classList.toggle('dark', localStorage.getItem('vueuse-color-scheme') === 'dark');
-            }
-        </script>
-    </head>
-    <body class="bg-white dark:bg-gray-900">
-        <SquareLines>
-            <Header client:only="vue"></Header>
-            <slot></slot>
-            <Footer client:only="vue"></Footer>
-        </SquareLines>
-    </body>
+    <script is:inline>
+      // prevent flickering
+      if (typeof Storage !== 'undefined') {
+        document.documentElement.classList.toggle('dark', localStorage.getItem('vueuse-color-scheme') === 'dark');
+      }
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <SquareLines>
+      <Header client:only="vue" />
+      <slot />
+      <Footer client:only="vue" />
+    </SquareLines>
+  </body>
 </html>

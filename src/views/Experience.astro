@@ -1,19 +1,20 @@
 ---
-const { logo,  date, role, comp, desc } = Astro.props;
+const { logo, date, role, comp, desc } = Astro.props;
 ---
 
 <div class="relative flex flex-col justify-start pl-12">
-    <div
-        class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-gray-950 w-14 h-14 border-gray-300 dark:border-gray-500">
-        <img src={logo} alt={comp} class="w-8 h-8 object-contain" />
-    </div>
+  <div
+    class="absolute top-0 left-0 z-40 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full border border-gray-300 bg-white dark:border-gray-500 dark:bg-gray-950"
+  >
+    <img src={logo} alt={comp} class="h-8 w-8 object-contain" />
+  </div>
 
-    <p class="text-xs uppercase text-gray-500 dark:text-gray-400 trackign-widest">
-        {date}
-    </p>
-    <h3 class="my-1 text-lg font-bold dark:text-gray-100">{role}</h3>
-    <p class="mb-1 text-sm font-medium dark:text-gray-300">{comp}</p>
-    <p class="text-sm font-light text-gray-600 dark:text-gray-400">
-        {desc}
-    </p>
+  <p class="trackign-widest text-xs text-gray-500 uppercase dark:text-gray-400">
+    {date}
+  </p>
+  <h3 class="my-1 text-lg font-bold dark:text-gray-100">{role}</h3>
+  <p class="mb-1 text-sm font-medium dark:text-gray-300">{comp}</p>
+  <p class="text-sm font-light text-gray-600 dark:text-gray-400">
+    {desc}
+  </p>
 </div>

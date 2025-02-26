@@ -3,48 +3,48 @@ import type { Experience, Menu, Project, Social, TechStack } from './types';
 export const menus: Array<Menu> = [
     {
         label: 'Home',
-        route: '/'
+        route: '/',
     },
     {
         label: 'Posts',
-        route: '/posts'
+        route: '/posts',
     },
     {
         label: 'Projects',
-        route: '/projects'
+        route: '/projects',
     },
     {
         label: 'About',
-        route: '/about'
-    }
+        route: '/about',
+    },
 ];
 
 export const socials: Array<Social> = [
     {
         name: 'Facebook',
         icon: 'Facebook',
-        href: 'https://facebook.com/SupianIDz'
+        href: 'https://facebook.com/SupianIDz',
     },
     {
         name: 'Instagram',
         icon: 'Instagram',
-        href: 'https://instagram.com/SupianIDz'
+        href: 'https://instagram.com/SupianIDz',
     },
     {
         name: 'Threads',
         icon: 'AtSign',
-        href: 'https://threads.com/@SupianIDz'
+        href: 'https://threads.com/@SupianIDz',
     },
     {
         name: 'LinkedIn',
         icon: 'Linkedin',
-        href: 'https://www.linkedin.com/in/supianidz/'
+        href: 'https://www.linkedin.com/in/supianidz/',
     },
     {
         name: 'Github',
         icon: 'Github',
-        href: 'https://github.com/SupianIDz'
-    }
+        href: 'https://github.com/SupianIDz',
+    },
 ];
 
 export const projects: Array<Project> = [
@@ -52,26 +52,26 @@ export const projects: Array<Project> = [
         name: 'Laravel Impersonate',
         desc: 'Login as a different user quickly for Laravel.',
         prev: '/images/projects/1.webp',
-        link: 'https://github.com/OctopyID/LaraPersonate'
+        link: 'https://github.com/OctopyID/LaraPersonate',
     },
     {
         name: 'Google Photo CLI',
         desc: 'GPhoto streamlines the photo uploading process and helps you keep your photo library organized.',
         prev: '/images/projects/2.webp',
-        link: 'https://github.com/OctopyID/GPhotoCLI'
+        link: 'https://github.com/OctopyID/GPhotoCLI',
     },
     {
         name: 'Debugify',
         desc: 'Your Debug Companion.',
         prev: '/images/projects/3.webp',
-        link: 'https://github.com/OctopyID/Debugify'
+        link: 'https://github.com/OctopyID/Debugify',
     },
     {
         name: 'SIOPEN',
         desc: 'Marketplace designed to facilitate the procurement of goods and services between the Regional Government and MSMEs.',
         prev: '/images/projects/4.webp',
-        link: null
-    }
+        link: null,
+    },
 ];
 
 export const experiences: Array<Experience> = [
@@ -80,29 +80,29 @@ export const experiences: Array<Experience> = [
         role: 'Back-End Engineer',
         comp: 'Procurement of Goods and Services Work Unit of Hulu Sungai Selatan Regency',
         desc: 'Developed and managed a marketplace for transactions between local governments and SMEs, facilitated adoption by other districts, and integrated with Bela Pengadaan to streamline procurement processes.',
-        logo: '/images/company/4.webp'
+        logo: '/images/company/4.webp',
     },
     {
         date: 'August 2022 · December 2023',
         role: 'Full-Stack Engineer',
         comp: 'Regional Water Utility Company Intan Banjar',
         desc: 'Building and optimizing systems for clean water payment processing, installation requests, and customer complaint management, ensuring seamless and efficient service delivery.',
-        logo: '/images/company/3.webp'
+        logo: '/images/company/3.webp',
     },
     {
         date: 'February 2020 · December 2022',
         role: 'Full-Stack Engineer',
         comp: 'Department of Communication and Informatics of Hulu Sungai Selatan Regency',
         desc: 'Responsible for developing government applications and managing main and email servers infrastructures to ensure seamless operations and robust security.',
-        logo: '/images/company/2.webp'
+        logo: '/images/company/2.webp',
     },
     {
         date: 'February 2019 · Feb 2020',
         role: 'Administrator & Full-Stack Programmer',
         comp: 'Hasnur Jaya International',
         desc: 'Freelance Developer focused on Warehouse Management Systems, streamlining inventory processes with FIFO and LIFO strategies, overseeing fuel and clean water data management, and automating asset maintenance schedules.',
-        logo: '/images/company/1.webp'
-    }
+        logo: '/images/company/1.webp',
+    },
 ];
 
 export const stacks: Array<TechStack> = [
@@ -139,5 +139,5 @@ export const stacks: Array<TechStack> = [
     { label: 'Grafana', color: '#F46800' },
 
     // CDN & Cloud
-    { label: 'Cloudflare', color: '#F38020' }
+    { label: 'Cloudflare', color: '#F38020' },
 ];

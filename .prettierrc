@@ -3,17 +3,25 @@
     "semi": true,
     "singleQuote": true,
     "printWidth": 120,
-    "pluginSearchDirs": false,
     "tailwindStylesheet": "./src/style/main.css",
     "plugins": [
-        "prettier-plugin-tailwindcss",
-        "prettier-plugin-astro"
+        "prettier-plugin-astro",
+        "prettier-plugin-tailwindcss"
     ],
     "overrides": [
         {
             "files": "*.astro",
             "options": {
                 "parser": "astro"
+            }
+        },
+        {
+            "files": [
+                "*.vue",
+                "*.astro"
+            ],
+            "options": {
+                "tabWidth": 2
             }
         }
     ]

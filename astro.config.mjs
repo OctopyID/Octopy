@@ -10,28 +10,26 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: 'https://www.octopy.dev',
     vite: {
-        plugins: [
-            css()
-        ]
+        plugins: [css()],
     },
     markdown: {
         shikiConfig: {
             themes: {
                 light: 'github-light',
-                dark: 'github-dark'
+                dark: 'github-dark',
             },
-            wrap: true
-        }
+            wrap: true,
+        },
     },
     integrations: [
         vue({
             //
         }),
         robot({
-            sitemap: true
+            sitemap: true,
         }),
         sitemap({
             //
-        })
-    ]
+        }),
+    ],
 });

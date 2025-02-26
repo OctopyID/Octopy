@@ -6,10 +6,10 @@ const posts = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(),
-        dateFormatted: z.string()
-    })
+        dateFormatted: z.string(),
+    }),
 });
 
 export const collections = {
-    posts
+    posts,
 };

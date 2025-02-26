@@ -4,10 +4,8 @@ import _ from 'lodash';
 const boxes = 9;
 ---
 
-<div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-gray-300 dark:divide-gray-700 divide-dashed">
-    {
-        _.times(boxes, () => (
-            <div class="w-full h-auto bg-white dark:bg-gray-900 aspect-square"></div>
-        ))
-    }
+<div
+  class="relative flex h-[30px] w-full divide-x divide-dashed divide-gray-300 sm:h-[45px] md:h-[60px] xl:h-[88px] dark:divide-gray-700"
+>
+  {_.times(boxes, () => <div class="aspect-square h-auto w-full bg-white dark:bg-gray-900" />)}
 </div>

@@ -5,13 +5,19 @@ const { name, desc, link, prev } = Astro.props;
 const Wrapper = link ? 'a' : 'div';
 ---
 
-<Wrapper href={link} target={link ? "_blank" : undefined} class="group relative flex flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-3">
+<Wrapper
+  href={link}
+  target={link ? '_blank' : undefined}
+  class="group relative flex flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-3"
+>
   <div
     class="absolute inset-0 z-20 block h-full w-full rounded-2xl border border-dashed border-transparent bg-transparent duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-dashed group-hover:border-gray-500 group-hover:bg-white dark:group-hover:border-gray-400 dark:group-hover:bg-gray-900"
-  ></div>
+  >
+  </div>
   <div
     class="absolute inset-0 z-10 block h-full w-full rounded-2xl border border-dashed border-gray-500 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-gray-400"
-  ></div>
+  >
+  </div>
   <div class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
     <div class="block w-full">
       <img src={prev} class="aspect-16/9 h-auto w-full rounded-lg object-cover" alt={name} loading="eager" />

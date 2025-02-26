@@ -3,21 +3,35 @@ const { text } = Astro.props;
 ---
 
 <div class="relative my-14 select-none">
-    <div class="relative w-full pl-5 overflow-x-hidden md:pl-0">
-        <div
-            class="absolute w-full h-px bg-linear-to-r from-transparent to-white md:from-white dark:from-transparent dark:to-gray-900 md:dark:from-gray-900 md:via-transparent md:dark:via-transparent md:to-white md:dark:to-gray-900">
-        </div>
-        <div class="w-full h-px border-t border-dashed border-gray-500 dark:border-gray-400"></div>
-    </div>
+  <div class="relative w-full overflow-x-hidden pl-5 md:pl-0">
     <div
-        class="absolute flex items-center justify-center w-auto h-auto px-3 py-1.5 uppercase tracking-widest space-x-1 text-[0.6rem] md:-translate-x-1/2 -translate-y-1/2 border  border-dashed rounded-full bg-white border-gray-500 dark:border-gray-400 dark:bg-gray-900 text-gray-500 dark:text-gray-400 left-0 md:ml-0 ml-5 md:left-1/2  shadow-xs">
-        <p class="leading-none">{text}</p>
-        <div class="flex items-center justify-center w-5 h-5 translate-x-1 border border-dashed rounded-full border-gray-500 dark:border-gray-400">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                 stroke-linejoin="round" class="size-3">
-                <path d="M12 5v14" />
-                <path d="m19 12-7 7-7-7" />
-            </svg>
-        </div>
+      class="absolute h-px w-full bg-linear-to-r from-transparent to-white md:from-white md:via-transparent md:to-white dark:from-transparent dark:to-gray-900 md:dark:from-gray-900 md:dark:via-transparent md:dark:to-gray-900"
+    >
     </div>
+    <div class="h-px w-full border-t border-dashed border-gray-500 dark:border-gray-400"></div>
+  </div>
+  <div
+    class="absolute left-0 ml-5 flex h-auto w-auto -translate-y-1/2 items-center justify-center space-x-1 rounded-full border border-gray-500 bg-white px-3 py-1.5 text-[0.6rem] tracking-widest text-gray-500 uppercase shadow-xs md:left-1/2 md:ml-0 md:-translate-x-1/2 dark:border-gray-400 dark:bg-gray-900 dark:text-gray-400"
+  >
+    <p class="leading-none">{text}</p>
+    <div
+      class="flex h-5 w-5 translate-x-1 items-center justify-center rounded-full border border-gray-500 dark:border-gray-400"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-3"
+      >
+        <path d="M12 5v14"></path>
+        <path d="m19 12-7 7-7-7"></path>
+      </svg>
+    </div>
+  </div>
 </div>

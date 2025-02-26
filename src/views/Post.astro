@@ -5,19 +5,27 @@ const { frontmatter } = Astro.props;
 ---
 
 <MainLayout title={frontmatter.title}>
-    <main class="relative z-30 mx-auto mt-10 max-w-6xl bg-white pb-1 text-gray-900 md:rounded-t-md dark:bg-gray-900">
-        <div
-            class="relative flex flex-col justify-stretch border-t border-b-0 border-gray-200 px-5 pt-6 md:rounded-t-2xl md:border-r md:border-l md:pt-20 lg:px-0 dark:border-gray-800"
-        >
-            <div class="absolute top-0 left-0 mt-1 hidden h-full w-px -translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-gray-950"></div>
-            <div class="absolute top-0 right-0 mt-1 hidden h-full w-px translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-gray-950"></div>
-            <h1 class="mx-auto w-full max-w-2xl text-left text-2xl leading-tight font-bold tracking-tighter md:mb-12 md:text-3xl md:leading-none lg:text-4xl dark:text-gray-100">
-                {frontmatter.title}
-            </h1>
-        </div>
+  <main class="relative z-30 mx-auto mt-10 max-w-6xl bg-white pb-1 text-gray-900 md:rounded-t-md dark:bg-gray-900">
+    <div
+      class="relative flex flex-col justify-stretch border-t border-b-0 border-gray-200 px-5 pt-6 md:rounded-t-2xl md:border-r md:border-l md:pt-20 lg:px-0 dark:border-gray-800"
+    >
+      <div
+        class="absolute top-0 left-0 mt-1 hidden h-full w-px -translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-gray-950"
+      >
+      </div>
+      <div
+        class="absolute top-0 right-0 mt-1 hidden h-full w-px translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-gray-950"
+      >
+      </div>
+      <h1
+        class="mx-auto w-full max-w-2xl text-left text-2xl leading-tight font-bold tracking-tighter md:mb-12 md:text-3xl md:leading-none lg:text-4xl dark:text-gray-100"
+      >
+        {frontmatter.title}
+      </h1>
+    </div>
 
-        <article class="mx-auto prose prose-md mb-20 w-full max-w-4xl px-7 lg:px-0 dark:prose-invert">
-            <slot />
-        </article>
-    </main>
+    <article class="prose-md mx-auto prose mb-20 w-full max-w-4xl px-7 lg:px-0 dark:prose-invert">
+      <slot />
+    </article>
+  </main>
 </MainLayout>

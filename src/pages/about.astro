@@ -10,68 +10,59 @@ import Tech from '@views/commons/Tech.astro';
 ---
 
 <MainLayout title="About Me">
-    <div class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0 select-none">
-        <Heading title="About Me">
-            Hello 👋 I'm Supian M, a developer based in Banjarbaru, Indonesia. I'm passionate about web development and server administration, always eager to learn new
-            technologies.
-        </Heading>
+  <div class="relative z-20 mx-auto my-12 max-w-4xl px-7 select-none lg:px-0">
+    <Heading title="About Me">
+      Hello 👋 I'm Supian M, a developer based in Banjarbaru, Indonesia. I'm passionate about web development and server
+      administration, always eager to learn new technologies.
+    </Heading>
 
-        <img src="/images/banner.webp" class="relative z-30 my-5 w-full rounded-xl" alt="" />
+    <img src="/images/banner.webp" class="relative z-30 my-5 w-full rounded-xl" alt="" />
 
-        <section class="my-5 sm:mt-6">
-            <h2 class="text-2xl font-bold dark:text-gray-200 mb-5">Short Bio</h2>
-            <p class="text-sm  text-gray-600 sm:text-base lg:text-lg  dark:text-gray-400">
-                🧑🏻‍💻 Focused on back-end development and ⚙️ server management — keeping apps 🚀 and servers 💾 running smoothly.
-            </p>
-        </section>
+    <section class="my-5 sm:mt-6">
+      <h2 class="mb-5 text-2xl font-bold dark:text-gray-200">Short Bio</h2>
+      <p class="text-sm text-gray-600 sm:text-base lg:text-lg dark:text-gray-400">
+        🧑🏻‍💻 Focused on back-end development and ⚙️ server management — keeping apps 🚀 and servers 💾 running smoothly.
+      </p>
+    </section>
 
-        <section class="my-5 sm:mt-6">
-            <h2 class="text-2xl font-bold dark:text-gray-200 mb-5">Working History</h2>
-            <div class="p-5">
-                {
-                    experiences.map((exp: Contract) => {
-                        return (
-                            <div class="border-l border-gray-200 pb-7 last:border-l-0 last:pb-0 dark:border-gray-500">
-                                <Experience
-                                    date={exp.date}
-                                    role={exp.role}
-                                    comp={exp.comp}
-                                    desc={exp.desc}
-                                    logo={exp.logo}
-                                />
-                            </div>
-                        );
-                    })
-                }
-            </div>
-        </section>
+    <section class="my-5 sm:mt-6">
+      <h2 class="mb-5 text-2xl font-bold dark:text-gray-200">Working History</h2>
+      <div class="p-5">
+        {
+          experiences.map((exp: Contract) => {
+            return (
+              <div class="border-l border-gray-200 pb-7 last:border-l-0 last:pb-0 dark:border-gray-500">
+                <Experience date={exp.date} role={exp.role} comp={exp.comp} desc={exp.desc} logo={exp.logo} />
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
 
-        <section class="my-5 sm:mt-6">
-            <h2 class="text-2xl font-bold dark:text-gray-200 mb-5">Tech Stack</h2>
-            <p class="text-sm  text-gray-600 sm:text-base lg:text-lg  dark:text-gray-400">
-                I use various technologies to build efficient applications, covering backend, frontend, server management, and deployment. Here are the technologies I work with:
-            </p>
-            <div class="pb-5 pt-5 flex flex-row gap-2 flex-wrap">
-                {
-                    stacks.map((stack: TechStack) => (
-                        <Tech label={stack.label} color={stack.color}></Tech>
-                    ))
-                }
-            </div>
-            <p class="text-sm text-gray-600 sm:text-base lg:text-lg dark:text-gray-400">
-                Of course, this is just a glimpse of my tech stack. There are a few I didn’t mention and I am constantly exploring and mastering new tools, frameworks, and
-                languages
-                to stay ahead of the ever-evolving tech landscape.
-            </p>
-        </section>
+    <section class="my-5 sm:mt-6">
+      <h2 class="mb-5 text-2xl font-bold dark:text-gray-200">Tech Stack</h2>
+      <p class="text-sm text-gray-600 sm:text-base lg:text-lg dark:text-gray-400">
+        I use various technologies to build efficient applications, covering backend, frontend, server management, and
+        deployment. Here are the technologies I work with:
+      </p>
+      <div class="flex flex-row flex-wrap gap-2 pt-5 pb-5">
+        {stacks.map((stack: TechStack) => <Tech label={stack.label} color={stack.color} />)}
+      </div>
+      <p class="text-sm text-gray-600 sm:text-base lg:text-lg dark:text-gray-400">
+        Of course, this is just a glimpse of my tech stack. There are a few I didn’t mention and I am constantly
+        exploring and mastering new tools, frameworks, and languages to stay ahead of the ever-evolving tech landscape.
+      </p>
+    </section>
 
-        <section class="my-5 sm:mt-6">
-            <h2 class="text-2xl font-bold dark:text-gray-200 mb-5">Let's Connect</h2>
-            <p class="text-sm  text-gray-600 sm:text-base lg:text-lg dark:text-gray-400">
-                If you want to stay up to date with my work, feel free to send me an <a href="mailto:supianidz@octopy.dev" class="text-indigo-600 underline">email</a>, or follow me
-                on
-                my social media linked in the footer.
-            </p>
-        </section>
-    </div>
+    <section class="my-5 sm:mt-6">
+      <h2 class="mb-5 text-2xl font-bold dark:text-gray-200">Let's Connect</h2>
+      <p class="text-sm text-gray-600 sm:text-base lg:text-lg dark:text-gray-400">
+        If you want to stay up to date with my work, feel free to send me an <a
+          href="mailto:supianidz@octopy.dev"
+          class="text-indigo-600 underline">email</a
+        >, or follow me on my social media linked in the footer.
+      </p>
+    </section>
+  </div>
 </MainLayout>

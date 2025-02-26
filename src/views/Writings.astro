@@ -2,24 +2,22 @@
 import Posts from '@views/Posts.astro';
 import Link from '@views/commons/Link.astro';
 ---
-<section class="max-w-4xl mx-auto px-7 lg:px-0">
-    <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900 dark:text-gray-100">
-        My Writings
-    </h2>
-    <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
-        Along with coding I also like to write about life and technology. Here are
-        some of my recent posts.
-    </p>
 
-    <div class="w-full max-w-4xl mx-auto my-7 xl:px-0">
-        <div class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
-            <div class="w-full space-y-7">
-                <Posts count="3" />
+<section class="mx-auto max-w-4xl px-7 lg:px-0">
+  <h2 class="text-2xl leading-10 font-bold tracking-tight text-gray-900 dark:text-gray-100">My Writings</h2>
+  <p class="mb-6 text-base text-gray-600 dark:text-gray-400">
+    Along with coding I also like to write about life and technology. Here are some of my recent posts.
+  </p>
 
-                <div class="flex items-center justify-center w-full py-5">
-                    <Link href="/posts">View All My Writing</Link>
-                </div>
-            </div>
+  <div class="mx-auto my-7 w-full max-w-4xl xl:px-0">
+    <div class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
+      <div class="w-full space-y-7">
+        <Posts count="3" />
+
+        <div class="flex w-full items-center justify-center py-5">
+          <Link href="/posts">View All My Writing</Link>
         </div>
+      </div>
     </div>
+  </div>
 </section>
