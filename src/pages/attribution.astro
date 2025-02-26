@@ -1,9 +1,14 @@
 ---
-import MainLayout from '../views/layouts/MainLayout.astro';
 import { Content, frontmatter } from './content/attribution.md';
-import Post from '../views/Post.astro';
+import MainLayout from '@views/layouts/MainLayout.astro';
+import Heading from '@views/commons/Heading.astro';
 ---
 
-<Post frontmatter={frontmatter}>
-  <Content />
-</Post>
+<MainLayout title={frontmatter.title}>
+  <div class="relative z-20 mx-auto my-12 max-w-4xl px-7 select-none lg:px-0">
+    <Heading title={frontmatter.title} />
+    <article class="prose-md mx-auto prose mb-5 w-full max-w-4xl px-7 lg:px-0 dark:prose-invert">
+      <Content />
+    </article>
+  </div>
+</MainLayout>
