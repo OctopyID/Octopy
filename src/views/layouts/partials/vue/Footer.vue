@@ -5,7 +5,7 @@
     <div class="container mx-auto flex max-w-7xl flex-col items-center px-7 py-8 sm:flex-row">
       <Logo />
       <p
-        class="mt-4 text-sm text-gray-700 sm:mt-0 sm:ml-4 sm:border-l sm:border-gray-300 sm:pl-4 dark:text-gray-100 dark:sm:border-gray-500"
+        class="mt-4 text-sm text-gray-700 sm:mt-0 sm:ml-4 sm:border-l sm:border-gray-300 sm:pl-4 dark:text-gray-100 dark:sm:border-gray-400"
       >
         {{ year }} © <span class="font-semibold">Octopy ID</span> — All Rights Reserved.
       </p>

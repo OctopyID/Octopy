@@ -31,7 +31,7 @@ pre.astro-code {
 }
 
 .astro-code {
-    @apply rounded-xl border border-dashed border-gray-500;
+    @apply rounded-xl border border-dashed border-gray-400;
 }
 
 .prose img {

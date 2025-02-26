@@ -37,7 +37,7 @@
         >
           <div class="absolute inset-0 top-0 right-0 block h-full w-full px-3 sm:hidden">
             <div
-              class="relative h-full w-full rounded-xl border border-dashed border-gray-300 bg-white backdrop-blur-xs dark:border-gray-500 dark:bg-gray-900"
+              class="relative h-full w-full rounded-xl border border-dashed border-gray-300 bg-white backdrop-blur-xs dark:border-gray-400 dark:bg-gray-900"
             ></div>
           </div>
 
