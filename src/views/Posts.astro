@@ -1,25 +1,27 @@
 ---
-import { getCollection } from 'astro:content';
-const allPosts = await getCollection('posts');
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { excerpt } from '~/helpers';
+import moment from 'moment';
+const posts = await getCollection('posts');
 
-const { count } = Astro.props;
+const { limit } = Astro.props;
 
-function parseDate(dateStr: string) {
-  const [month, day, year] = dateStr.split(' ');
-  return new Date(`${month} ${parseInt(day)}, ${year}`);
-}
+const sortedPosts = posts
+  .map((post) => {
+    console.log(post);
+    return {
+      ...post,
+      date: moment(post.data.date, 'DD-MM-YYYY HH:mm'),
+    };
+  })
+  .sort((a, b) => b.date.toDate().getTime() - a.date.toDate().getTime());
 
-const sortedPosts = allPosts
-  .map((post) => ({
-    ...post,
-    date: parseDate(post.data.dateFormatted),
-  }))
-  .sort((a, b) => b.date.getTime() - a.date.getTime());
-
-const postsLoop = sortedPosts.slice(0, count).map((post) => {
+const postsLoop = sortedPosts.slice(0, limit ? limit : sortedPosts.length).map((post) => {
   return {
     ...(post.data || {}),
     link: `/posts/${post.id}`,
+    date: post.date.format('MMM D, YYYY'),
+    excerpt: excerpt(post!.body ?? ''),
   };
 });
 ---
@@ -40,9 +42,9 @@ const postsLoop = sortedPosts.slice(0, count).map((post) => {
             </a>
           </h2>
           <p class="text-sm text-gray-600 dark:text-gray-400">
-            <span>{post.description}</span>
+            <span>{post.excerpt}</span>
           </p>
-          <div class="mt-2.5 text-xs font-medium text-gray-800 dark:text-gray-300">Posted on {post.dateFormatted}</div>
+          <div class="mt-2.5 text-xs font-medium text-gray-800 dark:text-gray-300">Posted on {post.date}</div>
         </div>
       </div>
     );

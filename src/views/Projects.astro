@@ -3,6 +3,8 @@ import type { Project as Contract } from '~/types';
 import { projects } from '~/config';
 import { Link } from './commons';
 import Project from './Project.astro';
+
+const { limit = null } = Astro.props;
 ---
 
 <section class="mx-auto max-w-4xl px-7 lg:px-0">
@@ -12,13 +14,15 @@ import Project from './Project.astro';
   </p>
   <div class="mt-7 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-2 md:grid-cols-3">
     {
-      projects.map((project: Contract) => {
-        return <Project name={project.name} desc={project.desc} prev={project.prev} link={project.link} />;
-      })
+      projects
+        .slice(0, limit ? limit : projects.length)
+        .map((project: Contract) => (
+          <Project name={project.name} desc={project.desc} prev={project.prev} link={project.link} />
+        ))
     }
   </div>
 
   <div class="flex w-full items-center justify-center py-5">
-    <Link href="/projects"> View All My Projects </Link>
+    <Link href="/projects"> View All My Projects</Link>
   </div>
 </section>

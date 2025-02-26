@@ -29,4 +29,10 @@ type TechStack = {
     color: string;
 };
 
-export type { Menu, Social, Project, Experience, TechStack };
+type Post = {
+    title: string;
+    date: string;
+    tags: string[];
+};
+
+export type { Menu, Social, Project, Experience, TechStack, Post };

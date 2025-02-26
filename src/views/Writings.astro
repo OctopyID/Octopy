@@ -1,6 +1,8 @@
 ---
 import Posts from '@views/Posts.astro';
 import Link from '@views/commons/Link.astro';
+
+const { limit = null } = Astro.props;
 ---
 
 <section class="mx-auto max-w-4xl px-7 lg:px-0">
@@ -12,7 +14,7 @@ import Link from '@views/commons/Link.astro';
   <div class="mx-auto my-7 w-full max-w-4xl xl:px-0">
     <div class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
       <div class="w-full space-y-7">
-        <Posts count="3" />
+        <Posts limit={limit} />
 
         <div class="flex w-full items-center justify-center py-5">
           <Link href="/posts">View All My Writing</Link>

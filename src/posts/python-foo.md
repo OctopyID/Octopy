@@ -1,7 +1,7 @@
 ---
 title: Run Python in Your Browser Effortlessly
-description: Run Python programs in the browser easily using Pyodide and WebAssembly for seamless execution of code and packages
-dateFormatted: Feb 24, 2025
+date: 26-02-2025 22:50
+tags: [ code, python ]
 ---
 
 Microsoft recently open-sourced [MarkItDown](https://github.com/microsoft/markitdown), a program that converts Office files to Markdown format. The project quickly climbed to

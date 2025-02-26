@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { Icon, Link, Separator } from '../views/commons';
+import { Icon, Link, Separator } from '@views/commons';
 import MainLayout from '@views/layouts/MainLayout.astro';
 import Portrait from '../../public/images/portrait.webp';
 import Projects from '@views/Projects.astro';
@@ -72,9 +72,9 @@ import Writings from '@views/Writings.astro';
 
   <Separator text="Check out my projects" />
 
-  <Projects />
+  <Projects limit={6} />
 
   <Separator text="Some of my writing" />
 
-  <Writings />
+  <Writings limit={3} />
 </MainLayout>
