@@ -1,8 +1,8 @@
 <template>
   <section
-    class="mt-auto border-t border-gray-200 bg-white text-gray-700 sm:mt-20 dark:border-gray-800 dark:bg-gray-900"
+    class="mt-auto w-full border-t border-gray-200 bg-white text-gray-700 sm:mt-20 dark:border-gray-800 dark:bg-gray-900"
   >
-    <div class="container mx-auto flex max-w-7xl flex-col items-center px-7 py-8 sm:flex-row">
+    <div class="container mx-auto flex max-w-6xl flex-col items-center pt-8 pb-2 sm:flex-row">
       <Logo />
       <p
         class="mt-4 text-sm text-gray-700 sm:mt-0 sm:ml-4 sm:border-l sm:border-gray-300 sm:pl-4 dark:text-gray-100 dark:sm:border-gray-400"
@@ -10,7 +10,7 @@
         {{ year }} © <span class="font-semibold">Octopy ID</span> — All Rights Reserved.
       </p>
 
-      <div class="mt-4 inline-flex justify-center gap-x-3 sm:mt-0 sm:ml-auto sm:justify-start">
+      <div class="mt-4 inline-flex justify-center space-x-3 sm:mt-0 sm:ml-auto sm:justify-start">
         <a
           v-for="social in socials"
           :href="social.href"
@@ -22,11 +22,24 @@
         </a>
       </div>
     </div>
+
+    <div
+      class="container mx-auto flex w-full max-w-6xl flex-row items-center justify-center gap-x-4 pt-3 pb-8 xl:justify-end"
+    >
+      <div class="flex flex-row gap-x-1 text-sm">
+        <template v-for="(link, index) in links" :key="link.route">
+          <a :href="link.route" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+            {{ link.label }}
+          </a>
+          <span v-if="index < links.length - 1" class="text-gray-500 dark:text-gray-400">/</span>
+        </template>
+      </div>
+    </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { socials } from '~/config';
+import { links, socials } from '~/config';
 import { Icon, Logo } from '@views/commons/vue';
 
 const year = new Date().getFullYear();

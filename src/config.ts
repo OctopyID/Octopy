@@ -19,6 +19,25 @@ export const menus: Array<Menu> = [
     },
 ];
 
+export const links: Array<Menu> = [
+    {
+        label: 'Posts',
+        route: '/posts',
+    },
+    {
+        label: 'Projects',
+        route: '/projects',
+    },
+    {
+        label: 'About',
+        route: '/about',
+    },
+    {
+        label: 'Attribution',
+        route: '/attribution',
+    },
+];
+
 export const socials: Array<Social> = [
     {
         name: 'Facebook',
