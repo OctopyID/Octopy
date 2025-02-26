@@ -1,0 +1,9 @@
+---
+import MainLayout from '../views/layouts/MainLayout.astro';
+import { Content, frontmatter } from './content/attribution.md';
+import Post from '../views/Post.astro';
+---
+
+<Post frontmatter={frontmatter}>
+  <Content />
+</Post>
