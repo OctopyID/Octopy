@@ -52,7 +52,7 @@
 
         <div
           id="toggle"
-          class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-gray-800 dark:text-white"
+          class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-gray-800 dark:text-gray-200"
           @click="theme()"
         >
           <div
