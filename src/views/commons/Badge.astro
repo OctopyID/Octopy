@@ -1,0 +1,10 @@
+---
+const { class: custom = '' } = Astro.props;
+---
+
+<span
+  class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-300 ring-inset hover:ring-0"
+  class:list={custom}
+>
+  <slot />
+</span>
