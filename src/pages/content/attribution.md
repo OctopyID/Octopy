@@ -23,7 +23,6 @@ open-source community and creators.
 
 ## 📚 Libraries & Utilities
 
-- **[Lodash](https://lodash.com/)** — A modern JavaScript utility library.
 - **[Moment.js](https://momentjs.com/)** — A library for parsing, validating, and formatting dates.
 - **[VueUse](https://vueuse.org/)** — Essential Vue Composition utilities.
 - **[Fontsource](https://fontsource.org/)** — Open-source fonts like Geist Mono and Instrument Sans.

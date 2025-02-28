@@ -1,34 +1,37 @@
 ---
-import _ from 'lodash';
 import SquareLine from './SquareLine.astro';
 
-const boxes = 6;
+const { length = 6 } = Astro.props;
+
+const boxes = Array.from({
+  length
+});
 ---
 
-<div class="absolute h-auto w-full" style="z-index:-1">
+<div class="absolute h-auto w-full pointer-events-none" style="z-index:-1">
   <div class="absolute top-0 left-0 h-auto w-1/2 bg-gray-100 dark:bg-gray-900">
-    <div
-      class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-linear-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-gray-900"
-    >
+    <div class="absolute inset-0 z-30 h-full w-full bg-linear-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-gray-900">
     </div>
-    <div
-      class="flex h-full w-full flex-col divide-y divide-dashed divide-gray-300 border-l border-gray-300 dark:divide-gray-700 dark:border-gray-900"
-    >
-      {_.times(boxes, () => <SquareLine />)}
+    <div class="flex h-full w-full flex-col divide-y divide-dashed divide-gray-300 border-l border-gray-300 dark:divide-gray-700 dark:border-gray-900">
+      {
+        boxes.map(() => (
+          <SquareLine />
+        ))
+      }
     </div>
   </div>
 
   <div class="absolute top-0 right-0 h-auto w-1/2 bg-gray-100 dark:bg-gray-900">
-    <div
-      class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-linear-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-gray-900"
-    >
+    <div class="absolute inset-0 z-30 h-full w-full bg-linear-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-gray-900">
     </div>
-    <div
-      class="flex h-full w-full flex-col divide-y divide-dashed divide-gray-300 border-l border-gray-300 dark:divide-gray-700 dark:border-gray-900"
-    >
-      {_.times(boxes, () => <SquareLine />)}
+    <div class="flex h-full w-full flex-col divide-y divide-dashed divide-gray-300 border-l border-gray-300 dark:divide-gray-700 dark:border-gray-900">
+      {
+        boxes.map(() => (
+          <SquareLine />
+        ))
+      }
     </div>
   </div>
 </div>
 
-<slot />
+<slot></slot>

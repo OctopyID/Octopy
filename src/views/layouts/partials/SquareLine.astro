@@ -1,11 +1,15 @@
 ---
-import _ from 'lodash';
+const { length = 9 } = Astro.props;
 
-const boxes = 9;
+const boxes = Array.from({
+    length
+});
 ---
 
-<div
-  class="relative flex h-[30px] w-full divide-x divide-dashed divide-gray-300 sm:h-[45px] md:h-[60px] xl:h-[88px] dark:divide-gray-700"
->
-  {_.times(boxes, () => <div class="aspect-square h-auto w-full bg-white dark:bg-gray-900" />)}
+<div class="relative flex h-[30px] w-full divide-x divide-dashed divide-gray-300 sm:h-[45px] md:h-[60px] xl:h-[88px] dark:divide-gray-700">
+    {
+        boxes.map(() => (
+            <div class="aspect-square h-auto w-full bg-white dark:bg-gray-900" />
+        ))
+    }
 </div>
