@@ -53,7 +53,7 @@
         <div
           id="toggle"
           class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-gray-800 dark:text-gray-200"
-          @click="theme()"
+          @click="theme"
         >
           <div
             class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-gray-600"
@@ -80,16 +80,25 @@
 <script lang="ts" setup>
 import { menus } from '@config.ts';
 import { Icon, Logo } from '@views/commons/vue';
-import { useColorMode } from '@vueuse/core';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref, watch } from 'vue';
 
-const mode = useColorMode({
-  disableTransition: false,
+const mode = ref('light');
+const dark = ref(false);
+
+onMounted(() => {
+  mode.value = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 });
 
 const theme = () => {
   mode.value = mode.value === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', mode.value);
+
+  document.documentElement.classList.toggle('dark', mode.value === 'dark');
 };
+
+watch(mode, (val: string) => {
+  dark.value = val === 'dark';
+});
 
 const mobile = ref(false);
 const toggle = () => {
