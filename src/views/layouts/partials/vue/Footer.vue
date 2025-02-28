@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts" setup>
-import { links, socials } from '~/config';
+import { links, socials } from '@config';
 import { Icon, Logo } from '@views/commons/vue';
 
 const year = new Date().getFullYear();

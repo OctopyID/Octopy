@@ -78,7 +78,7 @@
 </template>
 
 <script lang="ts" setup>
-import { menus } from '~/config.ts';
+import { menus } from '@config.ts';
 import { Icon, Logo } from '@views/commons/vue';
 import { useDark, useToggle } from '@vueuse/core';
 import { onMounted, onUnmounted, ref } from 'vue';
