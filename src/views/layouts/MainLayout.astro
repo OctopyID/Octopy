@@ -20,6 +20,12 @@ const { title } = Astro.props;
     <link rel="icon" type="image/x-icon" href="/favicon.svg" />
     <link rel="preload" as="font" type="font/woff2" href={instrumentSansWoff2} crossorigin="anonymous" />
 
+    <script is:inline>
+      if (typeof Storage !== 'undefined') {
+        document.documentElement.classList.toggle('dark', localStorage.getItem('vueuse-color-scheme') === 'dark');
+      }
+    </script>
+
     <SEO
       title="Supian M —  Code, Servers, and Everything in Between"
       description="Hi, I'm Supian M. Explore my portfolio, read my posts, and learn more about me."
@@ -47,13 +53,6 @@ const { title } = Astro.props;
         ],
       }}
     />
-
-    <script is:inline>
-      // prevent flickering
-      if (typeof Storage !== 'undefined') {
-        document.documentElement.classList.toggle('dark', localStorage.getItem('vueuse-color-scheme') === 'dark');
-      }
-    </script>
   </head>
   <body class="bg-white dark:bg-gray-900">
     <SquareLines>

@@ -80,27 +80,21 @@
 <script lang="ts" setup>
 import { menus } from '@config.ts';
 import { Icon, Logo } from '@views/commons/vue';
-import { useDark, useToggle } from '@vueuse/core';
+import { useColorMode } from '@vueuse/core';
 import { onMounted, onUnmounted, ref } from 'vue';
 
-const dark = useDark();
-const theme = useToggle(dark, {
-  //
+const mode = useColorMode({
+  disableTransition: false,
 });
+
+const theme = () => {
+  mode.value = mode.value === 'dark' ? 'light' : 'dark';
+};
 
 const mobile = ref(false);
 const toggle = () => {
   mobile.value = !mobile.value;
 };
-
-onMounted(() => {
-  const items = document.querySelectorAll<HTMLAnchorElement>('#menu a');
-  items.forEach((item) => {
-    if (item.pathname === window.location.pathname) {
-      item.classList.add('text-gray-900', 'dark:text-white');
-    }
-  });
-});
 
 const stickyClasses = ['fixed', 'h-14'];
 const defaultClasses = ['absolute', 'h-20'];
@@ -138,6 +132,13 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
+  const items = document.querySelectorAll<HTMLAnchorElement>('#menu a');
+  items.forEach((item) => {
+    if (item.pathname === window.location.pathname) {
+      item.classList.add('text-gray-900', 'dark:text-white');
+    }
+  });
+
   window.addEventListener('scroll', handleScroll);
 });
 
