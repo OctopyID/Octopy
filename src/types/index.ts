@@ -33,6 +33,8 @@ type Post = {
     title: string;
     date: string;
     tags: string[];
+    link: string;
+    excerpt: string;
 };
 
 export type { Menu, Social, Project, Experience, TechStack, Post };

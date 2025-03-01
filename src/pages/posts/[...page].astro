@@ -1,0 +1,34 @@
+---
+import type { GetStaticPaths } from 'astro';
+
+import MainLayout from '@views/layouts/MainLayout.astro';
+import Posts from '@views/Posts.astro';
+import Heading from '@views/commons/Heading.astro';
+import Pagination from '../../views/commons/Pagination.astro';
+import { collection } from '../../helpers';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await collection();
+
+  return paginate(posts, {
+    pageSize: 2,
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<MainLayout title={`Page ${page.currentPage}`}>
+  <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 select-none lg:px-0">
+    <Heading title="My Writing">
+      Explore my thoughts on life and tech — where curiosity meets creativity. From deep reflections to innovative
+      ideas, each post is a blend of insight and inspiration. Stay tuned for fresh perspectives and the latest updates!
+    </Heading>
+
+    <div class="z-50 my-8 flex w-full flex-col items-stretch gap-5">
+      <Posts posts={page.data} />
+
+      <Pagination page={page} />
+    </div>
+  </section>
+</MainLayout>

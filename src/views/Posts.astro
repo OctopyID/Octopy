@@ -1,25 +1,11 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
-import { Badge } from '@views/commons';
-import { excerpt } from '@helpers';
+import type { Post } from '../types';
+import { excerpt } from '../helpers';
 import moment from 'moment';
+import type { ContentEntryModule } from 'astro';
+const { posts } = Astro.props;
 
-const { limit, tag = null } = Astro.props;
-
-const posts = await getCollection('posts');
-
-const filteredPosts = tag ? posts.filter((post) => post.data.tags?.includes(tag)) : posts;
-
-const sortedPosts = filteredPosts
-  .map((post) => {
-    return {
-      ...post,
-      date: moment(post.data.date, 'DD-MM-YYYY HH:mm'),
-    };
-  })
-  .sort((a, b) => b.date.toDate().getTime() - a.date.toDate().getTime());
-
-const loop = sortedPosts.slice(0, limit ? limit : sortedPosts.length).map((post) => {
+const loop = posts.map((post: unknown) => {
   return {
     ...(post.data || {}),
     link: `/posts/${post.id}`,
@@ -30,7 +16,7 @@ const loop = sortedPosts.slice(0, limit ? limit : sortedPosts.length).map((post)
 ---
 
 {
-  loop.map((post) => {
+  loop.map((post: Post) => {
     return (
       <div
         class="group relative cursor-pointer rounded-2xl border border-dashed border-transparent p-7"

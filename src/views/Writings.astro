@@ -1,8 +1,13 @@
 ---
 import Posts from '@views/Posts.astro';
 import Link from '@views/commons/Link.astro';
+import { collection } from '../helpers';
 
 const { limit = null } = Astro.props;
+
+const posts = await collection().then((posts) => {
+  return posts.slice(0, limit);
+});
 ---
 
 <section class="mx-auto max-w-4xl px-7 lg:px-0">
@@ -14,7 +19,7 @@ const { limit = null } = Astro.props;
   <div class="mx-auto my-7 w-full max-w-4xl xl:px-0">
     <div class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
       <div class="w-full space-y-7">
-        <Posts limit={limit} />
+        <Posts posts={posts} />
 
         <div class="flex w-full items-center justify-center py-5">
           <Link href="/posts">View All My Writing</Link>

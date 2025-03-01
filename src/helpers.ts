@@ -1,3 +1,6 @@
+import { type CollectionEntry, getCollection } from 'astro:content';
+import moment from 'moment';
+
 export function excerpt(content: string, length: number = 200): string {
     if (content === '') {
         return '';
@@ -17,4 +20,20 @@ export function excerpt(content: string, length: number = 200): string {
 function parseDate(dateStr: string) {
     const [month, day, year] = dateStr.split(' ');
     return new Date(`${month} ${parseInt(day)}, ${year}`);
+}
+
+export async function collection() {
+    let posts = await getCollection('posts');
+
+    return posts
+        .map((post: CollectionEntry<'posts'>) => {
+            return {
+                ...post,
+                slug: post.id,
+                date: moment(post.data.date, 'DD-MM-YYYY HH:mm'),
+            };
+        })
+        .sort((a, b) => {
+            return b.date.toDate().getTime() - a.date.toDate().getTime();
+        });
 }
