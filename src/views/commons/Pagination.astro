@@ -1,19 +1,49 @@
 ---
 import Icon from './Icon.astro';
+import type { Page } from 'astro';
 const { page } = Astro.props;
 
-const pageNums = Array.from({ length: page.lastPage }, (_, i) => {
-  return i + 1;
-});
+const generatePageLinks = (page: Page) => {
+  const base = page.url.current.replace(/\/\d+$/, '');
+
+  return Array.from({ length: page.lastPage }, (_, i) => {
+    const page = i + 1;
+
+    let link = base;
+    if (page !== 1) {
+      link = `${base}/page/${page}`;
+    }
+
+    return {
+      page,
+      link,
+    };
+  });
+};
+
+const pages = generatePageLinks(page);
+
+const reformatPrevNext = (link: string) => {
+  const regex = /^(.+?)\/(\d+)$/;
+
+  if (regex.test(link)) {
+    return link.replace(regex, '$1/page/$2');
+  }
+
+  return link;
+};
 
 const PrevTag = page.url.prev ? 'a' : 'span';
+const PrevLink = reformatPrevNext(page.url.prev);
+
 const NextTag = page.url.next ? 'a' : 'span';
+const NextLink = reformatPrevNext(page.url.next);
 ---
 
 <nav class="mt-8 flex items-center justify-center gap-x-1" aria-label="Pagination">
   <!-- Prev Button -->
   <PrevTag
-    href={page.url.prev}
+    href={PrevLink}
     class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-gray-100 dark:hover:bg-white/10 dark:focus:bg-white/10"
     aria-label="Previous"
     aria-disabled={!page.url.prev}
@@ -26,17 +56,17 @@ const NextTag = page.url.next ? 'a' : 'span';
   <!-- Page Numbers -->
   <div class="flex items-center gap-x-1">
     {
-      pageNums.map((num) => (
+      pages.map((num) => (
         <a
-          href={`/posts/${num === 1 ? '' : num + '/'}`}
+          href={num.link}
           class={`flex min-h-[38px] min-w-[38px] items-center justify-center rounded-lg px-3 py-2 text-sm ${
-            num === page.currentPage
+            num.page === page.currentPage
               ? 'bg-gray-200 text-gray-800 focus:bg-gray-300 dark:bg-white/10 dark:text-gray-100 dark:focus:bg-gray-500'
               : 'text-gray-800 hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-100 dark:hover:bg-white/10 dark:focus:bg-white/10'
           }`}
           aria-current={num === page.currentPage ? 'page' : undefined}
         >
-          {num}
+          {num.page}
         </a>
       ))
     }
@@ -44,7 +74,7 @@ const NextTag = page.url.next ? 'a' : 'span';
 
   <!-- Next Button -->
   <NextTag
-    href={page.url.next}
+    href={NextLink}
     class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-gray-100 dark:hover:bg-white/10 dark:focus:bg-white/10"
     aria-label="Next"
     aria-disabled={!page.url.next}

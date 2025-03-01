@@ -9,14 +9,26 @@ import { collection } from '@helpers';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await collection();
+  const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags || [])));
 
-  return paginate(posts, { pageSize: 2 }).map((page, index) => ({
-    ...page,
-    params: { page: index === 0 ? undefined : `page/${index + 1}` },
-  }));
+  return tags.flatMap((tag) => {
+    const filteredPosts = posts.filter((post) => (post.data.tags || []).includes(tag));
+
+    return paginate(filteredPosts, {
+      pageSize: 2,
+      params: { tag },
+      props: { tag },
+    }).map((page, index) => ({
+      ...page,
+      params: {
+        tag,
+        page: index === 0 ? undefined : `page/${index + 1}`,
+      },
+    }));
+  });
 }) satisfies GetStaticPaths;
 
-const { page } = Astro.props;
+const { page, tag } = Astro.props;
 ---
 
 <MainLayout title={`Page ${page.currentPage}`}>
