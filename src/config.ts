@@ -1,42 +1,44 @@
 import type { Experience, Menu, Project, Social, TechStack } from './types';
 
-export const menus: Array<Menu> = [
-    {
-        label: 'Home',
-        route: '/',
-    },
-    {
-        label: 'Posts',
-        route: '/posts',
-    },
-    {
-        label: 'Projects',
-        route: '/projects',
-    },
-    {
-        label: 'About',
-        route: '/about',
-    },
-];
+export const menus: { header: Array<Menu>; footer: Array<Menu> } = {
+    header: [
+        {
+            label: 'Home',
+            route: '/',
+        },
+        {
+            label: 'Posts',
+            route: '/posts',
+        },
+        {
+            label: 'Projects',
+            route: '/projects',
+        },
+        {
+            label: 'About',
+            route: '/about',
+        },
+    ],
 
-export const links: Array<Menu> = [
-    {
-        label: 'Posts',
-        route: '/posts',
-    },
-    {
-        label: 'Projects',
-        route: '/projects',
-    },
-    {
-        label: 'About',
-        route: '/about',
-    },
-    {
-        label: 'Attribution',
-        route: '/attribution',
-    },
-];
+    footer: [
+        {
+            label: 'Posts',
+            route: '/posts',
+        },
+        {
+            label: 'Projects',
+            route: '/projects',
+        },
+        {
+            label: 'About',
+            route: '/about',
+        },
+        {
+            label: 'Attribution',
+            route: '/attribution',
+        },
+    ],
+};
 
 export const socials: Array<Social> = [
     {
@@ -149,7 +151,6 @@ export const stacks: Array<TechStack> = [
 
     // Version Control & Collaboration
     { label: 'Git', color: '#F05032' },
-    { label: 'GitHub', color: '#181717' },
 
     // Project Management
     { label: 'ClickUp', color: '#7B68EE' },

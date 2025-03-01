@@ -25,11 +25,11 @@
 
     <div class="container mx-auto flex w-full max-w-5xl flex-row items-center justify-center gap-x-4 xl:justify-end">
       <div class="flex flex-row gap-x-1 text-sm">
-        <template v-for="(link, index) in links" :key="link.route">
+        <template v-for="(link, index) in menus.footer" :key="link.route">
           <a :href="link.route" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
             {{ link.label }}
           </a>
-          <span v-if="index < links.length - 1" class="text-gray-500 dark:text-gray-400">/</span>
+          <span v-if="index < menus.footer.length - 1" class="text-gray-500 dark:text-gray-400">/</span>
         </template>
       </div>
     </div>
@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts" setup>
-import { links, socials } from '@config';
+import { menus, socials } from '@config';
 import { Icon, Logo } from '@views/commons/vue';
 
 const year = new Date().getFullYear();

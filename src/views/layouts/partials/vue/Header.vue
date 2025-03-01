@@ -42,7 +42,7 @@
           </div>
 
           <a
-            v-for="menu in menus"
+            v-for="menu in menus.header"
             :href="menu.route"
             class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-gray-900 sm:mb-0 sm:py-0 md:w-auto dark:hover:text-white"
           >
