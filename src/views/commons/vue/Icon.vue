@@ -13,7 +13,9 @@ import {
   Linkedin,
   Menu,
   Moon,
+  Newspaper,
   Sun,
+  Tag,
   X,
 } from 'lucide-vue-next';
 import { computed } from 'vue';
@@ -30,17 +32,19 @@ const props = defineProps({
 });
 
 const icons = {
-  Moon,
-  Sun,
-  Facebook,
-  Instagram,
   AtSign,
-  Linkedin,
+  Facebook,
   Github,
-  X,
+  Instagram,
+  Linkedin,
   Menu,
+  Moon,
+  Newspaper,
   Next: ChevronRight,
   Prev: ChevronLeft,
+  Sun,
+  Tag,
+  X,
 };
 
 const icon = computed(() => {

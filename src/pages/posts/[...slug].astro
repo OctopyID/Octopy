@@ -1,12 +1,13 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
 import Post from '@views/Post.astro';
+import { collection } from '../../helpers';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('posts');
+  const entries = await collection();
 
   return entries.map((entry) => ({
-    params: { slug: entry.id },
+    params: { slug: entry.slug },
     props: {
       entry,
     },
@@ -17,6 +18,6 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Post frontmatter={entry.data}>
+<Post data={entry.data}>
   <Content />
 </Post>

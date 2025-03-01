@@ -27,7 +27,7 @@ const reformatPrevNext = (link: string) => {
   const regex = /^(.+?)\/(\d+)$/;
 
   if (regex.test(link)) {
-    return link.replace(regex, '$1/page/$2');
+    link= link.replace(regex, '$1/page/$2');
   }
 
   return link;

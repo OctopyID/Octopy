@@ -1,7 +1,8 @@
 ---
 title: bar
-date: 26-02-2025 22:50
+category: foo
 tags: [code]
+date: 26-02-2025 22:50
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget arcu a massa elementum bibendum sed nec lectus. Donec gravida nunc at dolor condimentum finibus. Mauris a

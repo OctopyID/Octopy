@@ -1,13 +1,20 @@
 ---
 import Posts from '@views/Posts.astro';
 import Link from '@views/commons/Link.astro';
-import { collection } from '../helpers';
+import { categories as getCategories, tags as getTags, collection } from '../helpers';
+import Icon from './commons/Icon.astro';
+import Badge from './commons/Badge.astro';
 
 const { limit = null } = Astro.props;
 
 const posts = await collection().then((posts) => {
   return posts.slice(0, limit);
 });
+
+const feed = 'https://feed.miantiao.me/';
+
+const categories = await getCategories();
+const tags = await getTags();
 ---
 
 <section class="mx-auto max-w-4xl px-7 lg:px-0">
@@ -16,13 +23,55 @@ const posts = await collection().then((posts) => {
     Along with coding I also like to write about life and technology. Here are some of my recent posts.
   </p>
 
-  <div class="mx-auto my-7 w-full max-w-4xl xl:px-0">
+  <div class="mx-auto my-7 w-full xl:px-0">
     <div class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
-      <div class="w-full space-y-7">
+      <div class="w-full space-y-7 md:w-2/3">
         <Posts posts={posts} />
 
         <div class="flex w-full items-center justify-center py-5">
           <Link href="/posts">View All My Writing</Link>
+        </div>
+      </div>
+
+      <div class="mt-10 flex w-full flex-col space-y-7 md:mt-0 md:w-1/3">
+        <div class="w-full rounded-2xl border border-dashed border-gray-400 p-6 dark:border-gray-400">
+          <div class="relative flex items-center space-x-2">
+            <Icon name="Newspaper" class="h-6 w-6 flex-none text-gray-700 dark:text-gray-200" />
+
+            <h2 class="flex text-sm font-semibold text-gray-900 dark:text-gray-100">Categories</h2>
+          </div>
+
+          <div class="mt-2 flex flex-wrap gap-2">
+            {
+              categories.map((row) => (
+                <a href={`/posts/category/${row.label.toLowerCase()}`}>
+                  <Badge class="cursor-pointer lowercase hover:bg-gray-500 hover:text-white">
+                    {row.label} <span class="text-xs"> ({row.count})</span>
+                  </Badge>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="w-full rounded-2xl border border-dashed border-gray-400 p-6 dark:border-gray-400">
+          <div class="relative flex items-center space-x-2">
+            <Icon name="Tag" class="h-6 w-6 flex-none text-gray-700 dark:text-gray-200" />
+
+            <h2 class="flex text-sm font-semibold text-gray-900 dark:text-gray-100">Tags</h2>
+          </div>
+
+          <div class="mt-2 flex flex-wrap gap-2">
+            {
+              tags.map((row) => (
+                <a href={`/posts/tag/${row.label}`}>
+                  <Badge class="cursor-pointer hover:bg-gray-500 hover:text-white">
+                    {row.label} <span class="text-xs"> ({row.count})</span>
+                  </Badge>
+                </a>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>

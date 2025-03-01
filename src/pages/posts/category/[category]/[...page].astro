@@ -1,0 +1,57 @@
+---
+import type { GetStaticPaths } from 'astro';
+
+import MainLayout from '@views/layouts/MainLayout.astro';
+import Posts from '@views/Posts.astro';
+import Heading from '@views/commons/Heading.astro';
+import Pagination from '@views/commons/Pagination.astro';
+import { collection } from '@helpers';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await collection();
+
+  const categories = [...new Set(posts.map((post) => post.data.category))];
+
+  return categories.flatMap((category: string) => {
+    const filteredPosts = posts.filter((post) => {
+      return post.data.category.toLowerCase() === category.toLowerCase();
+    });
+
+    let paginated = paginate(filteredPosts, {
+      pageSize: 2,
+      props: {
+        category,
+      },
+      params: {
+        category: category.toLowerCase(),
+      },
+    });
+
+    return paginated.map((page, index) => ({
+      ...page,
+      params: {
+        category: category.toLowerCase(),
+        page: index === 0 ? undefined : `page/${index + 1}`,
+      },
+    }));
+  });
+}) satisfies GetStaticPaths;
+
+const { page, category } = Astro.props;
+---
+
+<MainLayout title={`${category}`}>
+  <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 select-none lg:px-0">
+    <Heading title={`${category}`}>
+      Exploring posts in the "{category}" category — Immerse yourself in a thoughtfully curated collection of insights
+      and ideas focused on {category}. Each post offers a unique blend of knowledge and creativity. Start exploring and
+      uncover something new today!
+    </Heading>
+
+    <div class="z-50 my-8 flex w-full flex-col items-stretch gap-5">
+      <Posts posts={page.data} />
+
+      <Pagination page={page} />
+    </div>
+  </section>
+</MainLayout>

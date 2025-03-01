@@ -17,18 +17,20 @@ export function excerpt(content: string, length: number = 200): string {
     );
 }
 
-function parseDate(dateStr: string) {
-    const [month, day, year] = dateStr.split(' ');
-    return new Date(`${month} ${parseInt(day)}, ${year}`);
-}
-
 export async function collection() {
     let posts = await getCollection('posts');
 
     return posts
         .map((post: CollectionEntry<'posts'>) => {
+            let data = {
+                ...post.data,
+                tags: post.data.tags ?? [],
+                category: post.data.category ?? 'Uncategorized',
+            };
+
             return {
                 ...post,
+                data,
                 slug: post.id,
                 date: moment(post.data.date, 'DD-MM-YYYY HH:mm'),
             };
@@ -36,4 +38,42 @@ export async function collection() {
         .sort((a, b) => {
             return b.date.toDate().getTime() - a.date.toDate().getTime();
         });
+}
+
+export async function categories() {
+    let posts = await collection();
+
+    let categoryCounts = posts.reduce(
+        (acc, post) => {
+            let category = post.data.category || 'Uncategorized';
+            acc[category] = (acc[category] || 0) + 1;
+            return acc;
+        },
+        {} as Record<string, number>,
+    );
+
+    return Object.entries(categoryCounts).map(([label, count]) => ({
+        label,
+        count,
+    }));
+}
+
+export async function tags() {
+    let posts = await collection();
+
+    let tagCounts = posts.reduce(
+        (acc, post) => {
+            let tags = post.data.tags || [];
+            tags.forEach((tag) => {
+                acc[tag] = (acc[tag] || 0) + 1;
+            });
+            return acc;
+        },
+        {} as Record<string, number>,
+    );
+
+    return Object.entries(tagCounts).map(([label, count]) => ({
+        label,
+        count,
+    }));
 }
