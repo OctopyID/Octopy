@@ -6,11 +6,12 @@ import Posts from '@views/Posts.astro';
 import Heading from '@views/commons/Heading.astro';
 import Pagination from '@views/commons/Pagination.astro';
 import { collection } from '@helpers';
+import { pagination } from '@config';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await collection();
 
-  return paginate(posts, { pageSize: 2 }).map((page, index) => ({
+  return paginate(posts, {  pageSize: pagination.limit, }).map((page, index) => ({
     ...page,
     params: { page: index === 0 ? undefined : `page/${index + 1}` },
   }));

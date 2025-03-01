@@ -1,4 +1,8 @@
-import type { Experience, Menu, Project, Social, TechStack } from './types';
+import type { Experience, Menu, Project, Social, TechStack } from '@types';
+
+export const pagination = {
+    limit: 5,
+};
 
 export const menus: { header: Array<Menu>; footer: Array<Menu> } = {
     header: [

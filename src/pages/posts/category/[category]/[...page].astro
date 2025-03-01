@@ -6,6 +6,7 @@ import Posts from '@views/Posts.astro';
 import Heading from '@views/commons/Heading.astro';
 import Pagination from '@views/commons/Pagination.astro';
 import { collection } from '@helpers';
+import { pagination } from '@config';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await collection();
@@ -18,7 +19,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     });
 
     let paginated = paginate(filteredPosts, {
-      pageSize: 2,
+      pageSize: pagination.limit,
       props: {
         category,
       },

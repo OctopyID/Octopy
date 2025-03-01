@@ -6,6 +6,7 @@ import Posts from '@views/Posts.astro';
 import Heading from '@views/commons/Heading.astro';
 import Pagination from '@views/commons/Pagination.astro';
 import { collection } from '@helpers';
+import { pagination } from '@config';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await collection();
@@ -15,7 +16,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     const filteredPosts = posts.filter((post) => (post.data.tags || []).includes(tag));
 
     return paginate(filteredPosts, {
-      pageSize: 2,
+       pageSize: pagination.limit,,
       params: { tag },
       props: { tag },
     }).map((page, index) => ({
