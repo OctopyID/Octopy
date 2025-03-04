@@ -30,7 +30,7 @@ pre.astro-code {
     font-family: 'Geist Mono', monospace;
 }
 
-.astro-code {
+.astro-code, starlight-file-tree.not-content {
     @apply rounded-xl border border-dashed border-gray-400;
 }
 

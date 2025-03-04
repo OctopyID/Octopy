@@ -9,6 +9,7 @@
         "pages": "wrangler pages"
     },
     "dependencies": {
+        "@astrojs/mdx": "^4.1.0",
         "@astrojs/sitemap": "^3.2.1",
         "@astrojs/vue": "^5.0.7",
         "@fontsource/geist-mono": "^5.1.1",

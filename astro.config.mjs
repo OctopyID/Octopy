@@ -5,6 +5,7 @@ import vue from '@astrojs/vue';
 import robot from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 import reading from 'astro-reading-time';
+import markdownX from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,5 +33,8 @@ export default defineConfig({
             //
         }),
         reading(),
+        markdownX({
+            //
+        })
     ],
 });
