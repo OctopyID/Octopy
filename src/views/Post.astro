@@ -3,12 +3,17 @@ import '@fontsource/geist-mono';
 import Badge from '@views/commons/Badge.astro';
 import MainLayout from '@views/layouts/MainLayout.astro';
 
-const { data } = Astro.props;
+const { entry, reading } = Astro.props;
+
+const data = entry.data;
 
 let tags = [];
 if (data.tags.length > 0) {
   tags = data.tags;
 }
+
+const published = entry.date.format('MMM D, YYYY');
+console.log(reading);
 ---
 
 <MainLayout title={data.title}>
@@ -25,11 +30,13 @@ if (data.tags.length > 0) {
       >
       </div>
 
-      <h1
-        class="mx-auto w-full max-w-4xl text-left text-3xl leading-tight font-bold tracking-tighter mb-8 md:mb-12 md:text-3xl md:leading-none lg:text-4xl dark:text-gray-100"
-      >
-        {data.title}
-      </h1>
+      <div class="mx-auto mb-5 w-full max-w-4xl text-left tracking-tighter md:mb-8 border-b pb-2 border-dashed border-gray-400">
+        <h1 class="text-3xl leading-tight font-bold md:text-3xl md:leading-none lg:text-4xl dark:text-gray-100">
+          {data.title}
+        </h1>
+
+        <p class="mx-auto mt-2 w-full text-gray-500 text-md dark:text-gray-100">Published on {published} <span class="mx-2">•</span> {reading.minutesRead}</p>
+      </div>
     </div>
 
     <article class="prose-md mx-auto prose mb-5 w-full max-w-4xl px-7 lg:px-0 dark:prose-invert">

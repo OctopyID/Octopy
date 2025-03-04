@@ -1259,6 +1259,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mogeko/utils@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@mogeko/utils@npm:0.6.2"
+  dependencies:
+    github-slugger: "npm:^2.0.0"
+  checksum: 10c0/a9a29b7771e88ba9e39c17cc82848cd85aa04e7edc8d98440526861b43bba52e22ea6aa93840b256ab7d2eb761230bf16302756a31a5ff2ca3bac1befac5cdbb
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -2257,6 +2266,17 @@ __metadata:
   dependencies:
     printable-characters: "npm:^1.0.42"
   checksum: 10c0/8c5693a84621fe53c62fcad6b779dc55c5caf4d43b8e67077964baea4a337769ef53f590d7395c806805b4ef1a391b614ba9acdee19b2ca4309ddedaf13894e6
+  languageName: node
+  linkType: hard
+
+"astro-reading-time@npm:^0.1.13":
+  version: 0.1.13
+  resolution: "astro-reading-time@npm:0.1.13"
+  dependencies:
+    "@mogeko/utils": "npm:^0.6.2"
+    mdast-util-to-string: "npm:^4.0.0"
+    reading-time: "npm:^1.5.0"
+  checksum: 10c0/62040cfa90179f71f0519bf2f5d701192b736286ac65106a9ea2b908cd325de4adffc86b4c3f9e0c08a48864348537fa083f0a32ac71c5c5de288e5a0a302b10
   languageName: node
   linkType: hard
 
@@ -5053,6 +5073,7 @@ __metadata:
     "@tailwindcss/typography": "npm:^0.5.16"
     "@tailwindcss/vite": "npm:^4.0.8"
     astro: "npm:^5.3.0"
+    astro-reading-time: "npm:^0.1.13"
     astro-robots-txt: "npm:^1.0.0"
     astro-seo: "npm:^0.8.4"
     lucide-vue-next: "npm:^0.475.0"
@@ -5539,6 +5560,13 @@ __metadata:
   dependencies:
     picomatch: "npm:^2.2.1"
   checksum: 10c0/6fa848cf63d1b82ab4e985f4cf72bd55b7dcfd8e0a376905804e48c3634b7e749170940ba77b32804d5fe93b3cc521aa95a8d7e7d725f830da6d93f3669ce66b
+  languageName: node
+  linkType: hard
+
+"reading-time@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "reading-time@npm:1.5.0"
+  checksum: 10c0/0f730852fd4fb99e5f78c5b0cf36ab8c3fa15db96f87d9563843f6fd07a47864273ade539ebb184b785b728cde81a70283aa2d9b80cba5ca03b81868be03cabc
   languageName: node
   linkType: hard
 

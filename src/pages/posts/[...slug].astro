@@ -2,7 +2,6 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Post from '@views/Post.astro';
 import { collection } from '../../helpers';
-
 export async function getStaticPaths() {
   const entries = await collection();
 
@@ -15,9 +14,9 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, remarkPluginFrontmatter } = await render(entry);
 ---
 
-<Post data={entry.data}>
+<Post entry={entry} reading={remarkPluginFrontmatter}>
   <Content />
 </Post>

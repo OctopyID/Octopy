@@ -5,7 +5,7 @@ import moment from 'moment';
 import type { ContentEntryModule } from 'astro';
 const { posts } = Astro.props;
 
-const loop = posts.map((post: unknown) => {
+const loop = posts.map((post: any) => {
   return {
     ...(post.data || {}),
     link: `/posts/${post.id}`,
@@ -33,7 +33,7 @@ const loop = posts.map((post: unknown) => {
           <p class="text-sm text-gray-600 dark:text-gray-400">
             <span>{post.excerpt}</span>
           </p>
-          <div class="mt-2.5 text-xs font-medium text-gray-800 dark:text-gray-300">Posted on {post.date}</div>
+          <div class="mt-2.5 text-xs font-medium text-gray-800 dark:text-gray-300">Published on {post.date}</div>
         </div>
       </div>
     );
