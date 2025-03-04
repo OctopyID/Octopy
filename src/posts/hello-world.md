@@ -1,7 +1,7 @@
 ---
 title: Hello World
-date: 26-02-2025 22:50
 tags: [code]
+date: 2025-03-01 00:00
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget arcu a massa elementum bibendum sed nec lectus. Donec gravida nunc at dolor condimentum finibus. Mauris a

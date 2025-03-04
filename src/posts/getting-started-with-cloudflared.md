@@ -1,166 +1,178 @@
 ---
 title: "Understanding Cloudflared: Reasons, Installation, and Basic Tunnel Configuration"
-date: 4-03-2025 23:09
 category: Cloudflare
-tags: [ cloudflared ]
+tags: [cloudflared]
+date: 2025-03-04 23:09
 ---
 
-### What is Cloudflared?
+## What is Cloudflared?
 
-Cloudflared is a tool developed by Cloudflare that creates secure connections between local infrastructure and the Cloudflare network without opening ports on your firewall. By
-using Cloudflared, you can connect local services to the internet through a Cloudflare Tunnel.
+Cloudflared is a command-line tool developed by Cloudflare that creates secure tunnels between your local infrastructure and the Cloudflare network without needing to open ports on your firewall. By using Cloudflared, you can expose local services to the internet safely through a Cloudflare Tunnel.
 
-### Why Use Cloudflared?
+## Why Use Cloudflared?
 
-Key reasons to use Cloudflared include:
+Here are some key reasons to use Cloudflared:
 
-- **Security**: No need to open ports on the firewall, reducing the risk of external attacks.
+- **Enhanced Security**: No need to open ports on your firewall, reducing the risk of external attacks.
 - **Ease of Access**: Access local services through secure domains managed by Cloudflare.
-- **Integration with Cloudflare**: Benefit from Cloudflare features like caching, DDoS protection, and more.
-- **Automation and Management**: Configuration can be automated via CLI commands, simplifying tunnel management.
+- **Seamless Integration**: Leverage Cloudflare features like caching, DDoS protection, and traffic monitoring.
+- **Automation and Management**: Easily manage tunnels and configurations via CLI commands.
 
-### Installing Cloudflared
+## Installing Cloudflared
 
-Here are the steps to install Cloudflared on a Linux-based system:
+Follow these steps to install Cloudflared on a Linux-based system:
 
-1. **Download and Install**
-   You can download Cloudflared for your operating system from the official Cloudflare documentation:
-   [Cloudflared Downloads](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
+### 1. Download and Install
 
-   For Linux, use the following commands:
-   ```bash
-   # Download the latest Cloudflared binary
-   curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+Download the latest Cloudflared binary and move it to a directory in your `PATH`:
 
-   # Grant execute permissions
-   chmod +x cloudflared-linux-amd64
+```bash
+# Download the latest release
+curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 
-   # Move the binary to a PATH directory
-   sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
+# Make it executable
+chmod +x cloudflared-linux-amd64
 
-   # Verify the installation
-   cloudflared --version
-   ```
+# Move to /usr/local/bin for global access
+sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
 
-2. **Authenticate with Cloudflare**
-   Run this command inside your server:
-   ```bash
-   cloudflared tunnel login
-   ```
-   This command will open a browser window and prompt you to log in to your Cloudflare account. If you are working on a headless server, you can copy the login URL and open it in
-   your local browser.
+# Verify installation
+cloudflared --version
+```
 
-### Creating a Tunnel
+### 2. Authenticate with Cloudflare
 
-To create a new tunnel, use the following command:
+To link Cloudflared to your Cloudflare account, run the following:
+
+```bash
+cloudflared tunnel login
+```
+
+This will open a browser window prompting you to log in. If using a headless server, copy the provided URL and open it in your local browser.
+
+## Creating and Configuring a Cloudflare Tunnel
+
+### 1. Create a New Tunnel
+
+Create a new tunnel named `example`:
 
 ```bash
 cloudflared tunnel create example
 ```
 
-This command will create a new tunnel named `example`. Cloudflared will generate a unique tunnel ID:
+After running the command, you’ll see output like this:
 
 ```bash
-Tunnel credentials written to /root/.cloudflared/34c56f81-e6d9-40bf-b25e-c496964571fc.json. cloudflared chose this file based on where your origin certificate was found. Keep this file secret. To revoke these credentials, delete the tunnel.
-
+Tunnel credentials written to /root/.cloudflared/34c56f81-e6d9-40bf-b25e-c496964571fc.json
 Created tunnel example with id 34c56f81-e6d9-40bf-b25e-c496964571fc
 ```
 
-### Connecting HTTP via Cloudflared
+### 2. Configure Cloudflared
 
-Now, let’s connect a local HTTP service (for example, a server running on port 80) through Cloudflared.
+Create a configuration file at `~/.cloudflared/config.yml`:
 
-1. **Configuring Cloudflared**
-   Create a configuration file at `~/.cloudflared/config.yml`:
+```yaml
+tunnel: 34c56f81-e6d9-40bf-b25e-c496964571fc
+credentials-file: /root/.cloudflared/34c56f81-e6d9-40bf-b25e-c496964571fc.json
+originRequest:
+  connectTimeout: 30s
 
-   ```yaml
-   tunnel: 34c56f81-e6d9-40bf-b25e-c496964571fc
-   credentials-file: /root/.cloudflared/34c56f81-e6d9-40bf-b25e-c496964571fc.json
-   originRequest:
-     connectTimeout: 30s
+ingress:
+  - hostname: blog.example.com
+    service: http://localhost:80
+```
 
-   ingress:
-     - hostname: blog.example.com
-       service: http://localhost:80
-   ```
+### 3. Symlink the Config for Systemd
 
-2. **Creating a Symlink for Configuration**
-   To allow systemd to access Cloudflared’s configuration, create a symlink from the configuration file to `/etc/cloudflared/`:
+Cloudflared expects config files in standard directories like `/etc`. Let’s create a symlink:
 
-   ```bash
-   sudo mkdir -p /etc/cloudflared
-   sudo ln -s /root/.cloudflared/config.yml /etc/cloudflared/config.yml
-   ```
+```bash
+sudo mkdir -p /etc/cloudflared
+sudo ln -s /root/.cloudflared/config.yml /etc/cloudflared/config.yml
+```
 
-   **Why create a symlink?**
-   Systemd typically looks for configuration files in standard directories like `/etc`. Since Cloudflared stores its default configuration in `/root/.cloudflared/`, creating a
-   symlink allows systemd to find the file without altering Cloudflared's default paths. This keeps the original configuration secure in the root's home directory.
+This keeps your original configuration secure in the root's home directory.
 
-3. **Configuring DNS for the Tunnel**
+### 4. Set Up DNS for the Tunnel
 
-   Add DNS to route the domain to the tunnel:
+Route your domain to the tunnel:
 
-   ```bash
-   cloudflared tunnel route dns example blog.example.com
-   ```
+```bash
+cloudflared tunnel route dns example blog.example.com
+```
 
-4. **Registering a Subdomain**
+If there’s no DNS record yet, create one:
 
-   If you haven’t created a DNS entry yet, do so now:
+```bash
+cloudflared tunnel dns create blog.example.com
+```
 
-   ```bash
-   cloudflared tunnel dns create blog.example.com
-   ```
+### 5. Run Cloudflared as a Service
 
-5. **Running Cloudflared as a Service (systemd)**
-   Create a new service file:
+Create a new systemd service:
 
-   ```bash
-   sudo nano /etc/systemd/system/cloudflared.service
-   ```
+```bash
+sudo nano /etc/systemd/system/cloudflared.service
+```
 
-   Add the following configuration:
+Add the following configuration:
 
-   ```shell
-   [Unit]
-   Description=cloudflared
-   After=network-online.target
-   Wants=network-online.target
+```ini
+[Unit]
+Description=Cloudflared Tunnel Service
+After=network-online.target
+Wants=network-online.target
 
-   [Service]
-   TimeoutStartSec=0
-   Type=notify
-   ExecStart=/usr/bin/cloudflared --no-autoupdate --config /etc/cloudflared/config.yml tunnel run
-   Restart=on-failure
-   RestartSec=5s
+[Service]
+TimeoutStartSec=0
+Type=notify
+ExecStart=/usr/local/bin/cloudflared --no-autoupdate --config /etc/cloudflared/config.yml tunnel run
+Restart=on-failure
+RestartSec=5s
 
-   [Install]
-   WantedBy=multi-user.target
-   ```
+[Install]
+WantedBy=multi-user.target
+```
 
-   Enable, start, and restart the service:
+Enable and start the service:
 
-   ```bash
-   sudo systemctl enable cloudflared
-   sudo systemctl start cloudflared
-   sudo systemctl restart cloudflared
-   ```
+```bash
+sudo systemctl enable cloudflared
+sudo systemctl start cloudflared
+```
 
+To apply changes, restart the service:
 
-### Verifying the Setup
+```bash
+sudo systemctl restart cloudflared
+```
+
+## Verifying the Setup
 
 Once everything is configured, check if your service is accessible by visiting:
 
-[blog.example.com](https://blog.example.com)
+[https://blog.example.com](https://blog.example.com)
 
-If the setup is correct, you should see your local service live. If not, double-check the tunnel configuration, DNS settings, and Cloudflared logs.
+If the setup works, your local service should be live! If not, review the following:
 
-### Conclusion
+- **Tunnel configuration** — ensure the correct tunnel ID and credentials are used.
+- **DNS settings** — confirm DNS records are properly linked to the tunnel.
+- **Logs** — check logs with:
 
-Congratulations! You have successfully installed Cloudflared, created a tunnel, and connected a local HTTP service to a domain through Cloudflare.
+```bash
+journalctl -u cloudflared -f
+```
 
-This is just the beginning of our Cloudflared exploration. In the next series, we will dive into configuring load balancing, adding authentication, and security tips.
+## Conclusion
 
-Stay tuned for the next post — we will also cover how to use Cloudflared for secure SSH access to your server!
+Congratulations! You've successfully:
 
-See you in the next part of the series!
+- Installed Cloudflared.
+- Created a secure tunnel.
+- Configured DNS and systemd.
+- Exposed a local service to the internet via Cloudflare.
+
+In the next part of this series, we’ll explore more advanced topics such as load balancing, adding authentication, and securing SSH access with Cloudflared.
+
+Stay tuned for more Cloudflare magic!
+

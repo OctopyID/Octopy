@@ -32,7 +32,7 @@ export async function collection() {
                 ...post,
                 data,
                 slug: post.id,
-                date: moment(post.data.date, 'DD-MM-YYYY HH:mm'),
+                date: moment(post.data.date, 'YYYY-MM-DD HH:mm'),
             };
         })
         .sort((a, b) => {
