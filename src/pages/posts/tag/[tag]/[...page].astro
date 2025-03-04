@@ -16,7 +16,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     const filteredPosts = posts.filter((post) => (post.data.tags || []).includes(tag));
 
     return paginate(filteredPosts, {
-       pageSize: pagination.limit,,
+      pageSize: pagination.limit,
       params: { tag },
       props: { tag },
     }).map((page, index) => ({
