@@ -1,6 +1,6 @@
 <template>
   <section
-    class="mt-auto flex w-full flex-col gap-y-3 border-t border-gray-200 bg-white py-8 text-gray-700 sm:mt-20 dark:border-gray-800 dark:bg-gray-900"
+    class="mt-auto flex w-full flex-col px-7     gap-y-3 border-t border-gray-200 bg-white py-8 text-gray-700 sm:mt-20 dark:border-gray-800 dark:bg-gray-900"
   >
     <div class="container mx-auto flex max-w-5xl flex-col items-center sm:flex-row">
       <Logo />
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto flex w-full max-w-5xl flex-row items-center justify-center gap-x-4 xl:justify-end">
+    <div class="container mx-auto flex w-full max-w-5xl flex-row items-center justify-center gap-x-4 md:justify-end">
       <div class="flex flex-row gap-x-1 text-sm">
         <template v-for="(link, index) in menus.footer" :key="link.route">
           <a :href="link.route" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
