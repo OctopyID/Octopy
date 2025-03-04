@@ -80,7 +80,7 @@ Now, let’s connect a local HTTP service (for example, a server running on port
      connectTimeout: 30s
 
    ingress:
-     - hostname: blog.octopy.dev
+     - hostname: blog.example.com
        service: http://localhost:80
    ```
 
@@ -101,7 +101,7 @@ Now, let’s connect a local HTTP service (for example, a server running on port
    Add DNS to route the domain to the tunnel:
 
    ```bash
-   cloudflared tunnel route dns example blog.octopy.dev
+   cloudflared tunnel route dns example blog.example.com
    ```
 
 4. **Registering a Subdomain**
@@ -109,7 +109,7 @@ Now, let’s connect a local HTTP service (for example, a server running on port
    If you haven’t created a DNS entry yet, do so now:
 
    ```bash
-   cloudflared tunnel dns create blog.octopy.dev
+   cloudflared tunnel dns create blog.example.com
    ```
 
 5. **Running Cloudflared as a Service (systemd)**
