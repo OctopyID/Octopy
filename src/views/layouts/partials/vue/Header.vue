@@ -59,17 +59,9 @@
             class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-gray-600"
           >
             <Icon
-              name="Sun"
-              class="ease absolute h-6 w-6 transform fill-amber-500 transition duration-700"
-              :class="{ rising: !dark }"
-              v-show="!dark"
-            ></Icon>
-            <Icon
-              name="Moon"
-              class="ease absolute h-6 w-6 transform fill-amber-500 transition duration-700"
-              :class="{ rising: dark }"
-              v-show="dark"
-            ></Icon>
+              :name="dark ? 'Moon' : 'Sun'"
+              class="ease absolute h-6 w-6 transform fill-amber-500 transition duration-700 rising"
+            />
           </div>
         </div>
       </nav>
