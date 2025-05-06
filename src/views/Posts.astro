@@ -22,18 +22,18 @@ const loop = posts.map((post: any) => {
         class="group relative cursor-pointer rounded-2xl border border-dashed border-transparent p-7"
         onclick={`location.href = '${post.link}'`}
       >
-        <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-gray-400 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-gray-400 dark:bg-gray-900" />
-        <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-gray-400 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-gray-400" />
+        <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-slate-400 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-slate-400 dark:bg-slate-900" />
+        <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-slate-400 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-slate-400" />
         <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
           <h2 class="mb-3 flex items-center">
-            <a href={post.link} class="text-base leading-tight font-bold tracking-tight sm:text-lg dark:text-gray-100">
+            <a href={post.link} class="text-base leading-tight font-bold tracking-tight sm:text-lg dark:text-slate-100">
               {post.title}
             </a>
           </h2>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
+          <p class="text-sm text-slate-600 dark:text-slate-400">
             <span>{post.excerpt}</span>
           </p>
-          <div class="mt-2.5 text-xs font-medium text-gray-800 dark:text-gray-300">Published on {post.date}</div>
+          <div class="mt-2.5 text-xs font-medium text-slate-800 dark:text-slate-300">Published on {post.date}</div>
         </div>
       </div>
     );

@@ -16,25 +16,25 @@ const publishedAt = entry.date.format('MMM D, YYYY');
 ---
 
 <MainLayout title={data.title}>
-  <main class="relative z-30 mx-auto mt-10 max-w-6xl bg-white pb-10 text-gray-900 md:rounded-t-md dark:bg-gray-900">
+  <main class="relative z-30 mx-auto mt-10 max-w-6xl bg-white pb-10 text-slate-900 md:rounded-t-md dark:bg-slate-900">
     <div
-      class="relative flex flex-col justify-stretch border-t border-b-0 border-gray-300 px-5 pt-6 md:rounded-t-2xl md:border-r md:border-l md:pt-20 lg:px-0 dark:border-gray-800"
+      class="relative flex flex-col justify-stretch border-t border-b-0 border-slate-300 px-5 pt-6 md:rounded-t-2xl md:border-r md:border-l md:pt-20 lg:px-0 dark:border-slate-800"
     >
       <div
-        class="absolute top-0 left-0 mt-1 hidden h-full w-px -translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-gray-950"
+        class="absolute top-0 left-0 mt-1 hidden h-full w-px -translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-slate-950"
       >
       </div>
       <div
-        class="absolute top-0 right-0 mt-1 hidden h-full w-px translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-gray-950"
+        class="absolute top-0 right-0 mt-1 hidden h-full w-px translate-x-px bg-gradient-to-b from-transparent to-white md:block dark:to-slate-950"
       >
       </div>
 
-      <div class="mx-auto mb-5 w-full max-w-4xl text-left tracking-tighter md:mb-8 border-b pb-2 border-dashed border-gray-400">
-        <h1 class="text-3xl leading-tight font-bold md:text-3xl md:leading-none lg:text-4xl dark:text-gray-100">
+      <div class="mx-auto mb-5 w-full max-w-4xl text-left tracking-tighter md:mb-8 border-b pb-2 border-dashed border-slate-400">
+        <h1 class="text-3xl leading-tight font-bold md:text-3xl md:leading-none lg:text-4xl dark:text-slate-100">
           {data.title}
         </h1>
 
-        <p class="mx-auto mt-2 w-full text-gray-500 text-md dark:text-gray-100">Published on {publishedAt} <span class="mx-2">•</span> {reading.minutesRead}</p>
+        <p class="mx-auto mt-2 w-full text-slate-500 text-md dark:text-slate-100">Published on {publishedAt} <span class="mx-2">•</span> {reading.minutesRead}</p>
       </div>
     </div>
 
@@ -45,10 +45,10 @@ const publishedAt = entry.date.format('MMM D, YYYY');
     {
       tags.length > 0 && (
         <div class="mx-auto flex w-full max-w-4xl items-center gap-x-1 px-7 lg:px-0">
-          <span class="text-sm font-semibold dark:text-gray-100">Tags :</span>
+          <span class="text-sm font-semibold dark:text-slate-100">Tags :</span>
           {tags.map((tag: string) => (
             <a href={`/posts/tag/${tag}`}>
-              <Badge class="cursor-pointer lowercase hover:bg-gray-500 hover:text-white">{tag}</Badge>
+              <Badge class="cursor-pointer lowercase hover:bg-slate-500 hover:text-white">{tag}</Badge>
             </a>
           ))}
         </div>

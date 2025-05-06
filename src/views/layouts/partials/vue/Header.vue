@@ -7,19 +7,19 @@
     >
       <Logo class="w-full" />
       <div
-        class="fixed inset-0 z-20 h-screen w-screen bg-white/90 duration-300 ease-out dark:bg-gray-900/90"
+        class="fixed inset-0 z-20 h-screen w-screen bg-white/90 duration-300 ease-out dark:bg-slate-900/90"
         v-on:click="toggle"
         v-if="mobile"
       ></div>
       <nav
-        class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-gray-500 sm:flex-row sm:justify-end dark:text-gray-400"
+        class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-slate-500 sm:flex-row sm:justify-end dark:text-slate-400"
       >
         <div
           class="ml-4 flex h-6 w-6 cursor-pointer flex-col items-end justify-center sm:hidden"
           v-on:click="toggle"
           v-if="!mobile"
         >
-          <Icon name="Menu" class="h-8 w-8 text-gray-800 dark:text-gray-200"></Icon>
+          <Icon name="Menu" class="h-8 w-8 text-slate-800 dark:text-slate-200"></Icon>
         </div>
 
         <div
@@ -27,7 +27,7 @@
           v-on:click="toggle"
           v-if="mobile"
         >
-          <Icon name="X" class="h-6 w-6 text-gray-800 dark:text-gray-200"></Icon>
+          <Icon name="X" class="h-6 w-6 text-slate-800 dark:text-slate-200"></Icon>
         </div>
 
         <div
@@ -37,14 +37,14 @@
         >
           <div class="absolute inset-0 top-0 right-0 block h-full w-full px-3 sm:hidden">
             <div
-              class="relative h-full w-full rounded-xl border border-dashed border-gray-300 bg-white backdrop-blur-xs dark:border-gray-400 dark:bg-gray-900"
+              class="relative h-full w-full rounded-xl border border-dashed border-slate-300 bg-white backdrop-blur-xs dark:border-slate-400 dark:bg-slate-900"
             ></div>
           </div>
 
           <a
             v-for="menu in menus.header"
             :href="menu.route"
-            class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-gray-900 sm:mb-0 sm:py-0 md:w-auto dark:hover:text-white"
+            class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-slate-900 sm:mb-0 sm:py-0 md:w-auto dark:hover:text-white"
           >
             {{ menu.label }}
           </a>
@@ -52,11 +52,11 @@
 
         <div
           id="toggle"
-          class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-gray-800 dark:text-gray-200"
+          class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-slate-800 dark:text-slate-200"
           @click="theme"
         >
           <div
-            class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-gray-600"
+            class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-slate-600"
           >
             <Icon
               :name="dark ? 'Moon' : 'Sun'"
@@ -100,10 +100,10 @@ const toggle = () => {
 const stickyClasses = ['fixed', 'h-14'];
 const defaultClasses = ['absolute', 'h-20'];
 const stickyClassesCtn = [
-  'border-gray-300/50',
+  'border-slate-300/50',
   'bg-white/80',
-  'dark:border-gray-600/40',
-  'dark:bg-gray-900/60',
+  'dark:border-slate-600/40',
+  'dark:bg-slate-900/60',
   'backdrop-blur-2xl',
 ];
 const defaultClassesCtn = ['border-transparent'];
@@ -136,7 +136,7 @@ onMounted(() => {
   const items = document.querySelectorAll<HTMLAnchorElement>('#menu a');
   items.forEach((item) => {
     if (item.pathname === window.location.pathname) {
-      item.classList.add('text-gray-900', 'dark:text-white');
+      item.classList.add('text-slate-900', 'dark:text-white');
     }
   });
 
