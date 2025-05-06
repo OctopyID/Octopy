@@ -27,7 +27,7 @@ const reformatPrevNext = (link: string) => {
   const regex = /^(.+?)\/(\d+)$/;
 
   if (regex.test(link)) {
-    link= link.replace(regex, '$1/page/$2');
+    link = link.replace(regex, '$1/page/$2');
   }
 
   return link;
@@ -44,7 +44,7 @@ const NextLink = reformatPrevNext(page.url.next);
   <!-- Prev Button -->
   <PrevTag
     href={PrevLink}
-    class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-slate-800 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-slate-100 dark:hover:bg-white/10 dark:focus:bg-white/10"
+    class="inline-flex min-h-[38px] min-w-[38px] cursor-pointer items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-slate-800 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-slate-100 dark:hover:bg-white/10 dark:focus:bg-white/10"
     aria-label="Previous"
     aria-disabled={!page.url.prev}
     {...page.url.prev ? {} : { disabled: true }}
@@ -75,7 +75,7 @@ const NextLink = reformatPrevNext(page.url.next);
   <!-- Next Button -->
   <NextTag
     href={NextLink}
-    class="inline-flex min-h-[38px] min-w-[38px] items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-slate-800 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-slate-100 dark:hover:bg-white/10 dark:focus:bg-white/10"
+    class="inline-flex min-h-[38px] min-w-[38px] cursor-pointer items-center justify-center gap-x-1.5 rounded-lg px-2.5 py-2 text-sm text-slate-800 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:text-slate-100 dark:hover:bg-white/10 dark:focus:bg-white/10"
     aria-label="Next"
     aria-disabled={!page.url.next}
     {...page.url.next ? {} : { disabled: true }}
