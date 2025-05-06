@@ -60,5 +60,16 @@ const { title, subtitle = 'Octopy ID' } = Astro.props;
       <slot />
       <Footer client:load="vue" />
     </SquareLines>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1G3E25708P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-1G3E25708P');
+    </script>
   </body>
 </html>
