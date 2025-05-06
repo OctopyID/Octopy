@@ -38,7 +38,7 @@ export const menus: { header: Array<Menu>; footer: Array<Menu> } = {
             route: '/about',
         },
         {
-            label: 'Attribution',
+            label: 'Attributions',
             route: '/attribution',
         },
     ],
@@ -102,14 +102,14 @@ export const projects: Array<Project> = [
 export const experiences: Array<Experience> = [
     {
         date: 'January 2023 · Present',
-        role: 'Back-End Engineer',
+        role: 'Full-Stack Engineer',
         comp: 'Procurement of Goods and Services Work Unit of Hulu Sungai Selatan Regency',
         desc: 'Developed and managed a marketplace for transactions between local governments and SMEs, facilitated adoption by other districts, and integrated with Bela Pengadaan to streamline procurement processes.',
         logo: '/images/company/4.webp',
     },
     {
         date: 'August 2022 · December 2023',
-        role: 'Full-Stack Engineer',
+        role: 'Back-End Engineer',
         comp: 'Regional Water Utility Company Intan Banjar',
         desc: 'Building and optimizing systems for clean water payment processing, installation requests, and customer complaint management, ensuring seamless and efficient service delivery.',
         logo: '/images/company/3.webp',
@@ -123,7 +123,7 @@ export const experiences: Array<Experience> = [
     },
     {
         date: 'February 2019 · Feb 2020',
-        role: 'Administrator & Full-Stack Programmer',
+        role: 'Full-Stack Engineer',
         comp: 'Hasnur Jaya International',
         desc: 'Freelance Developer focused on Warehouse Management Systems, streamlining inventory processes with FIFO and LIFO strategies, overseeing fuel and clean water data management, and automating asset maintenance schedules.',
         logo: '/images/company/1.webp',
