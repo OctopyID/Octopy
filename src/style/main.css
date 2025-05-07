@@ -1,3 +1,6 @@
+/**
+ * Base Imports and Plugins
+ */
 @import "tailwindcss";
 
 @plugin "tailwind-scrollbar";
@@ -5,35 +8,60 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-html, .astro-code {
-    @apply scrollbar-thin  scrollbar-thumb-slate-700 scrollbar-track-slate-300 dark:scrollbar-thumb-gray-700 dark:scrollbar-track-gray-800;
+/**
+ * Custom Properties
+ */
+:root {
+    --font-primary: 'Instrument Sans';
+    --font-code: 'Iosevka', monospace;
+    --color-background-dark: var(--color-slate-900);
+    --border-radius: 0.75rem;
 }
+
+/**
+ * Dark Mode Configuration
+ */
 
 html.dark {
     color-scheme: dark;
 }
 
+/**
+ * Base Element Styles
+ */
+body {
+    font-family: var(--font-primary);
+}
+
+/**
+ * Scrollbar Styling
+ */
+html,
+.astro-code {
+    @apply scrollbar-thin
+    scrollbar-thumb-slate-700
+    scrollbar-track-slate-300
+    dark:scrollbar-thumb-slate-700
+    dark:scrollbar-track-slate-800;
+}
+
+/**
+ * Code Block Styling
+ */
+pre.astro-code {
+    font-family: var(--font-code), monospace;
+}
+
+.astro-code,
+starlight-file-tree.not-content {
+    @apply rounded-xl border border-dashed border-slate-400;
+}
+
 html.dark pre:has(code),
 html.dark pre:has(code) span {
     color: var(--shiki-dark) !important;
-    background-color: var(--color-gray-900) !important;
+    background-color: var(--color-background-dark) !important;
     font-style: var(--shiki-dark-font-style) !important;
     font-weight: var(--shiki-dark-font-weight) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
-}
-
-body {
-    font-family: 'Instrument Sans', sans-serif;
-}
-
-pre.astro-code {
-    font-family: 'Geist Mono', monospace;
-}
-
-.astro-code, starlight-file-tree.not-content {
-    @apply rounded-xl border border-dashed border-gray-400;
-}
-
-.prose img {
-    @apply rounded-xl;
 }
