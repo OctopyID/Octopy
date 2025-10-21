@@ -90,13 +90,7 @@ export const projects: Array<Project> = [
         desc: 'Your Debug Companion.',
         prev: '/images/projects/3.webp',
         link: 'https://github.com/OctopyID/Debugify',
-    },
-    {
-        name: 'SIOPEN',
-        desc: 'Marketplace designed to facilitate the procurement of goods and services between the Regional Government and MSMEs.',
-        prev: '/images/projects/4.webp',
-        link: null,
-    },
+    }
 ];
 
 export const experiences: Array<Experience> = [
@@ -151,7 +145,6 @@ export const stacks: Array<TechStack> = [
 
     // Databases
     { label: 'MySQL', color: '#4479A1' },
-    { label: 'PostgreSQL', color: '#4169E1' },
 
     // Version Control & Collaboration
     { label: 'Git', color: '#F05032' },
