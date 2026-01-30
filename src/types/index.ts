@@ -11,8 +11,10 @@ type Social = {
 
 type Project = {
     name: string;
+    slug: string;
     desc: string;
     link: string | null;
+    docs: string | null;
     prev: string;
 };
 

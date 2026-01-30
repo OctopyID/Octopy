@@ -1,0 +1,44 @@
+---
+import { projects } from '@config';
+import type { Project } from '@types';
+import MainLayout from '@views/layouts/MainLayout.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  return projects.map((project: Project) => {
+    return {
+      params: {
+        slug: project.slug,
+      },
+      props: {
+        project,
+      },
+    };
+  });
+}
+
+const { project } = Astro.props;
+
+let content = '';
+if (project.docs) {
+  try {
+    const response = await fetch(project.docs);
+    if (response.ok) {
+      const markdown = await response.text();
+      content = await marked.parse(markdown);
+    } else {
+      content = '<p>Failed to load documentation.</p>';
+    }
+  } catch (error) {
+    content = '<p>Error loading documentation.</p>';
+  }
+} else {
+  content = '<p>No documentation available.</p>';
+}
+---
+
+<MainLayout title={project.name}>
+  <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0">
+    <div class="prose dark:prose-invert max-w-none" set:html={content} />
+  </section>
+</MainLayout>

@@ -18,7 +18,7 @@ import MainLayout from '@views/layouts/MainLayout.astro';
     <div class="z-50 my-8 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-3 sm:gap-5">
       {
         projects.map((project: Contract) => {
-          return <Project name={project.name} desc={project.desc} prev={project.prev} link={project.link} />;
+          return <Project name={project.name} desc={project.desc} prev={project.prev} slug={project.slug} />;
         })
       }
     </div>

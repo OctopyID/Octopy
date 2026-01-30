@@ -1,13 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 
-const { name, desc, link, prev } = Astro.props;
-const Wrapper = link ? 'a' : 'div';
+const { name, desc, slug, prev } = Astro.props;
 ---
 
-<Wrapper
-  href={link}
-  target={link ? '_blank' : undefined}
+<a
+  href={`/projects/${slug}`}
   class="group relative flex flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-3"
 >
   <div
@@ -29,4 +27,4 @@ const Wrapper = link ? 'a' : 'div';
       <div class="block truncate text-sm text-slate-600 dark:text-slate-400">{desc}</div>
     </div>
   </div>
-</Wrapper>
+</a>

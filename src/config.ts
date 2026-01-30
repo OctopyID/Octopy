@@ -75,27 +75,35 @@ export const socials: Array<Social> = [
 export const projects: Array<Project> = [
     {
         name: 'Laravel Impersonate',
+        slug: 'lara-personate',
         desc: 'Login as a different user quickly for Laravel.',
         prev: '/images/projects/1.webp',
         link: 'https://github.com/OctopyID/LaraPersonate',
+        docs: 'https://raw.githubusercontent.com/OctopyID/LaraPersonate/refs/heads/main/README.md',
     },
     {
         name: 'Google Photo CLI',
+        slug: 'gphoto-cli',
         desc: 'GPhoto streamlines the photo uploading process and helps you keep your photo library organized.',
         prev: '/images/projects/2.webp',
         link: 'https://github.com/OctopyID/GPhotoCLI',
+        docs: 'https://raw.githubusercontent.com/OctopyID/GPhotoCLI/refs/heads/main/README.md',
     },
     {
         name: 'Filament Palette Switcher',
+        slug: 'filament-palette-switcher',
         desc: 'A FilamentPHP plugin that allows users to easily switch and customize the UI color palette in their Filament admin panels. This plugin provides a seamless way to change themes, either per user or globally across the application.',
         prev: '/images/projects/3.webp',
         link: 'https://github.com/OctopyID/FilamentPalette',
+        docs: 'https://raw.githubusercontent.com/OctopyID/FilamentPalette/refs/heads/main/README.md',
     },
     {
         name: 'Filament Tabify',
+        slug: 'filament-tabify',
         desc: 'Transform your Filament dashboard with elegant Tabbed Widgets. Group multiple widgets into a single, organized view to save space and improve clarity.',
         prev: '/images/projects/4.webp',
         link: 'https://github.com/OctopyID/FilamentTabify',
+        docs: 'https://raw.githubusercontent.com/OctopyID/FilamentTabify/refs/heads/main/README.md',
     }
 ];
 
