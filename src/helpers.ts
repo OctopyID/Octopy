@@ -77,3 +77,20 @@ export async function tags() {
         count,
     }));
 }
+
+export async function github(repo: string) {
+    try {
+        const response = await fetch(`https://api.github.com/repos/${repo}`, {
+            headers: {
+                'Cache-Control': 'public, max-age=604800',
+            },
+        });
+        if (response.ok) {
+            return await response.json();
+        }
+    } catch (error) {
+        console.error('Error fetching GitHub data:', error);
+    }
+
+    return null;
+}

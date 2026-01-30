@@ -4,6 +4,7 @@ import type { Project } from '@types';
 import MainLayout from '@views/layouts/MainLayout.astro';
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import { Star, ExternalLink } from 'lucide-vue-next';
+import { github } from '../../helpers';
 
 export async function getStaticPaths() {
   return projects.map((project: Project) => {
@@ -25,16 +26,12 @@ let stars = 0;
 let archived = false;
 
 if (project.link && project.link.includes('github.com')) {
-  try {
-    const repo = project.link.replace('https://github.com/', '');
-    const response = await fetch(`https://api.github.com/repos/${repo}`);
-    if (response.ok) {
-      const data = await response.json();
-      stars = data.stargazers_count;
-      archived = data.archived;
-    }
-  } catch (error) {
-    console.error('Error fetching GitHub stars:', error);
+  const repo = project.link.replace('https://github.com/', '');
+  const data = await github(repo);
+
+  if (data) {
+    stars = data.stargazers_count;
+    archived = data.archived;
   }
 }
 
