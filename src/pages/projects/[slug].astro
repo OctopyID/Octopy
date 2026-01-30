@@ -40,16 +40,7 @@ if (project.docs) {
   try {
     const response = await fetch(project.docs);
     if (response.ok) {
-      let markdown = await response.text();
-
-      // Replace relative image paths with absolute URLs
-      const baseUrl = project.docs.substring(0, project.docs.lastIndexOf('/') + 1);
-      markdown = markdown.replace(/src="([^"]+)"/g, (match, src) => {
-        if (!src.startsWith('http')) {
-          return `src="${baseUrl}${src}"`;
-        }
-        return match;
-      });
+      const markdown = await response.text();
 
       const processor = await createMarkdownProcessor({
         shikiConfig: {
@@ -62,6 +53,34 @@ if (project.docs) {
       });
       const result = await processor.render(markdown);
       content = result.code;
+
+      // Replace relative image paths with absolute URLs
+      const baseUrl = project.docs.substring(0, project.docs.lastIndexOf('/') + 1);
+      content = content.replace(/src="([^"]+)"/g, (match, src) => {
+        if (!src.startsWith('http') && !src.startsWith('//') && !src.startsWith('data:')) {
+          return `src="${baseUrl}${src}"`;
+        }
+        return match;
+      });
+
+      // Replace relative links with absolute GitHub blob URLs
+      let blobUrl = baseUrl;
+      if (baseUrl.includes('raw.githubusercontent.com')) {
+        blobUrl = baseUrl.replace('raw.githubusercontent.com', 'github.com');
+        const parts = blobUrl.split('/');
+        if (parts.length >= 6) {
+          parts.splice(5, 0, 'blob');
+          blobUrl = parts.join('/');
+        }
+      }
+
+      content = content.replace(/href="([^"]+)"/g, (match, href) => {
+        if (!href.startsWith('http') && !href.startsWith('//') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+          return `href="${blobUrl}${href}"`;
+        }
+        return match;
+      });
+
     } else {
       content = '<p>Failed to load documentation.</p>';
     }
