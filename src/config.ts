@@ -90,8 +90,8 @@ export const projects: Array<Project> = [
         docs: 'https://raw.githubusercontent.com/OctopyID/GPhotoCLI/refs/heads/main/README.md',
     },
     {
-        name: 'Filament Palette Switcher',
-        slug: 'filament-palette-switcher',
+        name: 'Filament Palette',
+        slug: 'filament-palette',
         desc: 'A FilamentPHP plugin that allows users to easily switch and customize the UI color palette in their Filament admin panels. This plugin provides a seamless way to change themes, either per user or globally across the application.',
         prev: '/images/projects/3.webp',
         link: 'https://github.com/OctopyID/FilamentPalette',
