@@ -86,10 +86,16 @@ export const projects: Array<Project> = [
         link: 'https://github.com/OctopyID/GPhotoCLI',
     },
     {
-        name: 'Debugify',
-        desc: 'Your Debug Companion.',
+        name: 'Filament Palette Switcher',
+        desc: 'A FilamentPHP plugin that allows users to easily switch and customize the UI color palette in their Filament admin panels. This plugin provides a seamless way to change themes, either per user or globally across the application.',
         prev: '/images/projects/3.webp',
-        link: 'https://github.com/OctopyID/Debugify',
+        link: 'https://github.com/OctopyID/FilamentPalette',
+    },
+    {
+        name: 'Filament Tabify',
+        desc: 'Transform your Filament dashboard with elegant Tabbed Widgets. Group multiple widgets into a single, organized view to save space and improve clarity.',
+        prev: '/images/projects/4.webp',
+        link: 'https://github.com/OctopyID/FilamentTabify',
     }
 ];
 
