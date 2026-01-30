@@ -2,7 +2,7 @@
 import { projects } from '@config';
 import type { Project } from '@types';
 import MainLayout from '@views/layouts/MainLayout.astro';
-import { marked } from 'marked';
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 
 export async function getStaticPaths() {
   return projects.map((project: Project) => {
@@ -25,7 +25,17 @@ if (project.docs) {
     const response = await fetch(project.docs);
     if (response.ok) {
       const markdown = await response.text();
-      content = await marked.parse(markdown);
+      const processor = await createMarkdownProcessor({
+        shikiConfig: {
+          themes: {
+            light: 'github-light',
+            dark: 'github-dark',
+          },
+          wrap: true,
+        },
+      });
+      const result = await processor.render(markdown);
+      content = result.code;
     } else {
       content = '<p>Failed to load documentation.</p>';
     }
@@ -39,6 +49,6 @@ if (project.docs) {
 
 <MainLayout title={project.name}>
   <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0">
-    <div class="prose dark:prose-invert max-w-none" set:html={content} />
+    <div class="prose max-w-none dark:prose-invert" set:html={content} />
   </section>
 </MainLayout>
