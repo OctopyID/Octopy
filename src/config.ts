@@ -104,6 +104,22 @@ export const projects: Array<Project> = [
         prev: '/images/projects/4.webp',
         link: 'https://github.com/OctopyID/FilamentTabify',
         docs: 'https://raw.githubusercontent.com/OctopyID/FilamentTabify/refs/heads/main/README.md',
+    },
+    {
+        name: 'Octopy Framework',
+        slug: 'octopy-framework',
+        desc: 'A lightweight PHP web framework inspired by Laravel, designed for rapid development with a rich set of libraries and a simple interface.',
+        prev: '/images/projects/1.webp',
+        link: 'https://github.com/OctopyID/OctopyFramework',
+        docs: 'https://raw.githubusercontent.com/OctopyID/OctopyFramework/refs/heads/master/README.md',
+    },
+    {
+        name: 'Lara Inotify',
+        slug: 'lara-inotify',
+        desc: 'A wrapper for inotify for Laravel to make it easier to watch filesystem and avoid memory leaks.',
+        prev: '/images/projects/2.webp',
+        link: 'https://github.com/OctopyID/LaraInotify',
+        docs: 'https://raw.githubusercontent.com/OctopyID/LaraInotify/refs/heads/master/README.md',
     }
 ];
 
