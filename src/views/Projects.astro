@@ -17,7 +17,7 @@ const { limit = null } = Astro.props;
       projects
         .slice(0, limit ? limit : projects.length)
         .map((project: Contract) => (
-          <Project name={project.name} desc={project.desc} prev={project.prev} link={project.link} />
+          <Project name={project.name} desc={project.desc} prev={project.prev} link={project.link} slug={project.slug} />
         ))
     }
   </div>

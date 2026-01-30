@@ -22,6 +22,7 @@ const { project } = Astro.props;
 
 let content = '';
 let stars = 0;
+let archived = false;
 
 if (project.link && project.link.includes('github.com')) {
   try {
@@ -30,6 +31,7 @@ if (project.link && project.link.includes('github.com')) {
     if (response.ok) {
       const data = await response.json();
       stars = data.stargazers_count;
+      archived = data.archived;
     }
   } catch (error) {
     console.error('Error fetching GitHub stars:', error);
@@ -96,16 +98,21 @@ if (project.docs) {
 <MainLayout title={project.name}>
   <section class="relative z-20 mx-auto my-12 max-w-4xl px-7 lg:px-0">
     <div class="mb-8 flex items-center justify-between">
-      <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">{project.name}</h1>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">{project.name}</h1>
         {
-          stars > 0 && (
-            <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-              <Star class="h-4 w-4 text-amber-400 fill-amber-400" />
-              <span>{stars}</span>
-            </div>
+          archived && (
+            <span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-300">
+              Archived
+            </span>
           )
         }
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+          <Star class="h-4 w-4 text-amber-400 fill-amber-400" />
+          <span>{stars}</span>
+        </div>
         {
           project.link && (
             <a
