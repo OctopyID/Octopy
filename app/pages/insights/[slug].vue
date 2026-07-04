@@ -25,7 +25,7 @@ const formatDate = (dateString: string) => {
 </script>
 
 <template>
-  <article v-if="article" class="py-12 md:py-20">
+  <article v-if="article" class="py-12 md:py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <header class="mb-12">
       <div class="flex items-center gap-4 text-sm font-medium text-text-muted uppercase tracking-wider mb-6">
         <time :datetime="article.date">{{ formatDate(article.date) }}</time>
@@ -45,7 +45,7 @@ const formatDate = (dateString: string) => {
       </div>
     </header>
 
-    <div class="prose prose-invert prose-primary max-w-none prose-headings:text-text-primary prose-a:text-primary-500 hover:prose-a:text-primary-400 prose-code:text-primary-400 prose-code:bg-surface-raised prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-bg-subtle prose-pre:border prose-pre:border-border prose-p:text-text-secondary prose-p:leading-relaxed prose-li:text-text-secondary">
+    <div class="prose dark:prose-invert max-w-none prose-img:rounded-xl prose-pre:!bg-surface-raised prose-pre:border prose-pre:border-border prose-pre:shadow-sm prose-p:leading-relaxed prose-a:text-primary-500 hover:prose-a:text-primary-600 dark:hover:prose-a:text-primary-400">
       <ContentRenderer :value="article" />
     </div>
   </article>
