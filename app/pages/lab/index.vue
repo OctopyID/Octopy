@@ -8,7 +8,28 @@ useSeoMeta({
   description: 'Open source experiments and libraries by Supian M.',
 });
 
-const { data: projects, pending } = await useFetch('/api/projects');
+const { data: projects, pending } = await useAsyncData('lab-projects', () => {
+  return queryCollection('lab').all();
+});
+
+const activeTab = ref('All');
+
+const languages = computed(() => {
+  if (!projects.value) return ['All'];
+  const langs = new Set<string>();
+  projects.value.forEach((p) => {
+    if (p.language && p.language !== 'Unknown') {
+      langs.add(p.language);
+    }
+  });
+  return ['All', ...Array.from(langs).sort()];
+});
+
+const filteredProjects = computed(() => {
+  if (!projects.value) return [];
+  if (activeTab.value === 'All') return projects.value;
+  return projects.value.filter((p) => p.language === activeTab.value);
+});
 </script>
 
 <template>
@@ -29,15 +50,36 @@ const { data: projects, pending } = await useFetch('/api/projects');
       </p>
     </div>
 
+    <!-- Language Tabs -->
+    <div
+      v-if="!pending && projects && projects.length > 0"
+      class="mb-10 flex flex-wrap gap-3"
+      v-motion-slide-visible-once-bottom
+    >
+      <button
+        v-for="lang in languages"
+        :key="lang"
+        @click="activeTab = lang"
+        class="rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none"
+        :class="
+          activeTab === lang
+            ? 'border-primary-500 bg-primary-500 text-white shadow-glow'
+            : 'border-border bg-surface-raised text-text-secondary hover:bg-surface hover:text-text-primary'
+        "
+      >
+        {{ lang }}
+      </button>
+    </div>
+
     <div v-if="pending" class="flex justify-center py-20">
       <Icon name="ph:spinner-gap-bold" size="32" class="animate-spin text-primary-500" />
     </div>
 
     <div
-      v-else-if="projects && projects.length > 0"
+      v-else-if="filteredProjects && filteredProjects.length > 0"
       class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
     >
-      <LabProjectCard v-for="project in projects" :key="project.id" :project="project" />
+      <LabProjectCard v-for="project in filteredProjects" :key="project.id" :project="project" />
     </div>
 
     <div v-else class="rounded-xl border border-dashed border-border py-20 text-center">

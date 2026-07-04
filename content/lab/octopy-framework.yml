@@ -1,0 +1,12 @@
+title: Octopy Framework
+description: A lightweight PHP framework with Laravel look-alike.
+icon: devicon:php
+tags:
+  - PHP
+  - Framework
+  - MVC
+link: https://github.com/OctopyID/OctopyFramework
+docs: https://raw.githubusercontent.com/OctopyID/OctopyFramework/refs/heads/main/README.md
+repo: OctopyID/OctopyFramework
+language: PHP
+isOpenSource: true

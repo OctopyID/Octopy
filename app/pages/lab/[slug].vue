@@ -2,8 +2,7 @@
 const route = useRoute();
 
 const { data, error, pending } = await useAsyncData(`lab-detail-${route.params.slug}`, async () => {
-  const projects = await $fetch('/api/projects');
-  const project = projects.find((p) => p.slug === route.params.slug);
+  const project = await queryCollection('lab').path(route.path).first();
 
   if (!project) {
     throw createError({ statusCode: 404, statusMessage: 'Project not found', fatal: true });
@@ -31,8 +30,23 @@ if (error.value) {
 }
 
 useSeoMeta({
-  title: () => `${data.value?.project.name || 'Project'} | Octopy ID Lab`,
-  description: () => data.value?.project.description || 'Open source project by Supian M.',
+  title: () => `${data.value?.project?.title || 'Project'} | Octopy ID Lab`,
+  description: () => data.value?.project?.description || 'Open source project by Supian M.',
+});
+
+const stats = ref({ stars: 0, forks: 0 });
+
+onMounted(async () => {
+  if (data.value?.project?.isOpenSource !== false && data.value?.project?.repo) {
+    try {
+      const res = await $fetch<{ stars: number; forks: number }>('/api/github-stats', {
+        params: { repo: data.value.project.repo },
+      });
+      stats.value = res;
+    } catch (e) {
+      // Handle silently
+    }
+  }
 });
 </script>
 
@@ -57,18 +71,24 @@ useSeoMeta({
           <span v-if="data.project.language" class="flex items-center gap-1">
             <Icon name="ph:code-duotone" size="16" /> {{ data.project.language }}
           </span>
-          <span class="flex items-center gap-1 text-primary-500">
-            <Icon name="ph:star-duotone" size="16" /> {{ data.project.stars }}
+          <span
+            v-if="data.project.isOpenSource === false"
+            class="flex items-center gap-1 text-red-500"
+          >
+            <Icon name="ph:lock-duotone" size="16" /> Closed Source
           </span>
-          <span class="flex items-center gap-1">
-            <Icon name="ph:git-fork-duotone" size="16" /> {{ data.project.forks }}
+          <span v-else-if="stats.stars > 0" class="flex items-center gap-1 text-primary-500">
+            <Icon name="ph:star-duotone" size="16" /> {{ stats.stars }}
+          </span>
+          <span v-if="stats.forks > 0" class="flex items-center gap-1">
+            <Icon name="ph:git-fork-duotone" size="16" /> {{ stats.forks }}
           </span>
         </div>
 
         <h1
           class="mb-6 text-3xl leading-tight font-extrabold tracking-tight text-text-primary md:text-5xl"
         >
-          {{ data.project.name }}
+          {{ data.project.title }}
         </h1>
 
         <p class="mb-8 text-xl leading-relaxed text-text-secondary">
@@ -77,7 +97,8 @@ useSeoMeta({
 
         <div class="flex gap-4">
           <a
-            :href="data.project.url"
+            v-if="data.project.link"
+            :href="data.project.link"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 rounded-lg bg-text-primary px-6 py-3 font-semibold text-bg shadow-sm transition-colors hover:bg-primary-500"

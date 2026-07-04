@@ -1,0 +1,12 @@
+title: Lara Inotify
+description: Laravel File System Watcher.
+icon: devicon:laravel
+tags:
+  - Laravel
+  - Inotify
+  - FileSystem
+link: https://github.com/OctopyID/LaraInotify
+docs: https://raw.githubusercontent.com/OctopyID/LaraInotify/refs/heads/main/README.md
+repo: OctopyID/LaraInotify
+language: PHP
+isOpenSource: true

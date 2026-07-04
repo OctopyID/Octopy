@@ -29,7 +29,7 @@ const progress = computed(() => {
 
 <template>
   <div
-    class="fixed top-0 left-0 z-[100] h-1 bg-gradient-to-r from-primary-400 to-primary-600 shadow-[0_0_10px_rgba(179,71,30,0.7)] transition-all duration-150 ease-out"
+    class="fixed top-0 left-0 z-[100] h-0.5 bg-gradient-to-r from-primary-400 to-primary-600 shadow-[0_0_10px_rgba(179,71,30,0.7)] transition-all duration-150 ease-out"
     :style="{ width: `${progress}%` }"
   ></div>
 </template>
