@@ -36,10 +36,13 @@
   --radius-lg: 0.5rem;
   --radius-full: 9999px;
 
+  --color-tab-bg: #f3f4f6;
+  --color-tab-active: #ffffff;
+
   --duration-fast: 150ms;
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-glow: 0 0 15px 0 var(--color-primary-500);
+  --shadow-glow: 0 4px 14px -4px var(--color-primary-500);
 }
 
 /* ==========================================================
@@ -59,6 +62,9 @@
   --color-text-muted: #71717a;
   --color-interactive: var(--color-primary-400);
   --color-interactive-muted: #2f1108;
+
+  --color-tab-bg: #18181b;
+  --color-tab-active: #27272a;
 }
 
 /* ==========================================================

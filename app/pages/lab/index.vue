@@ -53,18 +53,18 @@ const filteredProjects = computed(() => {
     <!-- Language Tabs -->
     <div
       v-if="!pending && projects && projects.length > 0"
-      class="mb-10 flex flex-wrap gap-3"
+      class="mb-10 inline-flex flex-wrap gap-1.5 rounded-full border border-border/40 bg-[var(--color-tab-bg)] p-1.5"
       v-motion-slide-visible-once-bottom
     >
       <button
         v-for="lang in languages"
         :key="lang"
         @click="activeTab = lang"
-        class="rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none"
+        class="rounded-full px-5 py-1.5 text-sm font-medium transition-all duration-300 focus:outline-none"
         :class="
           activeTab === lang
-            ? 'border-primary-500 bg-primary-500 text-white shadow-glow'
-            : 'border-border bg-surface-raised text-text-secondary hover:bg-surface hover:text-text-primary'
+            ? 'bg-[var(--color-tab-active)] text-text-primary shadow-sm ring-1 ring-border/50'
+            : 'text-text-secondary hover:text-text-primary'
         "
       >
         {{ lang }}
