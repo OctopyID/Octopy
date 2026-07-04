@@ -1,12 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-  variant?: 'brand' | 'neutral' | 'success' | 'warning'
-  size?: 'sm' | 'md'
-}>()
+  variant?: 'brand' | 'neutral' | 'success' | 'warning';
+  size?: 'sm' | 'md';
+}>();
 </script>
 
 <template>
-  <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+  <span
+    class="focus:ring-ring inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
+  >
     <slot />
   </span>
 </template>

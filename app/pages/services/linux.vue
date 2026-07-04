@@ -1,8 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Linux Server Engineering | Octopy ID',
-  description: 'High-availability architecture, security hardening, and performance tuning for Linux environments.'
-})
+  description:
+    'High-availability architecture, security hardening, and performance tuning for Linux environments.',
+});
 
 const deliverables = [
   'High-Availability (HA) Cluster Design',
@@ -10,8 +11,8 @@ const deliverables = [
   'Kernel & Network Performance Tuning',
   'Comprehensive Security Hardening',
   'Docker Swarm & Kubernetes Deployments',
-  '24/7 Monitoring & Alerting Setup'
-]
+  '24/7 Monitoring & Alerting Setup',
+];
 </script>
 
 <template>
@@ -22,14 +23,20 @@ const deliverables = [
     :deliverables="deliverables"
   >
     <p>
-      In the modern web, application logic is only as good as the infrastructure it runs on. I specialize in architecting Linux environments that are secure by default, highly available, and optimized for maximum throughput.
+      In the modern web, application logic is only as good as the infrastructure it runs on. I
+      specialize in architecting Linux environments that are secure by default, highly available,
+      and optimized for maximum throughput.
     </p>
     <p>
-      Whether you are migrating from shared hosting to a dedicated fleet or optimizing an existing cloud architecture on AWS/GCP/DigitalOcean, I ensure your infrastructure acts as a solid foundation, not a bottleneck.
+      Whether you are migrating from shared hosting to a dedicated fleet or optimizing an existing
+      cloud architecture on AWS/GCP/DigitalOcean, I ensure your infrastructure acts as a solid
+      foundation, not a bottleneck.
     </p>
     <h3>The Approach</h3>
     <p>
-      My methodology revolves around <strong>Infrastructure as Code (IaC)</strong> and immutable server patterns. Every configuration change is documented, tested, and reproducible, eliminating the "it works on my machine" paradigm.
+      My methodology revolves around <strong>Infrastructure as Code (IaC)</strong> and immutable
+      server patterns. Every configuration change is documented, tested, and reproducible,
+      eliminating the "it works on my machine" paradigm.
     </p>
   </ServicesServiceLayout>
 </template>

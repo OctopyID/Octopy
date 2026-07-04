@@ -1,59 +1,69 @@
 <script setup lang="ts">
 defineProps<{
-  title: string
-  subtitle: string
-  icon: string
-  deliverables: string[]
-}>()
+  title: string;
+  subtitle: string;
+  icon: string;
+  deliverables: string[];
+}>();
 </script>
 
 <template>
-  <div class="pt-24 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+  <div class="mx-auto max-w-4xl px-4 pt-24 pb-20 sm:px-6 lg:px-8">
     <!-- Breadcrumb & Header -->
-    <header class="mb-16 pb-12 border-b border-border">
-      <NuxtLink to="/services" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary-500 transition-colors mb-10">
+    <header class="mb-16 border-b border-border pb-12">
+      <NuxtLink
+        to="/services"
+        class="mb-10 inline-flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-primary-500"
+      >
         <Icon name="ph:arrow-left-bold" /> All Services
       </NuxtLink>
-      
-      <div class="flex items-center gap-4 mb-6">
-        <div class="w-16 h-16 rounded-xl bg-surface-raised border border-border flex items-center justify-center text-primary-500 shadow-sm">
+
+      <div class="mb-6 flex items-center gap-4">
+        <div
+          class="flex h-16 w-16 items-center justify-center rounded-xl border border-border bg-surface-raised text-primary-500 shadow-sm"
+        >
           <Icon :name="icon" size="36" />
         </div>
       </div>
-      
-      <h1 class="text-4xl md:text-6xl font-extrabold text-text-primary tracking-tight mb-6 leading-tight">
+
+      <h1
+        class="mb-6 text-4xl leading-tight font-extrabold tracking-tight text-text-primary md:text-6xl"
+      >
         {{ title }}
       </h1>
-      
-      <p class="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl">
+
+      <p class="max-w-3xl text-xl leading-relaxed text-text-secondary md:text-2xl">
         {{ subtitle }}
       </p>
     </header>
 
     <!-- Main Content Slot -->
-    <div class="prose prose-invert prose-primary max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-p:leading-relaxed prose-li:text-text-secondary mb-16">
+    <div
+      class="prose-primary prose mb-16 max-w-none prose-invert prose-headings:text-text-primary prose-p:leading-relaxed prose-p:text-text-secondary prose-li:text-text-secondary"
+    >
       <slot />
     </div>
-    
+
     <!-- Deliverables -->
-    <div class="bg-surface-raised border border-border rounded-2xl p-8 md:p-12 mb-16">
-      <h3 class="text-2xl font-bold text-text-primary mb-8">Key Deliverables</h3>
-      <ul class="grid md:grid-cols-2 gap-6">
+    <div class="mb-16 rounded-2xl border border-border bg-surface-raised p-8 md:p-12">
+      <h3 class="mb-8 text-2xl font-bold text-text-primary">Key Deliverables</h3>
+      <ul class="grid gap-6 md:grid-cols-2">
         <li v-for="item in deliverables" :key="item" class="flex items-start gap-3">
-          <Icon name="ph:check-circle-fill" class="text-primary-500 mt-1 shrink-0" size="20" />
-          <span class="text-text-secondary font-medium">{{ item }}</span>
+          <Icon name="ph:check-circle-fill" class="mt-1 shrink-0 text-primary-500" size="20" />
+          <span class="font-medium text-text-secondary">{{ item }}</span>
         </li>
       </ul>
     </div>
-    
+
     <!-- CTA -->
     <div class="text-center">
-      <h3 class="text-2xl font-bold text-text-primary mb-6">Ready to scale your infrastructure?</h3>
-      <NuxtLink to="/contact" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-12 px-8 bg-primary-500 text-white hover:bg-primary-600 shadow-glow">
+      <h3 class="mb-6 text-2xl font-bold text-text-primary">Ready to scale your infrastructure?</h3>
+      <NuxtLink
+        to="/contact"
+        class="inline-flex h-12 items-center justify-center rounded-md bg-primary-500 px-8 text-sm font-medium text-white shadow-glow transition-colors hover:bg-primary-600"
+      >
         Let's Talk
       </NuxtLink>
     </div>
-    
   </div>
 </template>

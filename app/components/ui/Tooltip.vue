@@ -1,14 +1,16 @@
 <script setup lang="ts">
 defineProps<{
-  content: string
-  placement?: string
-}>()
+  content: string;
+  placement?: string;
+}>();
 </script>
 
 <template>
-  <div class="relative inline-block group">
+  <div class="group relative inline-block">
     <slot />
-    <div class="absolute z-50 hidden group-hover:block bg-surface-raised text-text-primary text-xs rounded py-1 px-2 border border-border shadow-md whitespace-nowrap">
+    <div
+      class="absolute z-50 hidden rounded border border-border bg-surface-raised px-2 py-1 text-xs whitespace-nowrap text-text-primary shadow-md group-hover:block"
+    >
       {{ content }}
     </div>
   </div>

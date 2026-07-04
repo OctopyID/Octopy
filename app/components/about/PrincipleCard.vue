@@ -1,17 +1,21 @@
 <script setup lang="ts">
 defineProps<{
-  title: string
-  description: string
-  icon: string
-}>()
+  title: string;
+  description: string;
+  icon: string;
+}>();
 </script>
 
 <template>
-  <div class="p-6 rounded-xl border border-border bg-bg hover:border-interactive transition-colors group">
-    <div class="w-10 h-10 rounded bg-surface-raised border border-border flex items-center justify-center mb-4 text-text-secondary group-hover:text-primary-500 group-hover:border-primary-500/30 transition-colors">
+  <div
+    class="group rounded-xl border border-border bg-bg p-6 transition-colors hover:border-interactive"
+  >
+    <div
+      class="mb-4 flex h-10 w-10 items-center justify-center rounded border border-border bg-surface-raised text-text-secondary transition-colors group-hover:border-primary-500/30 group-hover:text-primary-500"
+    >
       <Icon :name="icon" size="20" />
     </div>
-    <h4 class="font-bold text-text-primary mb-2">{{ title }}</h4>
-    <p class="text-sm text-text-secondary leading-relaxed">{{ description }}</p>
+    <h4 class="mb-2 font-bold text-text-primary">{{ title }}</h4>
+    <p class="text-sm leading-relaxed text-text-secondary">{{ description }}</p>
   </div>
 </template>

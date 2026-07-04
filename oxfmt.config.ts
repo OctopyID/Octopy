@@ -10,7 +10,7 @@ export default defineConfig<OxfmtConfig>({
   importOrderMergeOnTrailingNewline: true,
   attributeSort: true,
   sortTailwindcss: {
-    stylesheet: './src/assets/main.css',
+    stylesheet: './app/assets/css/main.css',
     functions: ['clsx', 'cn', 'cva'],
     preserveWhitespace: true,
   },

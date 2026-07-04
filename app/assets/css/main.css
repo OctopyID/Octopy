@@ -76,7 +76,7 @@
   }
 
   html {
-    @apply font-sans bg-bg text-text-primary antialiased;
+    @apply bg-bg font-sans text-text-primary antialiased;
     scroll-behavior: smooth;
   }
 
@@ -92,7 +92,7 @@
     @apply bg-bg;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-border-strong rounded-full;
+    @apply rounded-full bg-border-strong;
   }
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-text-muted;
@@ -104,7 +104,7 @@
    ========================================================== */
 
 @utility glass {
-  @apply bg-surface/70 backdrop-blur-xl border border-border/50;
+  @apply border border-border/50 bg-surface/70 backdrop-blur-xl;
 }
 
 @utility glow-primary {

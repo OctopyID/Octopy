@@ -1,9 +1,9 @@
 <script setup lang="ts">
 defineProps<{
-  hoverable?: boolean
-  bordered?: boolean
-  glass?: boolean
-}>()
+  hoverable?: boolean;
+  bordered?: boolean;
+  glass?: boolean;
+}>();
 </script>
 
 <template>

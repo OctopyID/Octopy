@@ -1,11 +1,13 @@
 <script setup lang="ts">
 defineProps<{
-  color?: string
-}>()
+  color?: string;
+}>();
 </script>
 
 <template>
-  <span class="font-mono text-xs px-1.5 py-0.5 rounded bg-bg-subtle border border-border text-text-secondary">
+  <span
+    class="rounded border border-border bg-bg-subtle px-1.5 py-0.5 font-mono text-xs text-text-secondary"
+  >
     <slot />
   </span>
 </template>
