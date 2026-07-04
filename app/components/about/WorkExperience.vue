@@ -47,12 +47,12 @@ const experiences = [
       </h3>
 
       <div
-        class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-linear-to-b before:from-transparent before:via-border before:to-transparent md:before:mx-auto md:before:translate-x-0"
+        class="relative space-y-8 md:space-y-0 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-linear-to-b before:from-transparent before:via-border before:to-transparent md:before:mx-auto md:before:translate-x-0"
       >
         <div
           v-for="(exp, index) in experiences"
           :key="index"
-          class="group is-active relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse"
+          class="group is-active relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse md:[&:not(:first-child)]:-mt-8 lg:[&:not(:first-child)]:-mt-16"
           v-motion-slide-visible-once-bottom
         >
           <!-- Timeline Node -->

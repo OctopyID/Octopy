@@ -60,8 +60,5 @@ const principles = [
         />
       </div>
     </section>
-
-    <AboutStackGrid />
-    <AboutTimeline />
   </div>
 </template>

@@ -11,20 +11,28 @@ const form = ref({
 const isSubmitting = ref(false);
 const isSuccess = ref(false);
 
-const handleSubmit = () => {
-  // Simulate API call
+const handleSubmit = async () => {
   isSubmitting.value = true;
 
-  setTimeout(() => {
-    isSubmitting.value = false;
-    isSuccess.value = true;
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: form.value,
+    });
 
-    // Reset form after a while
+    isSuccess.value = true;
+    form.value = { name: '', email: '', subject: '', message: '' };
+
+    // Reset success state after a while
     setTimeout(() => {
       isSuccess.value = false;
-      form.value = { name: '', email: '', subject: '', message: '' };
     }, 5000);
-  }, 1500);
+  } catch (error) {
+    console.error('Failed to send message:', error);
+    alert('Failed to send message. Please try again later.');
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 </script>
 

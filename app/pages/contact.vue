@@ -11,22 +11,40 @@ useSeoMeta({
 
 const socials = [
   {
+    name: 'Email',
+    url: 'mailto:supianidz@octopy.dev',
+    icon: 'ph:envelope-duotone',
+    handle: 'supianidz@octopy.dev',
+  },
+  {
     name: 'GitHub',
-    url: 'https://github.com/octopy-id',
+    url: 'https://github.com/supianidz',
     icon: 'ph:github-logo-duotone',
-    handle: '@octopy-id',
+    handle: '@supianidz',
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/supian-m',
+    url: 'https://linkedin.com/in/supianidz',
     icon: 'ph:linkedin-logo-duotone',
-    handle: 'supian-m',
+    handle: 'supianidz',
   },
   {
-    name: 'Email',
-    url: 'mailto:supian@octopy.id',
-    icon: 'ph:envelope-duotone',
-    handle: 'supian@octopy.id',
+    name: 'Instagram',
+    url: 'https://instagram.com/supianidz',
+    icon: 'ph:instagram-logo-duotone',
+    handle: '@supianidz',
+  },
+  {
+    name: 'Facebook',
+    url: 'https://facebook.com/supianidz',
+    icon: 'ph:facebook-logo-duotone',
+    handle: 'supianidz',
+  },
+  {
+    name: 'Threads',
+    url: 'https://threads.net/@supianidz',
+    icon: 'ph:threads-logo-duotone',
+    handle: '@supianidz',
   },
 ];
 </script>
@@ -58,27 +76,27 @@ const socials = [
           </p>
         </div>
 
-        <div class="space-y-6">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <a
             v-for="social in socials"
             :key="social.name"
             :href="social.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="group flex items-center gap-4 rounded-xl border border-border bg-surface-raised p-4 transition-all hover:border-primary-500/50 hover:shadow-sm"
+            class="group flex items-center gap-3 rounded-xl border border-border bg-surface-raised p-4 transition-all hover:border-primary-500/50 hover:shadow-sm"
           >
             <div
-              class="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-bg text-text-muted transition-colors group-hover:text-primary-500"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-bg text-text-muted transition-colors group-hover:text-primary-500"
             >
-              <Icon :name="social.icon" size="24" />
+              <Icon :name="social.icon" size="20" />
             </div>
-            <div>
+            <div class="min-w-0 flex-1 overflow-hidden">
               <h4
-                class="font-medium text-text-primary transition-colors group-hover:text-primary-500"
+                class="truncate text-sm font-medium text-text-primary transition-colors group-hover:text-primary-500"
               >
                 {{ social.name }}
               </h4>
-              <p class="text-sm text-text-muted">{{ social.handle }}</p>
+              <p class="truncate text-xs text-text-muted">{{ social.handle }}</p>
             </div>
           </a>
         </div>
@@ -97,8 +115,8 @@ const socials = [
       </div>
 
       <!-- Contact Form -->
-      <div class="lg:col-span-7">
-        <ContactContactForm />
+      <div class="lg:sticky lg:top-28 lg:col-span-7 lg:self-start">
+        <ContactForm />
       </div>
     </div>
   </div>
