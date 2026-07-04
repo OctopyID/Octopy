@@ -10,9 +10,9 @@ const services = [
   },
   {
     id: 'mail',
-    title: 'Enterprise Mail Infrastructure',
+    title: 'Enterprise Mail Servers',
     description:
-      'Deliverability-focused custom mail servers, Postfix/Dovecot optimization, and spam prevention systems.',
+      'Deploying and managing robust self-hosted mail stacks (Mailcow, Poste.io) with strict SPF, DKIM, and DMARC configurations.',
     icon: 'ph:envelope-simple-duotone',
     path: '/services/mail',
   },
@@ -52,17 +52,18 @@ const services = [
           <h3 class="mb-3 text-xl font-bold text-text-primary">{{ service.title }}</h3>
           <p class="mb-8 text-sm leading-relaxed text-text-secondary">{{ service.description }}</p>
 
-          <NuxtLink
-            :to="service.path"
-            class="absolute bottom-8 left-8 flex items-center gap-2 text-sm font-semibold text-text-primary transition-colors group-hover:text-primary-500"
-          >
-            Learn more
-            <Icon
-              name="ph:arrow-right-bold"
-              class="transition-transform group-hover:translate-x-1"
-            />
-          </NuxtLink>
+          <!-- Removed NuxtLink -->
         </div>
+      </div>
+
+      <div class="mt-16 flex justify-center">
+        <NuxtLink
+          to="/services"
+          class="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border bg-surface px-8 text-sm font-semibold text-text-primary transition-all hover:-translate-y-0.5 hover:border-primary-500 hover:text-primary-500 hover:shadow-glow focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:outline-none"
+        >
+          Explore All Expertise
+          <Icon name="ph:arrow-right-bold" />
+        </NuxtLink>
       </div>
     </div>
   </section>

@@ -26,6 +26,16 @@
               and building lightning-fast web applications. When I take on a project, I own it from
               the DNS records down to the CSS utilities.
             </p>
+            <div class="mt-10">
+              <a
+                href="/Supian_M_Resume.pdf"
+                target="_blank"
+                class="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary-500 px-6 text-sm font-medium text-white shadow-glow transition-colors hover:bg-primary-600 focus-visible:ring-2 focus-visible:ring-interactive focus-visible:outline-none"
+              >
+                <Icon name="ph:file-pdf-duotone" size="20" />
+                Download Resume (PDF)
+              </a>
+            </div>
           </div>
         </div>
 

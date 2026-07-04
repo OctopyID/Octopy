@@ -1,9 +1,9 @@
 <template>
   <footer class="mt-24 border-t border-border bg-surface-raised pt-16 pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-4 lg:gap-8">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-8">
         <!-- Brand Section -->
-        <div class="md:col-span-2">
+        <div class="col-span-2">
           <NuxtLink to="/" class="mb-4 inline-flex items-center gap-2">
             <div
               class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500 text-white shadow-glow"
