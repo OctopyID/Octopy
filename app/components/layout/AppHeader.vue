@@ -32,7 +32,7 @@ const links = [
       <div class="border-b border-border py-4 lg:border-0">
         <div class="relative flex items-center">
           <NuxtLink to="/" class="mr-3 flex-none overflow-hidden text-lg font-bold md:w-auto">
-            Octopy<span class="text-primary-500">ID</span>
+            Octopy <span class="text-primary-500">ID</span>
           </NuxtLink>
 
           <!-- Desktop Nav -->
