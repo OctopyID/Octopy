@@ -4,8 +4,8 @@
 
 <template>
   <header class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-border bg-bg/95 supports-backdrop-blur:bg-bg/60">
-    <div class="max-w-8xl mx-auto">
-      <div class="py-4 border-b border-border lg:px-8 lg:border-0 mx-4 lg:mx-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="py-4 border-b border-border lg:border-0">
         <div class="relative flex items-center">
           <NuxtLink to="/" class="mr-3 flex-none overflow-hidden md:w-auto text-lg font-bold">
             Octopy<span class="text-primary-500">ID</span>
