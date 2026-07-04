@@ -1,5 +1,5 @@
-import { defineNuxtConfig } from 'nuxt/config'
-import tailwindcss from '@tailwindcss/vite'
+import { defineNuxtConfig } from 'nuxt/config';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
@@ -11,41 +11,33 @@ export default defineNuxtConfig({
 
   // Modules
   modules: [
-    '@nuxtjs/mdc',            // Markdown Components
-    '@nuxt/content',          // Blog & Lab data
-    '@nuxt/image',            // Optimised NuxtImg
-    '@nuxt/icon',             // Iconify icon system
-    '@nuxt/fonts',            // Auto-managed fonts
-    '@vueuse/nuxt',           // VueUse composables
-    '@vueuse/motion/nuxt',    // Micro-animations
-    '@nuxtjs/seo',            // Unified SEO (robots, sitemap, OG)
-    '@nuxtjs/color-mode',     // SSR-safe dark mode
+    '@nuxtjs/mdc', // Markdown Components
+    '@nuxt/content', // Blog & Lab data
+    '@nuxt/image', // Optimised NuxtImg
+    '@nuxt/icon', // Iconify icon system
+    '@nuxt/fonts', // Auto-managed fonts
+    '@vueuse/nuxt', // VueUse composables
+    '@vueuse/motion/nuxt', // Micro-animations
+    '@nuxtjs/seo', // Unified SEO (robots, sitemap, OG)
+    '@nuxtjs/color-mode', // SSR-safe dark mode
   ],
 
   // Tailwind CSS v4 setup via Vite
   vite: {
-    plugins: [
-      tailwindcss()
-    ],
+    plugins: [tailwindcss()],
     optimizeDeps: {
-      include: [
-        '@unhead/schema-org/vue',
-        '@vue/devtools-core',
-        '@vue/devtools-kit',
-      ]
-    }
+      include: ['@unhead/schema-org/vue', '@vue/devtools-core', '@vue/devtools-kit'],
+    },
   },
 
   // Nuxt Fonts configuration
   fonts: {
-    families: [
-      { name: 'Iosevka', provider: 'fontsource' }
-    ]
+    families: [{ name: 'Iosevka', provider: 'fontsource' }],
   },
 
   // Color mode: class-based (body.dark) for Tailwind v4 compat
   colorMode: {
-    classSuffix: '',          // adds class "dark" not "dark-mode"
+    classSuffix: '', // adds class "dark" not "dark-mode"
     preference: 'system',
     fallback: 'dark',
     storageKey: 'octopy-theme',
@@ -66,8 +58,8 @@ export default defineNuxtConfig({
   // Nitro settings
   nitro: {
     prerender: {
-      crawlLinks: true
-    }
+      crawlLinks: true,
+    },
   },
 
   // Content v3 collections
@@ -83,4 +75,4 @@ export default defineNuxtConfig({
       },
     },
   },
-})
+});

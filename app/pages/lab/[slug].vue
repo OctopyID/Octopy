@@ -43,7 +43,7 @@ useSeoMeta({
     </div>
 
     <article v-else-if="data" class="w-full">
-      <header class="mb-12">
+      <header class="mb-12" v-if="data.project">
         <NuxtLink to="/lab" class="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-text-primary transition-colors mb-8">
           <Icon name="ph:arrow-left-bold" /> Back to Lab
         </NuxtLink>

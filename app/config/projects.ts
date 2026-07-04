@@ -5,7 +5,7 @@ export const githubRepos = [
     repo: 'OctopyID/LaraPersonate',
     desc: 'Login as a different user quickly for Laravel.',
     link: 'https://github.com/OctopyID/LaraPersonate',
-    docs: 'https://raw.githubusercontent.com/OctopyID/LaraPersonate/refs/heads/main/README.md'
+    docs: 'https://raw.githubusercontent.com/OctopyID/LaraPersonate/refs/heads/main/README.md',
   },
   {
     name: 'Google Photo CLI',
@@ -13,7 +13,7 @@ export const githubRepos = [
     repo: 'OctopyID/GPhotoCLI',
     desc: 'GPhoto streamlines the photo uploading process and helps you keep your photo library organized.',
     link: 'https://github.com/OctopyID/GPhotoCLI',
-    docs: 'https://raw.githubusercontent.com/OctopyID/GPhotoCLI/refs/heads/main/README.md'
+    docs: 'https://raw.githubusercontent.com/OctopyID/GPhotoCLI/refs/heads/main/README.md',
   },
   {
     name: 'Filament Palette',
@@ -21,7 +21,7 @@ export const githubRepos = [
     repo: 'OctopyID/FilamentPalette',
     desc: 'Easily switch and customize the UI color palette for your FilamentPHP.',
     link: 'https://github.com/OctopyID/FilamentPalette',
-    docs: 'https://raw.githubusercontent.com/OctopyID/FilamentPalette/refs/heads/main/README.md'
+    docs: 'https://raw.githubusercontent.com/OctopyID/FilamentPalette/refs/heads/main/README.md',
   },
   {
     name: 'Filament Tabify',
@@ -29,7 +29,7 @@ export const githubRepos = [
     repo: 'OctopyID/FilamentTabify',
     desc: 'Transform your Filament dashboard with elegant Tabbed Widgets.',
     link: 'https://github.com/OctopyID/FilamentTabify',
-    docs: 'https://raw.githubusercontent.com/OctopyID/FilamentTabify/refs/heads/main/README.md'
+    docs: 'https://raw.githubusercontent.com/OctopyID/FilamentTabify/refs/heads/main/README.md',
   },
   {
     name: 'Octopy Framework',
@@ -37,7 +37,7 @@ export const githubRepos = [
     repo: 'OctopyID/OctopyFramework',
     desc: 'A lightweight PHP framework with Laravel look-alike.',
     link: 'https://github.com/OctopyID/OctopyFramework',
-    docs: 'https://raw.githubusercontent.com/OctopyID/OctopyFramework/refs/heads/main/README.md'
+    docs: 'https://raw.githubusercontent.com/OctopyID/OctopyFramework/refs/heads/main/README.md',
   },
   {
     name: 'Lara Inotify',
@@ -45,7 +45,7 @@ export const githubRepos = [
     repo: 'OctopyID/LaraInotify',
     desc: 'Laravel File System Watcher.',
     link: 'https://github.com/OctopyID/LaraInotify',
-    docs: 'https://raw.githubusercontent.com/OctopyID/LaraInotify/refs/heads/main/README.md'
+    docs: 'https://raw.githubusercontent.com/OctopyID/LaraInotify/refs/heads/main/README.md',
   },
   {
     name: 'Tako Framework',
@@ -53,6 +53,6 @@ export const githubRepos = [
     repo: 'gettako/tako',
     desc: 'A Go TUI framework without the duct tape. Handles DI, events, routing, and plugins cleanly.',
     link: 'https://gettako.dev',
-    docs: 'https://gettako.dev'
-  }
-]
+    docs: 'https://gettako.dev',
+  },
+];
