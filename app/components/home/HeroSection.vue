@@ -4,10 +4,20 @@
 
 <template>
   <section class="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-40">
-    <!-- Subtle glow background effect -->
-    <div
-      class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--color-primary-950)_0%,_transparent_70%)] opacity-50 dark:opacity-100"
-    ></div>
+    <!-- Rich Gradient Mesh Background -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div
+        class="absolute -top-[20%] left-[20%] h-[500px] w-[500px] animate-pulse rounded-full bg-primary-500/20 mix-blend-multiply blur-[120px] dark:mix-blend-screen"
+      ></div>
+      <div
+        class="absolute top-[20%] -right-[10%] h-[400px] w-[400px] animate-pulse rounded-full bg-primary-400/20 mix-blend-multiply blur-[100px] dark:mix-blend-screen"
+        style="animation-delay: 2s"
+      ></div>
+      <div
+        class="absolute -bottom-[10%] left-[40%] h-[600px] w-[600px] animate-pulse rounded-full bg-primary-600/10 mix-blend-multiply blur-[150px] dark:mix-blend-screen"
+        style="animation-delay: 4s"
+      ></div>
+    </div>
 
     <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
       <!-- Animated Tagline -->

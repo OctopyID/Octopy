@@ -1,5 +1,6 @@
 <template>
   <div class="flex min-h-screen flex-col">
+    <UiReadingProgress />
     <LayoutAppHeader />
     <main
       class="container mx-auto grid flex-grow grid-cols-1 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8"

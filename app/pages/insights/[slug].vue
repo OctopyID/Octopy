@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'blog',
+  layout: false,
 });
 
 const route = useRoute();
@@ -29,41 +29,72 @@ const formatDate = (dateString: string) => {
 </script>
 
 <template>
-  <article v-if="article" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
-    <header class="mb-12">
+  <NuxtLayout name="blog">
+    <article v-if="article" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <header class="mb-12">
+        <div
+          class="mb-6 flex items-center gap-4 text-sm font-medium tracking-wider text-text-muted uppercase"
+        >
+          <time :datetime="article.date">{{ formatDate(article.date) }}</time>
+          <span
+            v-if="article.readTime"
+            class="flex items-center gap-1 before:mr-3 before:content-['•']"
+          >
+            <Icon name="ph:clock-duotone" size="16" /> {{ article.readTime }} min read
+          </span>
+        </div>
+
+        <h1
+          class="mb-6 text-3xl leading-tight font-extrabold tracking-tight text-text-primary md:text-5xl"
+        >
+          {{ article.title }}
+        </h1>
+
+        <div class="mb-8 flex flex-wrap gap-2">
+          <span
+            v-for="tag in article.tags"
+            :key="tag"
+            class="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-medium text-primary-500"
+          >
+            {{ tag }}
+          </span>
+        </div>
+      </header>
+
       <div
-        class="mb-6 flex items-center gap-4 text-sm font-medium tracking-wider text-text-muted uppercase"
+        class="prose max-w-none dark:prose-invert prose-p:leading-relaxed prose-a:text-primary-500 hover:prose-a:text-primary-600 dark:hover:prose-a:text-primary-400 prose-pre:border prose-pre:border-border prose-pre:!bg-surface-raised prose-pre:!text-text-primary prose-pre:shadow-sm prose-img:rounded-xl"
       >
-        <time :datetime="article.date">{{ formatDate(article.date) }}</time>
-        <span
-          v-if="article.readTime"
-          class="flex items-center gap-1 before:mr-3 before:content-['•']"
-        >
-          <Icon name="ph:clock-duotone" size="16" /> {{ article.readTime }} min read
-        </span>
+        <ContentRenderer :value="article" />
       </div>
+    </article>
 
-      <h1
-        class="mb-6 text-3xl leading-tight font-extrabold tracking-tight text-text-primary md:text-5xl"
+    <!-- Table of Contents for the Sidebar -->
+    <template #sidebar>
+      <div
+        v-if="article?.body?.toc?.links?.length"
+        class="rounded-xl border border-border bg-surface-raised p-6 shadow-sm"
       >
-        {{ article.title }}
-      </h1>
-
-      <div class="mb-8 flex flex-wrap gap-2">
-        <span
-          v-for="tag in article.tags"
-          :key="tag"
-          class="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-medium text-primary-500"
-        >
-          {{ tag }}
-        </span>
+        <h3 class="mb-4 text-sm font-bold tracking-wider text-text-primary uppercase">
+          On this page
+        </h3>
+        <ul class="space-y-3 text-sm text-text-secondary">
+          <li v-for="link in article.body.toc.links" :key="link.id">
+            <a :href="`#${link.id}`" class="block transition-colors hover:text-primary-500">
+              {{ link.text }}
+            </a>
+            <ul
+              v-if="link.children?.length"
+              class="mt-3 ml-4 space-y-2 border-l border-border pl-4"
+            >
+              <li v-for="child in link.children" :key="child.id">
+                <a :href="`#${child.id}`" class="block transition-colors hover:text-primary-500">
+                  {{ child.text }}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </header>
-
-    <div
-      class="prose max-w-none dark:prose-invert prose-p:leading-relaxed prose-a:text-primary-500 hover:prose-a:text-primary-600 dark:hover:prose-a:text-primary-400 prose-pre:border prose-pre:border-border prose-pre:!bg-surface-raised prose-pre:!text-text-primary prose-pre:shadow-sm prose-img:rounded-xl"
-    >
-      <ContentRenderer :value="article" />
-    </div>
-  </article>
+    </template>
+  </NuxtLayout>
 </template>

@@ -4,7 +4,7 @@
 
 <template>
   <header
-    class="sticky top-0 z-40 w-full flex-none bg-bg/95 backdrop-blur transition-colors duration-500 supports-backdrop-blur:bg-bg/60 lg:z-50 lg:border-b lg:border-border"
+    class="sticky top-0 z-40 w-full flex-none bg-bg/70 backdrop-blur-md transition-colors duration-500 lg:z-50 lg:border-b lg:border-border/50"
   >
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="border-b border-border py-4 lg:border-0">

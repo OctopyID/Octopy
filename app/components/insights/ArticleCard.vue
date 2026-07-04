@@ -21,9 +21,9 @@ const formatDate = (dateString: string) => {
 </script>
 
 <template>
-  <NuxtLink :to="article.path" class="group block">
+  <NuxtLink :to="article.path" class="group block" v-motion-slide-visible-once-bottom>
     <article
-      class="rounded-xl border border-border bg-surface-raised p-6 transition-all duration-300 hover:border-interactive hover:bg-surface"
+      class="rounded-xl border border-border bg-surface-raised p-6 transition-all duration-300 hover:-translate-y-1 hover:border-interactive hover:bg-surface hover:shadow-glow"
     >
       <div
         class="mb-4 flex items-center gap-4 text-xs font-medium tracking-wider text-text-muted uppercase"
