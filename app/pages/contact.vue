@@ -11,6 +11,12 @@ useSeoMeta({
 
 const socials = [
   {
+    name: 'WhatsApp',
+    url: 'https://wa.me/628159826697?text=Hello%20Supian,%20I%20would%20like%20to%20discuss%20a%20project.',
+    icon: 'simple-icons:whatsapp',
+    handle: '+62 815-9826-697',
+  },
+  {
     name: 'Email',
     url: 'mailto:supianidz@octopy.dev',
     icon: 'ph:envelope-duotone',
@@ -60,8 +66,8 @@ const socials = [
         Let's Build Together
       </h1>
       <p class="text-xl leading-relaxed text-text-secondary">
-        Whether you need a robust Linux infrastructure, a custom mail server, or a full-stack
-        application, I'm here to help you scale.
+        Whether you need reliable Linux infrastructure, a secure mail server, or a pragmatic
+        full-stack application, I'm here to help you execute.
       </p>
     </div>
 
@@ -106,9 +112,9 @@ const socials = [
             <Icon name="ph:map-pin-duotone" size="20" /> Based In
           </h4>
           <p class="text-text-secondary">
-            Jakarta, Indonesia<br />
+            Banjarbaru, South Kalimantan<br />
             <span class="text-sm text-text-muted"
-              >Available for remote work worldwide (WIB/GMT+7)</span
+              >Available for remote work worldwide (WITA/GMT+8)</span
             >
           </p>
         </div>
