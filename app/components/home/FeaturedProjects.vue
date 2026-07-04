@@ -31,7 +31,9 @@ const projects = computed(() => allProjects.value || []);
           :to="`/lab/${project.stem}`"
           class="group block h-full"
         >
-          <UiCard class="flex h-full flex-col p-6 transition-colors group-hover:border-interactive">
+          <UiCard
+            class="flex h-full flex-col p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary-500 group-hover:shadow-glow"
+          >
             <div class="flex-grow">
               <div class="mb-4 flex items-center gap-2">
                 <Icon

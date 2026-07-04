@@ -42,7 +42,7 @@ const services = [
         <div
           v-for="service in services"
           :key="service.id"
-          class="group relative rounded-2xl border border-border bg-bg p-8 shadow-sm transition-colors hover:border-primary-500/50"
+          class="group relative rounded-2xl border border-border bg-bg p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-glow"
         >
           <div
             class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-interactive-muted text-primary-500"

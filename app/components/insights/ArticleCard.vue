@@ -23,7 +23,7 @@ const formatDate = (dateString: string) => {
 <template>
   <NuxtLink :to="article.path" class="group block h-full" v-motion-slide-visible-once-bottom>
     <article
-      class="flex h-full flex-col rounded-xl border border-border bg-surface-raised p-6 transition-all duration-300 hover:-translate-y-1 hover:border-interactive hover:bg-surface hover:shadow-glow"
+      class="flex h-full flex-col rounded-xl border border-border bg-surface-raised p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-glow"
     >
       <div class="flex-grow">
         <div

@@ -43,7 +43,7 @@ const services = [
     title: 'Enterprise Mail Servers',
     description:
       'Deploying and managing robust self-hosted mail stacks (Mailcow, Poste.io) with strict SPF, DKIM, and DMARC configurations for ultimate deliverability.',
-    icon: 'ph:envelope-simple-duotone',
+    icon: 'simple-icons:maildotru',
   },
   {
     id: 'docker',
@@ -75,7 +75,7 @@ const services = [
       <div
         v-for="service in services"
         :key="service.id"
-        class="group relative flex h-full flex-col rounded-2xl border border-border bg-surface-raised p-8 shadow-sm transition-colors hover:border-primary-500/50"
+        class="group relative flex h-full flex-col rounded-2xl border border-border bg-surface-raised p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:shadow-glow"
       >
         <div
           class="mb-8 flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-bg text-primary-500 transition-transform group-hover:scale-110"
@@ -105,14 +105,14 @@ const services = [
           rel="noopener noreferrer"
           class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-8 text-sm font-bold text-white shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:outline-none"
         >
-          <Icon name="ph:whatsapp-logo-duotone" size="20" />
+          <Icon name="simple-icons:whatsapp" size="20" />
           Chat on WhatsApp
         </a>
         <NuxtLink
           to="/contact"
           class="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-surface px-8 text-sm font-bold text-text-primary transition-all hover:-translate-y-1 hover:border-primary-500 hover:text-primary-500 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:outline-none"
         >
-          <Icon name="ph:envelope-duotone" size="20" />
+          <Icon name="simple-icons:maildotru" size="20" />
           Send an Email
         </NuxtLink>
       </div>

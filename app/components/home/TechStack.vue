@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const techList = [
-  { name: 'Linux', icon: 'mdi:linux' },
-  { name: 'Go', icon: 'mdi:language-go' },
-  { name: 'Laravel', icon: 'mdi:laravel' },
-  { name: 'Vue.js', icon: 'mdi:vuejs' },
-  { name: 'Nuxt', icon: 'mdi:nuxt' },
-  { name: 'Docker', icon: 'mdi:docker' },
-  { name: 'PostgreSQL', icon: 'mdi:database' },
-  { name: 'Tailwind CSS', icon: 'mdi:tailwind' },
+  { name: 'Linux', icon: 'simple-icons:linux' },
+  { name: 'Go', icon: 'simple-icons:go' },
+  { name: 'Laravel', icon: 'simple-icons:laravel' },
+  { name: 'Vue.js', icon: 'simple-icons:vuedotjs' },
+  { name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
+  { name: 'Docker', icon: 'simple-icons:docker' },
+  { name: 'PostgreSQL', icon: 'simple-icons:postgresql' },
+  { name: 'Tailwind CSS', icon: 'simple-icons:tailwindcss' },
 ];
 </script>
 
