@@ -25,7 +25,7 @@ const experiences = [
     date: 'February 2020 · December 2022',
     role: 'Full-Stack Engineer',
     comp: 'Dept. of Communication & Informatics (Diskominfo HSS)',
-    desc: 'Responsible for developing government applications and managing main and email servers infrastructures to ensure seamless operations and robust security.',
+    desc: 'Responsible for developing custom applications for various government departments. Additionally, I managed and secured a large-scale server infrastructure, handling everything from enterprise email stacks to core government servers.',
     logo: '/images/company/2.webp',
   },
   {
