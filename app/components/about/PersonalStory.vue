@@ -1,6 +1,6 @@
 <template>
   <section class="py-16 md:py-24">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid items-center gap-12 md:grid-cols-12">
         <!-- Text -->
         <div class="md:col-span-7">
@@ -35,7 +35,7 @@
             class="absolute inset-0 translate-x-4 translate-y-4 transform rounded-2xl border border-primary-500/20 bg-primary-500/10"
           ></div>
           <NuxtImg
-            src="/images/portrait.webp"
+            src="/images/me.png"
             alt="Supian M Portrait"
             class="relative aspect-[4/5] w-full rounded-2xl border border-border bg-surface object-cover shadow-lg"
             width="400"

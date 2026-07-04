@@ -44,9 +44,11 @@ const principles = [
     <!-- Components -->
     <AboutPersonalStory />
     <AboutBrandPhilosophy />
+    <AboutWorkExperience />
+    <AboutTechStack />
 
     <!-- Principles Section -->
-    <section class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
       <h3 class="mb-12 text-center text-2xl font-bold text-text-primary">Engineering Principles</h3>
       <div class="grid gap-6 md:grid-cols-3">
         <AboutPrincipleCard

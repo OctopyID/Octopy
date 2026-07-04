@@ -16,5 +16,6 @@ useSeoMeta({
     <HomeTechStack />
     <HomeServicesTeaser />
     <HomeFeaturedProjects />
+    <HomeLatestInsights />
   </div>
 </template>
