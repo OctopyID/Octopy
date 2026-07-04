@@ -1,6 +1,6 @@
 <template>
   <footer class="mt-24 border-t border-border bg-surface-raised pt-16 pb-8">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <UiContainer>
       <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-8">
         <!-- Brand Section -->
         <div class="col-span-2">
@@ -134,6 +134,6 @@
           &copy; {{ new Date().getFullYear() }} Octopy ID / Supian M. All rights reserved.
         </p>
       </div>
-    </div>
+    </UiContainer>
   </footer>
 </template>

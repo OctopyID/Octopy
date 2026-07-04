@@ -51,7 +51,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+  <UiContainer size="3xl" class="py-12 md:py-20">
     <div v-if="pending" class="flex justify-center py-20">
       <Icon name="ph:spinner-gap-bold" size="32" class="animate-spin text-primary-500" />
     </div>
@@ -116,5 +116,5 @@ onMounted(async () => {
         </div>
       </div>
     </article>
-  </div>
+  </UiContainer>
 </template>

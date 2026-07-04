@@ -30,7 +30,7 @@ const formatDate = (dateString: string) => {
 
 <template>
   <NuxtLayout name="blog">
-    <article v-if="article" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+    <article v-if="article" class="mx-auto max-w-3xl py-12 md:py-20">
       <header class="mb-12">
         <div
           class="mb-6 flex items-center gap-4 text-sm font-medium tracking-wider text-text-muted uppercase"

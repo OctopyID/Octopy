@@ -2,9 +2,7 @@
   <div class="flex min-h-screen flex-col">
     <UiReadingProgress />
     <LayoutAppHeader />
-    <main
-      class="container mx-auto grid flex-grow grid-cols-1 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8"
-    >
+    <UiContainer as="main" class="grid flex-grow grid-cols-1 gap-8 py-12 lg:grid-cols-4">
       <article class="lg:col-span-3">
         <slot />
       </article>
@@ -14,7 +12,7 @@
           <slot name="sidebar" />
         </div>
       </aside>
-    </main>
+    </UiContainer>
     <LayoutAppFooter />
   </div>
 </template>
