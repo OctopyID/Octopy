@@ -2,7 +2,9 @@
 const route = useRoute();
 
 const { data, error, pending } = await useAsyncData(`lab-detail-${route.params.slug}`, async () => {
-  const project = await queryCollection('lab').path(route.path).first();
+  const project = await queryCollection('lab')
+    .where('stem', '=', `lab/${route.params.slug}`)
+    .first();
 
   if (!project) {
     throw createError({ statusCode: 404, statusMessage: 'Project not found', fatal: true });
