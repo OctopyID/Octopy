@@ -4,7 +4,7 @@ const experiences = [
     date: '2019 · Present',
     role: 'Freelance Engineer & Consultant',
     comp: 'Various Independent Projects',
-    desc: 'Delivering rapid, high-quality software solutions for various clients. Projects range from custom web applications and API integrations to specialized infrastructure setups that require fast turnaround times.',
+    desc: 'Operating on a 100% remote, transparent workflow alongside my full-time commitments. To guarantee quality and reliability, I always provide clients with realistic, padded timelines—ensuring every project gets the dedicated attention it deserves without missing deadlines.',
     logo: '', // Fallback to icon
   },
   {

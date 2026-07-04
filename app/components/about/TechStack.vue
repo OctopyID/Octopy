@@ -4,8 +4,8 @@ const stackGroups = [
     category: 'Frontend & UI',
     items: [
       { label: 'Vue.js', icon: 'simple-icons:vuedotjs', color: '#4FC08D' },
+      { label: 'Nuxt', icon: 'simple-icons:nuxtdotjs', color: '#00DC82' },
       { label: 'TypeScript', icon: 'simple-icons:typescript', color: '#3178C6' },
-      { label: 'Astro', icon: 'simple-icons:astro', color: '#BC52EE' },
       { label: 'Electron', icon: 'simple-icons:electron', color: '#47848F' },
       { label: 'Flutter', icon: 'simple-icons:flutter', color: '#02569B' },
     ],
@@ -13,6 +13,7 @@ const stackGroups = [
   {
     category: 'Backend & Data',
     items: [
+      { label: 'Go', icon: 'simple-icons:go', color: '#00ADD8' },
       { label: 'PHP', icon: 'simple-icons:php', color: '#777BB4' },
       { label: 'Laravel', icon: 'simple-icons:laravel', color: '#FF2D20' },
       { label: 'Node.js', icon: 'simple-icons:nodedotjs', color: '#5FA04E' },
@@ -29,7 +30,7 @@ const stackGroups = [
       { label: 'Cloudflare', icon: 'simple-icons:cloudflare', color: '#F38020' },
       { label: 'Git', icon: 'simple-icons:git', color: '#F05032' },
       { label: 'Grafana', icon: 'simple-icons:grafana', color: '#F46800' },
-      { label: 'ClickUp', icon: 'simple-icons:clickup', color: '#7B68EE' },
+      { label: 'GitHub Actions', icon: 'simple-icons:githubactions', color: '#2088FF' },
     ],
   },
 ];

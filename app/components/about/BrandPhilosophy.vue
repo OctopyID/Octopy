@@ -21,7 +21,7 @@
             Like an octopus with its many arms, Octopy ID thrives in multi-disciplinary stacks.
             Whether it's managing Linux daemons, orchestrating Go routines, or crafting Vue
             interfaces, the core philosophy remains the same:
-            <strong>Precision, Scalability, and Resilience.</strong>
+            <strong>Pragmatism, Maintainability, and Execution.</strong>
           </p>
         </div>
 
