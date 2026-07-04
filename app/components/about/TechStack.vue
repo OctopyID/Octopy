@@ -41,9 +41,7 @@ const stackGroups = [
       <div class="mb-12" v-motion-slide-visible-once-bottom>
         <div class="mb-4 flex items-center gap-3">
           <div class="h-px w-12 bg-primary-500"></div>
-          <h2 class="text-xs font-bold tracking-widest text-primary-500 uppercase">
-            The Arsenal
-          </h2>
+          <h2 class="text-xs font-bold tracking-widest text-primary-500 uppercase">The Arsenal</h2>
         </div>
         <h3 class="mb-4 text-3xl font-extrabold text-text-primary md:text-4xl">Tech Stack</h3>
         <p class="max-w-2xl text-lg leading-relaxed text-text-secondary">

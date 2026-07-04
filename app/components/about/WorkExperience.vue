@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const experiences = [
   {
+    date: '2019 · Present',
+    role: 'Freelance Engineer & Consultant',
+    comp: 'Various Independent Projects',
+    desc: 'Delivering rapid, high-quality software solutions for various clients. Projects range from custom web applications and API integrations to specialized infrastructure setups that require fast turnaround times.',
+    logo: '', // Fallback to icon
+  },
+  {
     date: 'January 2023 · Present',
     role: 'Full-Stack Engineer',
     comp: 'Procurement of Goods and Services Work Unit of Hulu Sungai Selatan Regency',
@@ -47,7 +54,7 @@ const experiences = [
       </h3>
 
       <div
-        class="relative space-y-8 md:space-y-0 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-linear-to-b before:from-transparent before:via-border before:to-transparent md:before:mx-auto md:before:translate-x-0"
+        class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-linear-to-b before:from-transparent before:via-border before:to-transparent md:space-y-0 md:before:mx-auto md:before:translate-x-0"
       >
         <div
           v-for="(exp, index) in experiences"
@@ -75,10 +82,17 @@ const experiences = [
                 <h5 class="mt-1 text-sm font-medium text-text-secondary">{{ exp.comp }}</h5>
               </div>
               <img
+                v-if="exp.logo"
                 :src="exp.logo"
                 :alt="exp.comp"
                 class="h-12 w-12 shrink-0 rounded-xl border border-border/50 bg-white object-contain p-1 shadow-sm"
               />
+              <div
+                v-else
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-border/50 bg-surface shadow-sm"
+              >
+                <Icon name="ph:briefcase-duotone" size="24" class="text-text-muted" />
+              </div>
             </div>
             <p class="text-sm leading-relaxed text-text-secondary">
               {{ exp.desc }}
