@@ -1,16 +1,20 @@
+import { defineCachedEventHandler } from '#imports'
+import { githubRepos } from '../../app/config/projects'
 
-const REPOS = [
-  'OctopyID/LaraPersonate',
-  'OctopyID/GPhotoCLI',
-  'OctopyID/FilamentPalette',
-  'OctopyID/FilamentTabify',
-  'OctopyID/OctopyFramework',
-  'OctopyID/LaraInotify'
-]
+interface Project {
+  id: string
+  name: string
+  description: string
+  stars: number
+  forks: number
+  language: string
+  url: string
+  docs: string
+}
 
-export default defineCachedEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event): Promise<Project[]> => {
   const projects = await Promise.all(
-    REPOS.map(async (repo) => {
+    githubRepos.map(async (repo) => {
       try {
         const data = await $fetch<any>(`https://api.github.com/repos/${repo}`, {
           headers: {
@@ -28,12 +32,12 @@ export default defineCachedEventHandler(async (event) => {
           docs: `https://raw.githubusercontent.com/${repo}/refs/heads/main/README.md`
         }
       } catch (e) {
-        // Fallback gracefully if GitHub rate limits us
+        // Fallback gracefully if GitHub rate limits us or repo is private
         const name = repo.split('/')[1]
         return {
           id: repo,
           name: name,
-          description: 'A powerful tool built for the developer community.',
+          description: 'Failed to fetch repository data.',
           stars: 0,
           forks: 0,
           language: 'Unknown',
