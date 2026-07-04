@@ -6,8 +6,8 @@ const techList = [
   { name: 'Vue.js', icon: 'simple-icons:vuedotjs' },
   { name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
   { name: 'Docker', icon: 'simple-icons:docker' },
-  { name: 'PostgreSQL', icon: 'simple-icons:postgresql' },
-  { name: 'Tailwind CSS', icon: 'simple-icons:tailwindcss' },
+  { name: 'MySQL', icon: 'simple-icons:mysql' },
+  { name: 'TypeScript', icon: 'simple-icons:typescript' },
 ];
 </script>
 
@@ -15,7 +15,7 @@ const techList = [
   <section class="overflow-hidden border-y border-border bg-bg-subtle py-10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <p class="mb-8 text-center text-xs font-semibold tracking-widest text-text-muted uppercase">
-        Battle-Tested Technologies
+        Core Engineering Stack
       </p>
 
       <!-- CSS Marquee approach -->
