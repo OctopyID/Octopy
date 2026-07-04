@@ -17,10 +17,10 @@ const principles = [
     icon: 'ph:bounding-box-duotone',
   },
   {
-    title: 'High Availability',
+    title: 'Pragmatic Reliability',
     description:
-      'Designing resilient infrastructure with redundancy and failover mechanisms to ensure maximum uptime.',
-    icon: 'ph:activity-duotone',
+      'Designing infrastructure that makes sense for your scale. Preventing single points of failure without introducing unnecessary architectural overhead.',
+    icon: 'ph:shield-check-duotone',
   },
   {
     title: 'Clean Code',

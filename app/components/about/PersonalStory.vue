@@ -16,15 +16,17 @@
 
           <div class="prose max-w-none text-lg leading-relaxed text-text-secondary prose-invert">
             <p class="mb-6">
-              I am a battle-tested engineer who believes in shipping robust, scalable, and
-              maintainable systems. My approach is direct, transparent, and entirely
-              execution-oriented—no bullshit, just engineering excellence.
+              I've been writing code since 2014 and working professionally since 2019. I don't focus
+              on titles like "senior", but the open-source libraries I've authored have reached over
+              125,000 users and continue to grow. My approach to software is direct, transparent,
+              and entirely execution-oriented.
             </p>
             <p>
-              Over the years, I've traversed the full stack, from tweaking kernel parameters on
-              bare-metal Linux servers to architecting distributed enterprise mail infrastructures
-              and building lightning-fast web applications. When I take on a project, I own it from
-              the DNS records down to the CSS utilities.
+              I value honesty above all else. Before a client even hires me, I often advise them on
+              cost-effective, practical solutions they can try first. Over the years, I've traversed
+              the full stack—from tweaking kernel parameters on bare-metal Linux servers to building
+              modern web applications. When I take on a project, I own it from the DNS records down
+              to the CSS utilities.
             </p>
             <div class="mt-10">
               <a

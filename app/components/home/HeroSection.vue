@@ -28,7 +28,7 @@
         :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }"
       >
         <span class="flex h-2 w-2 animate-pulse rounded-full bg-primary-500"></span>
-        Architecting the Foundation
+        Solid Engineering Foundation
       </div>
 
       <!-- High-contrast Headline -->
@@ -38,8 +38,8 @@
         :initial="{ opacity: 0, y: 30 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 200 } }"
       >
-        Building <span class="text-gradient-primary">Scalable</span> <br class="hidden sm:block" />
-        Infrastructure & Code
+        Building <span class="text-gradient-primary">Reliable</span> <br class="hidden sm:block" />
+        Systems & Infrastructure
       </h1>
 
       <!-- Sub-copy -->
@@ -49,8 +49,9 @@
         :initial="{ opacity: 0, y: 20 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 400 } }"
       >
-        I am Supian M, the engineer behind Octopy ID. I design, build, and scale high-performance
-        Linux servers, enterprise mail systems, and robust web applications.
+        I am Supian M. I build pragmatic server architectures and web applications that just work.
+        No over-engineering, no false promises—just clean code, secure Linux environments, and
+        proven technologies.
       </p>
 
       <!-- CTAs -->

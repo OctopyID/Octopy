@@ -33,8 +33,8 @@ const services = [
       <div class="mx-auto mb-16 max-w-3xl text-center">
         <h2 class="text-3xl font-bold tracking-tight text-text-primary">Core Expertise</h2>
         <p class="mt-4 text-lg text-text-muted">
-          Bridging the gap between raw infrastructure and elegant application logic. I build systems
-          designed to scale and endure.
+          From configuring the bare metal to writing the application logic. I build systems that are
+          straightforward to maintain and built to last.
         </p>
       </div>
 

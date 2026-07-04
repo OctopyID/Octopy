@@ -14,28 +14,28 @@ const services = [
     id: 'vue-electron',
     title: 'Vue & Electron Development',
     description:
-      'Building modern, highly reactive single-page applications and cross-platform desktop software.',
+      'Developing practical single-page applications and desktop tools that prioritize user experience without unnecessary complexity.',
     icon: 'simple-icons:vuedotjs',
   },
   {
     id: 'laravel',
     title: 'Laravel Development',
     description:
-      'Crafting robust and secure backend systems, RESTful APIs, and full-stack web applications using the Laravel ecosystem.',
+      "Building maintainable web applications and REST APIs using Laravel's proven ecosystem. Code that your future developers can actually read.",
     icon: 'simple-icons:laravel',
   },
   {
     id: 'golang',
     title: 'Golang Development',
     description:
-      'Developing high-performance, concurrent backend services, CLI tools, and scalable microservices with Go.',
+      'Writing efficient backend services and CLI tools in Go for tasks where raw performance and concurrency actually matter.',
     icon: 'simple-icons:go',
   },
   {
     id: 'linux',
     title: 'Linux Server Administration',
     description:
-      'High-availability architecture, security hardening, and performance tuning for mission-critical infrastructure.',
+      'Practical server management, security hardening, and straightforward deployments designed to keep your services online without the headache.',
     icon: 'simple-icons:linux',
   },
   {
@@ -49,7 +49,7 @@ const services = [
     id: 'docker',
     title: 'Docker & Containerization',
     description:
-      'Containerizing applications for seamless deployment, orchestration, and continuous integration environments.',
+      "Containerizing applications to ensure they run the exact same way in production as they do on the developer's machine.",
     icon: 'simple-icons:docker',
   },
 ];
@@ -66,8 +66,9 @@ const services = [
         Services & Expertise
       </h1>
       <p class="text-xl leading-relaxed text-text-secondary">
-        I bridge the gap between raw infrastructure and elegant application logic, delivering
-        end-to-end engineering solutions that are built to scale and endure.
+        I deliver end-to-end engineering solutions focused on maintainability and real-world
+        results. Whether it's configuring a mail server or building a web app, I prioritize
+        pragmatic choices over hype.
       </p>
     </div>
 
@@ -95,8 +96,8 @@ const services = [
         Need a Custom Engineering Solution?
       </h2>
       <p class="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-text-secondary">
-        Every business has unique requirements. Let's discuss your project, and I will architect a
-        solution and provide a custom quotation tailored to your specific needs.
+        I believe in honesty first. Let's discuss your project—I often advise clients on
+        cost-effective, practical solutions they can try before committing to custom development.
       </p>
       <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
         <a
