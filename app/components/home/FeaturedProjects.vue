@@ -1,25 +1,6 @@
 <script setup lang="ts">
-// Placeholder projects until Content v3 is fully populated
-const projects = [
-  {
-    title: 'Laravel Octane Boilerplate',
-    description: 'High-performance starting point for Laravel applications using Swoole.',
-    tags: ['Laravel', 'Swoole', 'Docker'],
-    repo: 'octopy-id/laravel-octane'
-  },
-  {
-    title: 'Go Mail Router',
-    description: 'Blazing fast postfix policy daemon and mail router written in Go.',
-    tags: ['Go', 'Postfix', 'SMTP'],
-    repo: 'octopy-id/go-mail-router'
-  },
-  {
-    title: 'Nuxt 4 Starter',
-    description: 'Minimalist, utility-first Nuxt 4 template with Tailwind CSS v4.',
-    tags: ['Nuxt', 'Vue', 'Tailwind'],
-    repo: 'octopy-id/nuxt-starter'
-  }
-]
+const { data: allProjects, pending } = await useFetch('/api/github-projects')
+const projects = computed(() => allProjects.value ? allProjects.value.slice(0, 3) : [])
 </script>
 
 <template>
@@ -35,28 +16,35 @@ const projects = [
         </NuxtLink>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <UiCard v-for="project in projects" :key="project.repo" class="flex flex-col h-full p-6 hover:border-interactive transition-colors group">
-          <div class="flex-grow">
-            <div class="flex items-center gap-2 mb-4">
-              <Icon name="ph:folder-open-duotone" class="text-primary-500" size="24" />
-              <h3 class="font-semibold text-lg text-text-primary group-hover:text-primary-500 transition-colors">{{ project.title }}</h3>
+      <div v-if="pending" class="flex justify-center py-20">
+        <Icon name="ph:spinner-gap-bold" size="32" class="animate-spin text-primary-500" />
+      </div>
+      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <NuxtLink v-for="project in projects" :key="project.id" :to="`/lab/${project.slug}`" class="block h-full group">
+          <UiCard class="flex flex-col h-full p-6 group-hover:border-interactive transition-colors">
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-4">
+                <Icon name="ph:folder-open-duotone" class="text-primary-500" size="24" />
+                <h3 class="font-semibold text-lg text-text-primary group-hover:text-primary-500 transition-colors">{{ project.name }}</h3>
+              </div>
+              <p class="text-sm text-text-secondary mb-6">{{ project.description }}</p>
             </div>
-            <p class="text-sm text-text-secondary mb-6">{{ project.description }}</p>
-          </div>
-          
-          <div class="mt-auto">
-            <div class="flex flex-wrap gap-2 mb-4">
-              <UiTag v-for="tag in project.tags" :key="tag">{{ tag }}</UiTag>
+            
+            <div class="mt-auto">
+              <div class="flex flex-wrap gap-2 mb-4">
+                <UiTag v-if="project.language">{{ project.language }}</UiTag>
+                <UiTag><Icon name="ph:star-duotone" class="mr-1 inline-block" />{{ project.stars }}</UiTag>
+                <UiTag><Icon name="ph:git-fork-duotone" class="mr-1 inline-block" />{{ project.forks }}</UiTag>
+              </div>
+              <div class="flex items-center justify-between text-xs text-text-muted border-t border-border pt-4">
+                <span class="flex items-center gap-1 font-mono">
+                  <Icon name="mdi:github" size="16" />
+                  {{ project.id }}
+                </span>
+              </div>
             </div>
-            <div class="flex items-center justify-between text-xs text-text-muted border-t border-border pt-4">
-              <span class="flex items-center gap-1 font-mono">
-                <Icon name="mdi:github" size="16" />
-                {{ project.repo }}
-              </span>
-            </div>
-          </div>
-        </UiCard>
+          </UiCard>
+        </NuxtLink>
       </div>
       
       <div class="mt-8 text-center sm:hidden">

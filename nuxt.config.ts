@@ -11,6 +11,7 @@ export default defineNuxtConfig({
 
   // Modules
   modules: [
+    '@nuxtjs/mdc',            // Markdown Components
     '@nuxt/content',          // Blog & Lab data
     '@nuxt/image',            // Optimised NuxtImg
     '@nuxt/icon',             // Iconify icon system

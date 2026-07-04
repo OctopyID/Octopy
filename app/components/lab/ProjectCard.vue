@@ -2,6 +2,7 @@
 defineProps<{
   project: {
     id: string
+    slug: string
     name: string
     description: string
     stars: number
@@ -13,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <a :href="project.url" target="_blank" rel="noopener noreferrer" class="flex flex-col h-full p-6 rounded-xl hover:border-primary-500/50 transition-all duration-300 group hover:shadow-md bg-surface-raised border border-border" v-motion-slide-visible-once-bottom>
+  <NuxtLink :to="`/lab/${project.slug}`" class="flex flex-col h-full p-6 rounded-xl hover:border-primary-500/50 transition-all duration-300 group hover:shadow-md bg-surface-raised border border-border" v-motion-slide-visible-once-bottom>
     <div class="flex-grow">
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-2">
@@ -46,5 +47,5 @@ defineProps<{
         </span>
       </div>
     </div>
-  </a>
+  </NuxtLink>
 </template>

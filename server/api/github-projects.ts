@@ -3,6 +3,7 @@ import { githubRepos } from '../../app/config/projects'
 
 interface Project {
   id: string
+  slug: string
   name: string
   description: string
   stars: number
@@ -14,35 +15,36 @@ interface Project {
 
 export default defineCachedEventHandler(async (event): Promise<Project[]> => {
   const projects = await Promise.all(
-    githubRepos.map(async (repo) => {
+    githubRepos.map(async (project) => {
       try {
-        const data = await $fetch<any>(`https://api.github.com/repos/${repo}`, {
+        const data = await $fetch<any>(`https://api.github.com/repos/${project.repo}`, {
           headers: {
             'User-Agent': 'OctopyID-Portfolio'
           }
         })
         return {
-          id: repo,
-          name: data.name,
-          description: data.description,
+          id: project.repo,
+          slug: project.slug,
+          name: project.name,
+          description: project.desc || data.description,
           stars: data.stargazers_count,
           forks: data.forks_count,
           language: data.language,
-          url: data.html_url,
-          docs: `https://raw.githubusercontent.com/${repo}/refs/heads/main/README.md`
+          url: project.link,
+          docs: project.docs
         }
       } catch (e) {
         // Fallback gracefully if GitHub rate limits us or repo is private
-        const name = repo.split('/')[1]
         return {
-          id: repo,
-          name: name,
-          description: 'Failed to fetch repository data.',
+          id: project.repo,
+          slug: project.slug,
+          name: project.name,
+          description: project.desc || 'Failed to fetch repository data.',
           stars: 0,
           forks: 0,
           language: 'Unknown',
-          url: `https://github.com/${repo}`,
-          docs: ''
+          url: project.link,
+          docs: project.docs
         }
       }
     })
@@ -50,6 +52,6 @@ export default defineCachedEventHandler(async (event): Promise<Project[]> => {
   
   return projects
 }, {
-  name: 'github-projects',
+  name: 'github-projects-v2',
   maxAge: 3600 // Cache for 1 hour to prevent API limits
 })
