@@ -27,33 +27,6 @@
               <Icon name="ph:github-logo-duotone" size="20" />
             </a>
             <a
-              href="https://instagram.com/supianidz"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-text-muted transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:text-primary-500 hover:shadow-glow"
-              aria-label="Instagram"
-            >
-              <Icon name="ph:instagram-logo-duotone" size="20" />
-            </a>
-            <a
-              href="https://facebook.com/supianidz"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-text-muted transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:text-primary-500 hover:shadow-glow"
-              aria-label="Facebook"
-            >
-              <Icon name="ph:facebook-logo-duotone" size="20" />
-            </a>
-            <a
-              href="https://threads.net/@supianidz"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-text-muted transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:text-primary-500 hover:shadow-glow"
-              aria-label="Threads"
-            >
-              <Icon name="ph:threads-logo-duotone" size="20" />
-            </a>
-            <a
               href="https://linkedin.com/in/supianidz"
               target="_blank"
               rel="noopener noreferrer"
@@ -61,6 +34,15 @@
               aria-label="LinkedIn"
             >
               <Icon name="ph:linkedin-logo-duotone" size="20" />
+            </a>
+            <a
+              href="https://wa.me/628159826697?text=Hello%20Supian,%20I%20would%20like%20to%20discuss%20a%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-text-muted transition-all duration-300 hover:-translate-y-1 hover:border-primary-500 hover:text-primary-500 hover:shadow-glow"
+              aria-label="WhatsApp"
+            >
+              <Icon name="ph:whatsapp-logo-duotone" size="20" />
             </a>
           </div>
         </div>

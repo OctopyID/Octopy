@@ -34,24 +34,6 @@ const socials = [
     icon: 'ph:linkedin-logo-duotone',
     handle: 'supianidz',
   },
-  {
-    name: 'Instagram',
-    url: 'https://instagram.com/supianidz',
-    icon: 'ph:instagram-logo-duotone',
-    handle: '@supianidz',
-  },
-  {
-    name: 'Facebook',
-    url: 'https://facebook.com/supianidz',
-    icon: 'ph:facebook-logo-duotone',
-    handle: 'supianidz',
-  },
-  {
-    name: 'Threads',
-    url: 'https://threads.net/@supianidz',
-    icon: 'ph:threads-logo-duotone',
-    handle: '@supianidz',
-  },
 ];
 </script>
 
