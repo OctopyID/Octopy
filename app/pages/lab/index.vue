@@ -8,7 +8,7 @@ useSeoMeta({
   description: 'Open source experiments and libraries by Supian M.',
 });
 
-const { data: projects, pending } = await useFetch('/api/github-projects');
+const { data: projects, pending } = await useFetch('/api/projects');
 </script>
 
 <template>

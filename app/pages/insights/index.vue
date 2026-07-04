@@ -14,7 +14,7 @@ const { data: articles } = await useAsyncData('insights-articles', () => {
 </script>
 
 <template>
-  <div class="mx-auto max-w-4xl px-4 pt-24 pb-20 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl px-4 pt-24 pb-20 sm:px-6 lg:px-8">
     <div class="mb-16">
       <div class="mb-4 flex items-center gap-3">
         <div class="h-px w-8 bg-primary-500"></div>

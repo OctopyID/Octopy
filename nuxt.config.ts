@@ -26,7 +26,24 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ['@unhead/schema-org/vue', '@vue/devtools-core', '@vue/devtools-kit'],
+      include: [
+        '@shikijs/langs/ini',
+        '@shikijs/langs/go',
+        '@shikijs/langs/html',
+        '@shikijs/langs/php',
+        '@shikijs/langs/json',
+        '@shikijs/langs/yml',
+        '@shikijs/langs/yaml',
+        '@shikijs/langs/bash',
+        '@shikijs/langs/ts',
+        '@shikijs/langs/js',
+        '@shikijs/langs/vue',
+        '@shikijs/langs/css',
+        '@shikijs/langs/md',
+        '@unhead/schema-org/vue',
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+      ],
     },
   },
 
@@ -62,6 +79,31 @@ export default defineNuxtConfig({
     },
   },
 
+  // MDC settings (for dynamic markdown via <MDC>)
+  mdc: {
+    highlight: {
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark',
+      },
+      langs: [
+        'ini',
+        'go',
+        'html',
+        'php',
+        'json',
+        'yml',
+        'yaml',
+        'bash',
+        'ts',
+        'js',
+        'vue',
+        'css',
+        'md',
+      ],
+    },
+  },
+
   // Content v3 collections
   content: {
     build: {
@@ -69,7 +111,7 @@ export default defineNuxtConfig({
         highlight: {
           theme: {
             default: 'github-light',
-            dark: 'one-dark-pro',
+            dark: 'github-dark',
           },
         },
       },

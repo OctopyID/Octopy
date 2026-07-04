@@ -29,7 +29,7 @@ const formatDate = (dateString: string) => {
 </script>
 
 <template>
-  <article v-if="article" class="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+  <article v-if="article" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
     <header class="mb-12">
       <div
         class="mb-6 flex items-center gap-4 text-sm font-medium tracking-wider text-text-muted uppercase"
@@ -61,7 +61,7 @@ const formatDate = (dateString: string) => {
     </header>
 
     <div
-      class="prose max-w-none dark:prose-invert prose-p:leading-relaxed prose-a:text-primary-500 hover:prose-a:text-primary-600 dark:hover:prose-a:text-primary-400 prose-pre:border prose-pre:border-border prose-pre:!bg-surface-raised prose-pre:shadow-sm prose-img:rounded-xl"
+      class="prose max-w-none dark:prose-invert prose-p:leading-relaxed prose-a:text-primary-500 hover:prose-a:text-primary-600 dark:hover:prose-a:text-primary-400 prose-pre:border prose-pre:border-border prose-pre:!bg-surface-raised prose-pre:!text-text-primary prose-pre:shadow-sm prose-img:rounded-xl"
     >
       <ContentRenderer :value="article" />
     </div>

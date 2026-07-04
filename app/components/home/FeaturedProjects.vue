@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: allProjects, pending } = await useFetch('/api/github-projects');
+const { data: allProjects, pending } = await useFetch('/api/projects');
 const projects = computed(() => (allProjects.value ? allProjects.value.slice(0, 3) : []));
 </script>
 

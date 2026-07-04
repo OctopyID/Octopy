@@ -9,33 +9,49 @@ const themes = [
 </script>
 
 <template>
-  <div class="relative" role="group" aria-label="Theme selector">
-    <!-- Compact toggle (mobile) -->
-    <button
-      class="theme-toggle flex md:hidden"
-      :aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
-      :aria-pressed="isDark"
-      @click="toggleTheme"
-    >
-      <Icon :name="isDark ? 'ph:sun-bold' : 'ph:moon-bold'" size="18" />
-    </button>
-
-    <!-- Segmented control (desktop) -->
-    <div class="theme-segment hidden md:flex" role="radiogroup" aria-label="Theme">
+  <ClientOnly>
+    <div class="relative" role="group" aria-label="Theme selector">
+      <!-- Compact toggle (mobile) -->
       <button
-        v-for="t in themes"
-        :key="t.value"
-        class="theme-segment__btn"
-        :class="{ 'theme-segment__btn--active': currentTheme === t.value }"
-        :aria-checked="currentTheme === t.value"
-        role="radio"
-        @click="setTheme(t.value)"
+        class="theme-toggle flex md:hidden"
+        :aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
+        :aria-pressed="isDark"
+        @click="toggleTheme"
       >
-        <Icon :name="t.icon" size="14" />
-        <span>{{ t.label }}</span>
+        <Icon :name="isDark ? 'ph:sun-bold' : 'ph:moon-bold'" size="18" />
       </button>
+
+      <!-- Segmented control (desktop) -->
+      <div class="theme-segment hidden md:flex" role="radiogroup" aria-label="Theme">
+        <button
+          v-for="t in themes"
+          :key="t.value"
+          class="theme-segment__btn"
+          :class="{ 'theme-segment__btn--active': currentTheme === t.value }"
+          :aria-checked="currentTheme === t.value"
+          role="radio"
+          @click="setTheme(t.value)"
+        >
+          <Icon :name="t.icon" size="14" />
+          <span>{{ t.label }}</span>
+        </button>
+      </div>
     </div>
-  </div>
+
+    <template #fallback>
+      <div class="relative" role="group">
+        <div class="theme-toggle flex opacity-50 md:hidden">
+          <Icon name="ph:circle-notch-bold" class="animate-spin" size="18" />
+        </div>
+        <div class="theme-segment hidden opacity-50 md:flex">
+          <button v-for="t in themes" :key="t.value" class="theme-segment__btn pointer-events-none">
+            <Icon :name="t.icon" size="14" />
+            <span>{{ t.label }}</span>
+          </button>
+        </div>
+      </div>
+    </template>
+  </ClientOnly>
 </template>
 
 <style scoped>

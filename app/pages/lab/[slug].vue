@@ -2,7 +2,7 @@
 const route = useRoute();
 
 const { data, error, pending } = await useAsyncData(`lab-detail-${route.params.slug}`, async () => {
-  const projects = await $fetch('/api/github-projects');
+  const projects = await $fetch('/api/projects');
   const project = projects.find((p) => p.slug === route.params.slug);
 
   if (!project) {
@@ -37,7 +37,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-20 lg:px-8">
     <div v-if="pending" class="flex justify-center py-20">
       <Icon name="ph:spinner-gap-bold" size="32" class="animate-spin text-primary-500" />
     </div>
@@ -89,7 +89,7 @@ useSeoMeta({
 
       <div class="border-t border-border pt-12">
         <div
-          class="prose max-w-none dark:prose-invert prose-p:leading-relaxed prose-a:text-primary-500 hover:prose-a:text-primary-600 dark:hover:prose-a:text-primary-400 prose-pre:border prose-pre:border-border prose-pre:!bg-surface-raised prose-pre:shadow-sm prose-img:rounded-xl"
+          class="prose max-w-none dark:prose-invert prose-p:leading-relaxed prose-a:text-primary-500 hover:prose-a:text-primary-600 dark:hover:prose-a:text-primary-400 prose-pre:border prose-pre:border-border prose-pre:!bg-surface-raised prose-pre:!text-text-primary prose-pre:shadow-sm prose-img:rounded-xl"
         >
           <MDC :value="data.markdown" />
         </div>
