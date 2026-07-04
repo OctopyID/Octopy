@@ -2,7 +2,7 @@
 defineProps<{
   article: {
     title: string
-    description: string
+    description?: string
     date: string
     tags?: string[]
     readTime?: number
@@ -30,7 +30,7 @@ const formatDate = (dateString: string) => {
         {{ article.title }}
       </h3>
       
-      <p class="text-text-secondary line-clamp-3 mb-6 leading-relaxed">
+      <p v-if="article.description" class="text-text-secondary line-clamp-3 mb-6 leading-relaxed">
         {{ article.description }}
       </p>
       

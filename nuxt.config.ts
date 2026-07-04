@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',             // Iconify icon system
     '@nuxt/fonts',            // Auto-managed fonts
     '@vueuse/nuxt',           // VueUse composables
+    '@vueuse/motion/nuxt',    // Micro-animations
     '@nuxtjs/seo',            // Unified SEO (robots, sitemap, OG)
     '@nuxtjs/color-mode',     // SSR-safe dark mode
   ],
