@@ -38,7 +38,7 @@ const principles = [
       <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-text-primary md:text-5xl">
         About
       </h1>
-      <p class="text-xl text-text-muted">The mind and the machine.</p>
+      <p class="text-xl text-text-muted">A brief history of my career and philosophy.</p>
     </div>
 
     <!-- Components -->
@@ -58,6 +58,26 @@ const principles = [
           :description="p.description"
           :icon="p.icon"
         />
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="border-t border-border/50 bg-bg py-16 md:py-24">
+      <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="mb-4 text-3xl font-extrabold text-text-primary">
+          Need a pragmatic engineer for your next project?
+        </h2>
+        <p class="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-text-secondary">
+          I'm currently available for freelance projects and consulting. Let's discuss how I can
+          help build or scale your systems.
+        </p>
+        <NuxtLink
+          to="/contact"
+          class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary-500 px-8 text-sm font-bold text-white shadow-glow transition-all hover:-translate-y-1 hover:bg-primary-600 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:outline-none"
+        >
+          <Icon name="ph:envelope-simple-duotone" size="20" />
+          Let's Talk
+        </NuxtLink>
       </div>
     </section>
   </div>
