@@ -94,6 +94,9 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
     },
+    unenv: {
+      external: ['node:process'],
+    },
   },
 
   // MDC settings (for dynamic markdown via <MDC>)
