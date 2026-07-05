@@ -38,8 +38,7 @@
               </li>
               <li>
                 <strong class="text-text-primary">Open Source Scale:</strong> The software libraries
-                I author and maintain are actively utilized by a global community of over 125,000
-                developers.
+                I author and maintain are actively utilized by over 125,000 developers worldwide.
               </li>
             </ul>
 
