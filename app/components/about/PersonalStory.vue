@@ -16,18 +16,31 @@
 
           <div class="prose max-w-none text-lg leading-relaxed text-text-secondary prose-invert">
             <p class="mb-6">
-              I've been writing code since 2014 and working professionally since 2019. I don't focus
-              on titles like "senior", but the open-source libraries I've authored have reached over
-              125,000 users and continue to grow. My approach to software is direct, transparent,
-              and entirely execution-oriented.
+              I build and scale web applications and server environments. Over the past decade, I
+              have operated at the intersection of software development and Linux server
+              administration, delivering solutions for government sectors and private clients.
             </p>
-            <p>
-              I value honesty above all else. Before a client even hires me, I often advise them on
-              cost-effective, practical solutions they can try first. Over the years, I've traversed
-              the full stack—from tweaking kernel parameters on bare-metal Linux servers to building
-              modern web applications. When I take on a project, I own it from the DNS records down
-              to the CSS utilities.
-            </p>
+
+            <p class="mb-4">My work is defined by three core principles:</p>
+            <ul class="mb-6 space-y-2">
+              <li>
+                <strong class="text-text-primary">Full-Lifecycle Ownership:</strong> I architect
+                systems from bare-metal Linux provisioning, Web Application Firewalls (WAF), and
+                mail servers down to backend APIs and reactive frontends.
+              </li>
+              <li>
+                <strong class="text-text-primary">Pragmatic Architecture:</strong> I avoid
+                over-engineering. I advise stakeholders on cost-effective, maintainable tech stacks
+                that execute flawlessly in production.
+              </li>
+              <li>
+                <strong class="text-text-primary">Open Source Scale:</strong> The software libraries
+                I author and maintain are actively utilized by a global community of over 125,000
+                developers.
+              </li>
+            </ul>
+
+            <p>I don't just write code; I deliver reliable, production-ready software systems.</p>
             <div class="mt-10">
               <a
                 href="/Supian_M_Resume.pdf"
