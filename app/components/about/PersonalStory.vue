@@ -11,7 +11,10 @@
 
           <h3 class="mb-8 text-3xl leading-tight font-extrabold text-text-primary md:text-5xl">
             Supian M. <br />
-            <span class="text-text-secondary">Software & Linux Systems Engineer.</span>
+            <span
+              class="mt-2 block text-xl font-bold tracking-tight text-text-secondary md:text-2xl"
+              >Software & Linux Systems Engineer.</span
+            >
           </h3>
 
           <div class="prose max-w-none text-lg leading-relaxed text-text-secondary prose-invert">
