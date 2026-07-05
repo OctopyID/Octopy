@@ -16,6 +16,14 @@ export default defineNuxtConfig({
     smtpPass: process.env.SMTP_PASS || '',
   },
 
+  site: {
+    url: 'https://octopy.dev',
+    name: 'Octopy ID',
+    description:
+      'Portfolio and Lab of Supian M - Full-Stack Engineer and Infrastructure Consultant.',
+    defaultLocale: 'en',
+  },
+
   // Modules
   modules: [
     '@nuxtjs/mdc', // Markdown Components
@@ -74,6 +82,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
+      titleTemplate: '%s | %siteName',
       htmlAttrs: { lang: 'en' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',

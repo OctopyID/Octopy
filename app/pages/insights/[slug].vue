@@ -14,8 +14,8 @@ if (!article.value) {
 }
 
 useSeoMeta({
-  title: `${article.value.title} | Octopy ID Insights`,
-  description: article.value.description || 'Octopy ID Insights',
+  title: () => `${article.value?.title || 'Article'} | Insights`,
+  description: () => article.value?.description || 'Read more on Octopy ID',
 });
 
 const formatDate = (dateString: string) => {

@@ -32,7 +32,7 @@ if (error.value) {
 }
 
 useSeoMeta({
-  title: () => `${data.value?.project?.title || 'Project'} | Octopy ID Lab`,
+  title: () => `${data.value?.project?.title || 'Project'} | Lab`,
   description: () => data.value?.project?.description || 'Open source project by Supian M.',
 });
 

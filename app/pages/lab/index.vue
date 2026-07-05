@@ -4,7 +4,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: 'The Lab | Octopy ID',
+  title: 'The Lab',
   description: 'Open source experiments and libraries by Supian M.',
 });
 

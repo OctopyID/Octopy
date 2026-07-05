@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: 'Insights | Octopy ID',
+  title: 'Insights',
   description: 'Technical articles, architectural thoughts, and engineering reflections.',
 });
 

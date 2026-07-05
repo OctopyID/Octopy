@@ -4,7 +4,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: 'Services | Octopy ID',
+  title: 'Services',
   description:
     'Holistic infrastructure and application engineering services. Linux, Mail, and App Development.',
 });

@@ -4,7 +4,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: 'Octopy ID — Infrastructure & Engineering',
+  title: 'Infrastructure & Engineering',
   description:
     'Supian M / Octopy ID. Architecting scalable Linux servers, enterprise mail, and full-stack web applications.',
 });

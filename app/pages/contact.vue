@@ -4,7 +4,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: 'Contact | Octopy ID',
+  title: 'Contact',
   description:
     'Get in touch with Supian M for infrastructure consulting and scalable app development.',
 });

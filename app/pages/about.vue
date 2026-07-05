@@ -4,7 +4,7 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: 'About | Octopy ID',
+  title: 'About',
   description:
     'Learn about Supian M, the architect and executor behind Octopy ID, and our core engineering philosophy.',
 });
