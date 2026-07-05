@@ -90,7 +90,7 @@ const arms = [
 
         <Icon name="ph:circuitry-duotone" size="32" class="mb-1 text-primary-500" />
         <span class="text-sm font-black tracking-wider text-text-primary">OCTOPY</span>
-        <span class="text-[10px] font-bold tracking-[0.2em] text-primary-500">SYS</span>
+        <span class="text-[10px] font-bold tracking-[0.2em] text-primary-500">ID</span>
       </div>
     </div>
   </div>
