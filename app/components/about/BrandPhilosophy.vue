@@ -8,20 +8,31 @@
             <h2 class="text-xs font-bold tracking-widest text-primary-500 uppercase">The Brand</h2>
           </div>
 
-          <h3 class="mb-6 text-3xl font-extrabold text-text-primary">
+          <h3 class="mb-6 text-3xl font-extrabold text-text-primary md:text-5xl">
             Octopy ID <br />
-            <span class="text-text-secondary">The Manifesto</span>
+            <span
+              class="mt-2 block text-xl font-bold tracking-tight text-text-secondary md:text-2xl"
+              >The Manifesto</span
+            >
           </h3>
 
           <p class="mb-6 text-lg leading-relaxed text-text-secondary">
-            The Octopus motif symbolizes adaptability, intelligence, and the capability to handle
-            complex, multi-faceted environments simultaneously.
+            The octopus is a creature of high intelligence, adaptability, and decentralized control.
+            It thrives in high-pressure environments by coordinating multiple complex systems
+            seamlessly.
           </p>
           <p class="text-lg leading-relaxed text-text-secondary">
-            Like an octopus with its many arms, Octopy ID thrives in multi-disciplinary stacks.
-            Whether it's managing Linux daemons, orchestrating Go routines, or crafting Vue
-            interfaces, the core philosophy remains the same:
-            <strong>Pragmatism, Maintainability, and Execution.</strong>
+            This is the exact philosophy behind Octopy ID. Whether it is provisioning secure
+            bare-metal Linux infrastructure, mitigating threats via Web Application Firewalls, or
+            writing highly concurrent backend APIs, the objective is the same: to deliver resilient
+            systems that adapt to scale.
+          </p>
+          <p class="mt-6 text-lg leading-relaxed text-text-secondary">
+            We do not believe in hype-driven development. Our engineering decisions are guided by
+            three uncompromising pillars:<br />
+            <strong class="text-text-primary"
+              >Pragmatic Architecture, Maintainable Code, and Flawless Execution.</strong
+            >
           </p>
         </div>
 
