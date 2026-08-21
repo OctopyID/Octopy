@@ -13,7 +13,7 @@ const themes = [
     <div class="relative" role="group" aria-label="Theme selector">
       <!-- Compact toggle (mobile) -->
       <button
-        class="theme-toggle flex md:hidden"
+        class="theme-toggle flex lg:hidden"
         :aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
         :aria-pressed="isDark"
         @click="toggleTheme"
@@ -22,7 +22,7 @@ const themes = [
       </button>
 
       <!-- Segmented control (desktop) -->
-      <div class="theme-segment hidden md:flex" role="radiogroup" aria-label="Theme">
+      <div class="theme-segment hidden lg:flex" role="radiogroup" aria-label="Theme">
         <button
           v-for="t in themes"
           :key="t.value"
@@ -40,10 +40,10 @@ const themes = [
 
     <template #fallback>
       <div class="relative" role="group">
-        <div class="theme-toggle flex opacity-50 md:hidden">
+        <div class="theme-toggle flex opacity-50 lg:hidden">
           <Icon name="ph:circle-notch-bold" class="animate-spin" size="18" />
         </div>
-        <div class="theme-segment hidden opacity-50 md:flex">
+        <div class="theme-segment hidden opacity-50 lg:flex">
           <button v-for="t in themes" :key="t.value" class="theme-segment__btn pointer-events-none">
             <Icon :name="t.icon" size="14" />
             <span>{{ t.label }}</span>
@@ -64,7 +64,7 @@ const themes = [
   @apply border-[var(--color-interactive)] bg-[var(--color-interactive-muted)] text-[var(--color-interactive)];
 }
 .theme-segment {
-  @apply flex items-center gap-[2px] rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-bg-subtle)] p-[3px];
+  @apply items-center gap-[2px] rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-bg-subtle)] p-[3px];
 }
 .theme-segment__btn {
   @apply flex cursor-pointer items-center gap-[5px] rounded-[var(--radius-md)] border-none bg-transparent px-[10px] py-[4px] text-[12px] font-medium text-[var(--color-text-muted)] transition-all duration-[var(--duration-fast)] ease-[var(--ease-smooth)];

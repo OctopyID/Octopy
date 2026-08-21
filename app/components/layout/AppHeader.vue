@@ -44,11 +44,11 @@ const links = [
           </div>
 
           <!-- Mobile Menu Toggle -->
-          <div class="ml-auto flex lg:hidden">
+          <div class="ml-auto flex items-center lg:hidden">
             <ThemeSwitcher class="mr-4" />
             <button
               @click="toggleMobileMenu"
-              class="text-text-secondary transition-colors hover:text-text-primary focus:outline-none"
+              class="flex h-[36px] w-[36px] items-center justify-center text-text-secondary transition-colors hover:text-text-primary focus:outline-none"
               aria-label="Toggle mobile menu"
             >
               <Icon :name="isMobileMenuOpen ? 'ph:x-bold' : 'ph:list-bold'" size="24" />
